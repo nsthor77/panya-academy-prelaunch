@@ -31,7 +31,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{font-family:'IBM Plex Sans Thai','Plus Jakarta Sans',system-ui,sans-serif;color:var(--gray-900);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  body{font-family:'IBM Plex Sans Thai','Plus Jakarta Sans',system-ui,sans-serif;color:var(--gray-900);background:var(--gray-50);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
   button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
@@ -39,30 +39,34 @@
   /* === Lang === */
   body[data-lang="en"] [data-th]{display:none}body[data-lang="th"] [data-en]{display:none}
   
-  /* === Header (DARK glass) === */
-  .header{position:sticky;top:0;z-index:100;background:rgba(15,15,30,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+  /* === Header (LIGHT clean — FIXED) === */
+  .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--gray-100)}
   .nav{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.02em}
-  .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,#EC4899,#F97316);color:var(--white);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;box-shadow:0 4px 12px rgba(236,72,153,.4)}
-  .nav-links{display:none;gap:32px;font-size:14px;font-weight:500;color:rgba(255,255,255,.8)}
+  .logo{display:flex;align-items:center}
+  .logo-img{height:36px;width:auto;display:block}
+  .footer .logo-img{filter:brightness(0) invert(1);opacity:.95}
+  .nav-links{display:none;gap:28px;font-size:14px;font-weight:500;color:var(--gray-700);align-items:center;white-space:nowrap}
   @media(min-width:1024px){.nav-links{display:flex}}
-  .nav-links a{position:relative;padding:6px 0;transition:color .2s}
-  .nav-links a:hover{color:#fff}
+  .nav-links a{position:relative;padding:6px 4px;transition:color .2s;display:inline-block}
+  .nav-links a:hover{color:var(--primary)}
   .nav-cta{display:flex;gap:10px;align-items:center}
-  .btn-ghost-dark{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2);padding:9px 16px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s}
-  .btn-ghost-dark:hover{background:rgba(255,255,255,.1)}
-  .btn-bold{background:linear-gradient(135deg,#EC4899,#F97316);color:#fff;padding:10px 18px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:all .2s;box-shadow:0 4px 14px rgba(236,72,153,.4);display:inline-flex;align-items:center;gap:6px}
-  .btn-bold:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(236,72,153,.5)}
-  .lang-switch{display:inline-flex;background:rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:3px;gap:2px}
-  .lang-switch button{padding:5px 10px;border-radius:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.7);transition:all .2s}
+  .btn-ghost-dark{background:transparent;color:var(--gray-700);border:1px solid var(--gray-200);padding:9px 16px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s;font-family:inherit;white-space:nowrap}
+  .btn-ghost-dark:hover{background:var(--gray-50);border-color:var(--primary);color:var(--primary)}
+  .btn-bold{background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 100%);color:#fff;padding:10px 20px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;border:none;transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 12px rgba(30,64,175,.30),inset 0 1px 0 rgba(255,255,255,.15);display:inline-flex;align-items:center;gap:6px;font-family:inherit;white-space:nowrap}
+  .btn-bold:hover{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 100%);transform:translateY(-2px);box-shadow:0 8px 20px rgba(30,64,175,.40)}
+  .lang-switch{display:inline-flex;background:var(--gray-100);border-radius:var(--radius-sm);padding:3px;gap:2px}
+  .lang-switch button{padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;color:var(--gray-500);transition:all .2s;font-family:inherit}
+  .lang-switch button.active{background:#fff;color:var(--primary);box-shadow:var(--shadow-xs)}
   /* === SIGNUP / ROLE SECTION (v4) === */
-  .role-section{background:linear-gradient(180deg,#FFF 0%,#FAF5FF 100%);padding:80px 24px}
+  .role-section{padding:96px 24px;position:relative}
   .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;max-width:1080px;margin-left:auto;margin-right:auto}
   @media(max-width:900px){.role-grid{grid-template-columns:1fr}}
-  .role-card{background:#fff;border:2px solid var(--gray-200);border-radius:24px;padding:36px 28px;text-align:center;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
-  .role-card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--rc1),var(--rc2))}
-  .role-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(91,33,182,.15);border-color:transparent}
-  .role-icon-big{width:80px;height:80px;border-radius:20px;background:linear-gradient(135deg,var(--rc1),var(--rc2));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:#fff;box-shadow:0 10px 30px rgba(91,33,182,.2)}
+  .role-card{background:#fff;border:1px solid rgba(30,64,175,.06);border-radius:24px;padding:40px 28px 32px;text-align:center;cursor:pointer;transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(15,23,42,.06),0 2px 6px rgba(15,23,42,.04)}
+  .role-card:active{transform:translateY(-6px) scale(.98);transition:transform .1s}
+  .role-card::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,var(--rc1),var(--rc2));border-radius:24px 24px 0 0}
+  .role-card:hover{transform:translateY(-12px);box-shadow:0 30px 60px rgba(30,64,175,.20),0 12px 24px rgba(30,64,175,.12);border-color:transparent}
+  .role-card:hover .role-icon-big{transform:scale(1.08) rotate(-5deg)}
+  .role-icon-big{width:88px;height:88px;border-radius:22px;background:linear-gradient(135deg,var(--rc1),var(--rc2));display:flex;align-items:center;justify-content:center;margin:8px auto 24px;color:#fff;box-shadow:0 14px 32px rgba(30,64,175,.25);transition:all .35s}
   .role-icon-big svg{width:40px;height:40px}
   .role-card h3{font-size:22px;font-weight:800;margin-bottom:8px;color:var(--dark)}
   .role-card p.role-desc{font-size:14px;color:var(--gray-500);margin-bottom:20px;min-height:42px}
@@ -104,7 +108,7 @@
   /* === For Teachers v4 layout === */
   .teachers-row{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;max-width:1180px;margin:0 auto}
   @media(max-width:900px){.teachers-row{grid-template-columns:1fr;gap:32px}}
-  .teachers-text .section-eyebrow{margin-bottom:12px}
+  .teachers-text .section-eyebrow{display:inline-block;color:var(--primary);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;background:linear-gradient(135deg,#DBEAFE,#BFDBFE);padding:6px 16px;border-radius:999px;box-shadow:0 2px 8px rgba(30,64,175,.10)}
   .teachers-text .section-title{margin-bottom:18px;line-height:1.15}
   .teachers-desc{color:rgba(255,255,255,.85);font-size:16px;line-height:1.7;margin-bottom:28px;max-width:560px}
   .teach-perks-list{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px}
@@ -112,7 +116,7 @@
   .teach-perks-list li strong{color:#fff;font-weight:700}
   .tp-ico{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.10);backdrop-filter:blur(10px);color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(255,255,255,.10)}
 
-  .teachers-card{background:rgba(255,255,255,.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.10);border-radius:24px;padding:28px}
+  .teachers-card{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,.20)}
   .teach-card-head{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.10)}
   .teach-card-ico{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#FBBF24);color:var(--dark);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .teach-card-head h4{font-size:18px;font-weight:800;color:#fff}
@@ -121,18 +125,23 @@
   .teach-card-list li svg{color:var(--accent);flex-shrink:0}
 
   /* === BROWSE BY GRADE (v4 — easy class finding) === */
-  .browse-section{padding:24px 24px 56px;background:#fff;position:relative;z-index:5}
-  .browse-inner{max-width:1180px;margin:-44px auto 0;background:#fff;border-radius:24px;padding:28px 28px 24px;box-shadow:0 20px 60px rgba(15,23,42,.08);border:1px solid var(--gray-100);position:relative}
+  .browse-section{padding:0 24px 64px;background:transparent;position:relative;z-index:5;margin-top:-40px}
+  .browse-inner{max-width:1180px;margin:0 auto;background:linear-gradient(135deg,#FFFFFF 0%,#FAFBFF 100%);border-radius:24px;padding:32px;box-shadow:0 24px 60px rgba(30,64,175,.12),0 8px 16px rgba(30,64,175,.06);border:1px solid rgba(30,64,175,.08);position:relative;overflow:hidden}
+  .browse-inner::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#1E40AF,#3B82F6,#1E40AF);background-size:200% 100%;animation:shimmer 4s linear infinite}
+  @keyframes shimmer{0%{background-position:0 0}100%{background-position:200% 0}}
   .browse-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:12px}
   .browse-head h3{font-size:18px;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:10px}
   .browse-head h3 svg{color:var(--primary)}
   .browse-head p{font-size:13px;color:var(--gray-500)}
   .grade-pills{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
-  .grade-pill{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:14px 10px;border:1.5px solid var(--gray-200);border-radius:14px;background:#fff;cursor:pointer;transition:all .2s;text-decoration:none;color:inherit}
-  .grade-pill:hover{border-color:var(--primary);background:var(--primary-50);transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,64,175,.10)}
-  .grade-pill .gp-emoji{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--gp-c1),var(--gp-c2));color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:4px;font-weight:800;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif}
-  .grade-pill .gp-name{font-weight:700;font-size:14px;color:var(--dark)}
-  .grade-pill .gp-sub{font-size:11px;color:var(--gray-500)}
+  .grade-pill{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:20px 14px;border:1px solid rgba(30,64,175,.10);border-radius:14px;background:#fff;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;box-shadow:0 2px 6px rgba(30,64,175,.06);position:relative;overflow:hidden}
+  .grade-pill::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3B82F6,#1E40AF);opacity:0;transition:opacity .25s}
+  .grade-pill:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 14px 28px rgba(30,64,175,.15),0 4px 8px rgba(30,64,175,.08);background:linear-gradient(180deg,#FFFFFF 0%,#F0F6FF 100%)}
+  .grade-pill:hover::before{opacity:1}
+  .grade-pill:hover .gp-name{color:var(--primary)}
+  
+  .grade-pill .gp-name{font-weight:700;font-size:15px;color:var(--dark);transition:color .2s;letter-spacing:-.01em}
+  .grade-pill .gp-sub{font-size:12px;color:var(--gray-500);transition:color .2s;line-height:1.4;text-align:center}
 
   /* === Quick-find row (also under hero) === */
   .quickfind-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px;align-items:center}
@@ -155,10 +164,12 @@
   .btn-amber:hover{background:#FBBF24;transform:translateY(-1px);box-shadow:0 6px 16px rgba(245,158,11,.30)}
   .btn-large{padding:14px 28px;font-size:15px}
   
-  /* === Hero (LIGHT BLUE-WHITE clean) === */
-  .hero{position:relative;padding:64px 24px 90px;overflow:hidden;background:linear-gradient(180deg,#EFF6FF 0%,#FFFFFF 60%,#F8FAFC 100%);color:var(--dark)}
-  .hero::before{content:'';position:absolute;top:-150px;right:-100px;width:560px;height:560px;background:radial-gradient(circle,rgba(30,64,175,.10) 0%,transparent 65%);border-radius:50%;z-index:0}
-  .hero::after{content:'';position:absolute;bottom:-200px;left:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(59,130,246,.08) 0%,transparent 65%);border-radius:50%;z-index:0}
+  /* === Hero (VIBRANT gradient) === */
+  .hero{position:relative;padding:64px 24px 100px;overflow:hidden;background:linear-gradient(135deg,#EEF2FF 0%,#FEF3C7 100%);color:var(--dark)}
+  .hero::before{content:'';position:absolute;top:-200px;right:-150px;width:680px;height:680px;background:radial-gradient(circle,rgba(30,64,175,.18) 0%,transparent 60%);border-radius:50%;z-index:0}
+  .hero::after{content:'';position:absolute;bottom:-250px;left:-180px;width:580px;height:580px;background:radial-gradient(circle,rgba(245,158,11,.16) 0%,transparent 60%);border-radius:50%;z-index:0}
+  .hero::after, .hero::before{animation:floatSlow 16s ease-in-out infinite}
+  @keyframes floatSlow{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-20px)}}
   .hero-inner{max-width:980px;margin:0 auto;text-align:center;position:relative;z-index:1}
 
   .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--primary-dark);padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:24px;border:1px solid var(--primary-light);box-shadow:0 2px 12px rgba(30,64,175,.08)}
@@ -177,15 +188,15 @@
   .search-input::placeholder{color:var(--gray-400);font-weight:400}
   .search-divider{width:1px;height:28px;background:var(--gray-200);align-self:center}
   .search-grade{padding:0 12px;color:var(--gray-700);font-size:14px;font-weight:600;border:none;background:transparent;font-family:inherit;outline:none;cursor:pointer}
-  .search-btn{padding:14px 28px;border-radius:12px;background:var(--primary);color:#fff;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(30,64,175,.25)}
-  .search-btn:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 6px 16px rgba(30,64,175,.35)}
+  .search-btn{padding:14px 28px;border-radius:12px;background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 100%);color:#fff;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;gap:8px;box-shadow:0 4px 14px rgba(30,64,175,.30),inset 0 1px 0 rgba(255,255,255,.15)}
+  .search-btn:hover{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 100%);transform:translateY(-2px);box-shadow:0 8px 22px rgba(30,64,175,.40)}
 
   .search-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
   .search-tag{padding:7px 16px;border-radius:999px;background:#fff;border:1px solid var(--gray-200);font-size:13px;color:var(--gray-700);cursor:pointer;transition:all .2s;font-weight:500}
   .search-tag:hover{border-color:var(--primary);background:var(--primary-50);color:var(--primary)}
   
   /* === Hero Tutor Preview === */
-  .hero-tutor-preview{margin-top:32px;padding:20px;background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius-lg);box-shadow:0 8px 32px rgba(15,23,42,.06)}
+  .hero-tutor-preview{margin-top:36px;padding:24px;background:#fff;border:1px solid rgba(30,64,175,.10);border-radius:var(--radius-xl);box-shadow:0 20px 50px rgba(15,23,42,.10),0 8px 20px rgba(30,64,175,.06)}
   .hero-tutor-preview-label{font-size:13px;font-weight:600;color:var(--gray-700);margin-bottom:14px;text-align:left}
   .mini-tutors{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
   .mini-tutor{display:flex;align-items:center;gap:10px;padding:10px;background:var(--gray-50);border:1px solid var(--gray-100);border-radius:var(--radius);transition:all .2s;text-decoration:none;color:inherit}
@@ -203,14 +214,23 @@
   /* === Trust strip === */
   .trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:24px 40px;margin-top:48px;padding-top:32px;border-top:1px solid var(--gray-100)}
   .trust-item{display:flex;align-items:center;gap:10px;color:var(--gray-700);font-size:14px;font-weight:500}
-  .trust-item-icon{width:36px;height:36px;border-radius:10px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .trust-item-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 100%);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 6px 14px rgba(30,64,175,.25)}
   
+  /* === Section alternating backgrounds (depth) === */
+  section{position:relative}
+  section.bg-gradient{background:linear-gradient(180deg,#FAFBFF 0%,#FFFFFF 100%)}
+  section.bg-soft{background:#F8FAFC}
+  section.bg-tint{background:linear-gradient(180deg,#FFFFFF 0%,#EFF6FF 100%)}
+  /* Subtle pattern overlay for depth */
+  section.with-pattern{position:relative}
+  section.with-pattern::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(30,64,175,.05) 1px,transparent 0);background-size:32px 32px;pointer-events:none;opacity:.6}
+  section.with-pattern>*{position:relative;z-index:1}
   /* === Section === */
   section{padding:72px 24px}
   .section-inner{max-width:1280px;margin:0 auto}
   .section-head{text-align:center;margin-bottom:48px;max-width:680px;margin-left:auto;margin-right:auto}
-  .section-eyebrow{color:var(--primary);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
-  .section-title{font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--dark);letter-spacing:-.02em;margin-bottom:16px;line-height:1.2}
+  .section-eyebrow{display:inline-block;color:var(--primary);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;background:var(--primary-light);padding:5px 14px;border-radius:999px}
+  .section-title{font-size:clamp(28px,4vw,42px);font-weight:800;color:var(--dark);letter-spacing:-.025em;margin-bottom:14px;line-height:1.15}
   .section-sub{font-size:17px;color:var(--gray-500);line-height:1.6}
   
   .section-head-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;gap:20px;flex-wrap:wrap}
@@ -219,13 +239,41 @@
   .view-all:hover{gap:8px}
   
   /* === Categories === */
-  .cat-bg{background:var(--gray-50)}
-  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
-  .cat-card{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-md);padding:24px 20px;text-align:left;transition:all .2s;cursor:pointer;position:relative;overflow:hidden}
+  .cat-bg{background:linear-gradient(135deg,#EFF6FF 0%,#FAFBFF 50%,#F0F4FF 100%);position:relative;overflow:hidden}
+  .cat-bg::before{content:"";position:absolute;top:0;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,158,11,.10) 0%,transparent 70%);border-radius:50%;animation:floatSlow 20s ease-in-out infinite;pointer-events:none}
+  .cat-bg::after{content:"";position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(30,64,175,.10) 0%,transparent 70%);border-radius:50%;animation:floatSlow 25s ease-in-out infinite reverse;pointer-events:none}
+  .cat-bg .section-inner{position:relative;z-index:1}
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .cat-card{display:flex;flex-direction:column;justify-content:center;gap:6px;background:#fff;border:1px solid rgba(30,64,175,.10);border-radius:14px;padding:22px;text-align:left;transition:all .25s cubic-bezier(.4,0,.2,1);cursor:pointer;text-decoration:none;color:inherit;min-height:92px;position:relative;box-shadow:0 4px 12px rgba(30,64,175,.06),0 1px 3px rgba(15,23,42,.05);overflow:hidden}
+  .cat-card::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3B82F6,#1E40AF);opacity:0;transition:opacity .3s}
+  .cat-card::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:0;background:var(--primary);border-radius:0 4px 4px 0;transition:height .25s ease}
   .cat-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--primary),var(--teacher));opacity:0;transition:opacity .2s}
-  .cat-card:hover{transform:translateY(-3px);border-color:transparent;box-shadow:var(--shadow-md)}
+  .cat-card:hover{transform:translateY(-2px);border-color:var(--primary);box-shadow:0 8px 20px rgba(30,64,175,.10)}
+  .cat-card:hover .cat-name{font-weight:700;font-size:15px;color:var(--dark);letter-spacing:-.01em;line-height:1.3;transition:color .2s}
+  .cat-card-feature{
+    background:linear-gradient(135deg,#1E3A8A 0%,#1E40AF 50%,#2563EB 100%);
+    border-color:transparent;
+    box-shadow:0 12px 32px rgba(30,64,175,.40),0 4px 12px rgba(30,64,175,.25),inset 0 1px 0 rgba(255,255,255,.20);
+    position:relative;overflow:hidden
+  }
+  .cat-card-feature::before{content:"";position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.12) 0%,transparent 100%);pointer-events:none}
+  .cat-card-feature::after{display:none}
+  .cat-card-feature .cat-name{color:#fff!important;font-weight:800;font-size:16px;letter-spacing:-.01em;text-shadow:0 1px 3px rgba(0,0,0,.25);position:relative;z-index:1}
+  .cat-card-feature .cat-meta{color:#FBBF24!important;font-weight:700;font-size:12.5px;text-shadow:0 1px 2px rgba(0,0,0,.20);position:relative;z-index:1}
+  .cat-card-feature:hover{
+    background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#3B82F6 100%);
+    transform:translateY(-4px);
+    box-shadow:0 20px 44px rgba(30,64,175,.50),0 6px 16px rgba(30,64,175,.30)
+  }
+  .cat-card-feature:hover .cat-name{color:#fff!important}
+  .cat-card-feature .cat-name,.cat-card-feature .cat-meta{font-size:12.5px;color:var(--gray-500);font-weight:500;line-height:1.4}
+  .cat-card-feature:hover{background:var(--primary-dark);border-color:var(--primary-dark);transform:translateY(-2px);box-shadow:0 12px 28px rgba(30,64,175,.30)}
+  .cat-card-feature:hover .cat-name{color:#fff}
   .cat-card:hover::after{opacity:1}
-  .cat-icon{font-size:32px;margin-bottom:14px;display:block}
+  .cat-icon{width:64px;height:64px;border-radius:18px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:all .3s}
+  .cat-icon svg{width:32px;height:32px}
+  .category{cursor:pointer;transition:all .3s}
+  .category:hover .cat-icon{transform:scale(1.1) rotate(-5deg);box-shadow:0 12px 28px rgba(0,0,0,.15)}
   .cat-name{font-weight:700;color:var(--dark);margin-bottom:4px;font-size:15px}
   .cat-meta{font-size:12px;color:var(--gray-500)}
   .cat-card.coming{opacity:.65}
@@ -233,9 +281,9 @@
   
   /* === Featured Tutors === */
   .tutors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
-  .tutor-card{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-md);overflow:hidden;transition:all .2s;cursor:pointer}
-  .tutor-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--primary-light)}
-  .tutor-cover{height:120px;position:relative;overflow:hidden}
+  .tutor-card{background:#fff;border:1px solid rgba(30,64,175,.08);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s;cursor:pointer;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+  .tutor-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(30,64,175,.12);border-color:transparent}
+  .tutor-cover{height:140px;position:relative;overflow:hidden}
   .tutor-cover.c1{background:linear-gradient(135deg,#1E40AF,#3B82F6)}
   .tutor-cover.c2{background:linear-gradient(135deg,#7C3AED,#A78BFA)}
   .tutor-cover.c3{background:linear-gradient(135deg,#DC2626,#F59E0B)}
@@ -246,7 +294,7 @@
   .tutor-badge.verified{background:var(--green-light);color:var(--green)}
   .tutor-badge.top{background:var(--accent-light);color:#92400E}
   .tutor-info{padding:0 20px 20px;position:relative;margin-top:-30px}
-  .tutor-avatar{width:64px;height:64px;border-radius:50%;border:4px solid var(--white);background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:var(--white);font-size:24px;font-weight:700;box-shadow:var(--shadow-sm);margin-bottom:14px}
+  .tutor-avatar{width:72px;height:72px;border-radius:50%;border:4px solid #fff;background:linear-gradient(135deg,#3B82F6,#1E40AF);display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;font-weight:800;box-shadow:0 6px 18px rgba(30,64,175,.30);margin-bottom:14px}
   .tutor-name{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:4px}
   .tutor-title{font-size:13px;color:var(--gray-500);margin-bottom:12px}
   .tutor-stats{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-size:13px;color:var(--gray-700);flex-wrap:wrap}
@@ -279,19 +327,24 @@
   .how-tab.active{background:var(--primary);color:var(--white)}
   .how-tab.active.teacher-tab{background:var(--teacher)}
   .how-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-  .step{background:var(--white);border-radius:var(--radius-md);padding:32px 28px;border:1px solid var(--gray-100);position:relative;transition:all .2s}
-  .step:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-  .step-num{position:absolute;top:-18px;left:24px;width:40px;height:40px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;box-shadow:var(--shadow-md);font-family:'Plus Jakarta Sans',sans-serif}
-  .step.teacher-step .step-num{background:linear-gradient(135deg,var(--teacher),var(--teacher-dark))}
+  .step{background:#fff;border-radius:var(--radius-lg);padding:40px 28px 32px;border:1px solid rgba(30,64,175,.08);position:relative;transition:all .3s;box-shadow:0 4px 14px rgba(15,23,42,.04)}
+  .step:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(30,64,175,.12);border-color:rgba(30,64,175,.18)}
+  .step-num{position:absolute;top:-22px;left:24px;width:54px;height:54px;background:linear-gradient(135deg,#3B82F6 0%,#1E40AF 100%);color:#fff;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;box-shadow:0 10px 24px rgba(30,64,175,.35);font-family:'Plus Jakarta Sans',sans-serif;border:3px solid #fff}
+  .step.teacher-step .step-num{background:linear-gradient(135deg,#A78BFA 0%,#7C3AED 100%);box-shadow:0 10px 24px rgba(124,58,237,.35)}
   .step h3{font-size:18px;font-weight:700;margin-bottom:10px;margin-top:8px;color:var(--dark)}
   .step p{font-size:14px;color:var(--gray-700);line-height:1.6}
   .panel{display:none}.panel.active{display:block}
   
   /* === Why Panya === */
   .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-  .why-card{padding:28px;background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-md);transition:all .2s}
-  .why-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--primary-light)}
-  .why-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+  .why-card{padding:32px 28px;background:#fff;border:1px solid rgba(30,64,175,.08);border-radius:var(--radius-lg);transition:all .3s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+  .why-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(30,64,175,.15);border-color:transparent}
+  .why-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px;box-shadow:0 8px 20px rgba(0,0,0,.10)}
+  .why-icon svg{width:28px;height:28px}
+  .why-icon.blue{background:linear-gradient(135deg,#3B82F6,#1E40AF)}
+  .why-icon.green{background:linear-gradient(135deg,#10B981,#059669)}
+  .why-icon.purple{background:linear-gradient(135deg,#8B5CF6,#6D28D9)}
+  .why-icon.amber{background:linear-gradient(135deg,#F59E0B,#D97706)}
   .why-icon.blue{background:var(--primary-light);color:var(--primary)}
   .why-icon.green{background:var(--green-light);color:var(--green)}
   .why-icon.amber{background:var(--accent-light);color:#92400E}
@@ -344,15 +397,17 @@
   .email-form button{padding:13px 20px;border-radius:10px;font-weight:700;font-size:14px;border:none;cursor:pointer;transition:all .2s}
   
   /* === FAQ === */
-  .faq-bg{background:var(--white)}
+  .faq-bg{background:linear-gradient(180deg,#FAFBFF 0%,#F0F6FF 100%);position:relative;overflow:hidden}
+  .faq-bg::before{content:"";position:absolute;top:-150px;right:-150px;width:400px;height:400px;background:radial-gradient(circle,rgba(30,64,175,.08) 0%,transparent 70%);border-radius:50%}
+  .faq-bg .section-inner{position:relative;z-index:1}
   .faq{max-width:760px;margin:0 auto}
   .faq-tabs{display:flex;justify-content:center;gap:6px;margin-bottom:32px;background:var(--gray-50);padding:6px;border-radius:14px;width:fit-content;margin-left:auto;margin-right:auto;border:1px solid var(--gray-100)}
   .faq-tab{padding:9px 20px;border-radius:10px;font-weight:600;font-size:13px;color:var(--gray-500);transition:all .2s}
   .faq-tab.active{background:var(--primary);color:var(--white)}
   .faq-tab.active.teacher-tab{background:var(--teacher)}
-  .faq-item{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:all .2s}
+  .faq-item{background:#fff;border:1px solid rgba(30,64,175,.08);border-radius:var(--radius-md);margin-bottom:14px;overflow:hidden;transition:all .25s;box-shadow:0 4px 12px rgba(15,23,42,.04)}
   .faq-item[open]{border-color:var(--primary-light);box-shadow:var(--shadow-sm)}
-  .faq-item summary{padding:20px 24px;cursor:pointer;font-weight:600;color:var(--dark);font-size:15px;display:flex;justify-content:space-between;align-items:center;list-style:none}
+  .faq-item summary{padding:20px 24px;cursor:pointer;font-weight:600;font-size:15px;color:var(--dark);list-style:none;display:flex;justify-content:space-between;align-items:center;transition:color .2s}
   .faq-item summary::-webkit-details-marker{display:none}
   .faq-item summary::after{content:'+';font-size:24px;color:var(--primary);transition:transform .2s;font-weight:400;line-height:1}
   .faq-item[open] summary::after{transform:rotate(45deg)}
@@ -365,10 +420,11 @@
   .final-cta-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
   .final-cta .section-title{color:var(--white)}
   .final-cta p{font-size:17px;color:rgba(255,255,255,.85);margin-bottom:36px;max-width:540px;margin-left:auto;margin-right:auto}
-  .cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
   
   /* === Footer === */
-  .footer{background:var(--dark);color:var(--gray-300);padding:64px 24px 32px}
+  .footer{background:linear-gradient(180deg,#0A0A14 0%,#0F172A 100%);color:rgba(255,255,255,.65);padding:72px 24px 32px;position:relative;overflow:hidden}
+  .footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(30,64,175,.5) 50%,transparent 100%)}
   .footer-inner{max-width:1280px;margin:0 auto}
   .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
   @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
@@ -377,7 +433,7 @@
   .footer-brand .logo{margin-bottom:14px;color:var(--white)}
   .footer-brand .logo-mark{background:var(--white);color:var(--primary)}
   .footer-brand p{font-size:14px;color:var(--gray-400);line-height:1.7}
-  .footer h4{font-size:13px;font-weight:700;color:var(--white);margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
+  .footer h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:18px;letter-spacing:.05em;text-transform:uppercase}
   .footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
   .footer ul a{font-size:14px;color:var(--gray-400);transition:color .2s}
   .footer ul a:hover{color:var(--white)}
@@ -403,6 +459,28 @@
   /* === Toast === */
   .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--dark);color:var(--white);padding:14px 24px;border-radius:12px;font-size:14px;font-weight:500;box-shadow:var(--shadow-xl);transition:transform .3s ease;z-index:200}
   .toast.show{transform:translateX(-50%) translateY(0)}
+
+  /* === FREE TRIAL OFFER SECTION (Launch Promo) === */
+  .trial-section{background:linear-gradient(135deg,#EFF6FF 0%,#FFFFFF 50%,#FEF3C7 100%);padding:80px 24px;position:relative;overflow:hidden}
+  .trial-section::before{content:"";position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(245,158,11,.16) 0%,transparent 70%);border-radius:50%;animation:floatSlow 18s ease-in-out infinite}
+  .trial-section::after{content:"";position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(30,64,175,.10) 0%,transparent 70%);border-radius:50%;animation:floatSlow 22s ease-in-out infinite reverse}
+  .trial-section .section-inner{position:relative;z-index:1}
+  .trial-card{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;background:#fff;border-radius:28px;padding:48px;box-shadow:0 20px 60px rgba(30,64,175,.10);border:1px solid rgba(30,64,175,.06);max-width:1080px;margin:0 auto;position:relative;overflow:hidden}
+  .trial-card::before{content:"";position:absolute;top:0;right:0;width:140px;height:140px;background:linear-gradient(135deg,rgba(251,191,36,.20),transparent 70%);border-radius:0 28px 0 100%}
+  @media(max-width:760px){.trial-card{grid-template-columns:1fr;padding:32px;text-align:center;gap:24px}.trial-card .trial-features{grid-template-columns:1fr}.trial-card .tf-item{justify-content:center}}
+  .trial-icon{width:120px;height:120px;border-radius:30px;background:linear-gradient(135deg,#F59E0B 0%,#D97706 100%);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 16px 40px rgba(245,158,11,.35);flex-shrink:0;position:relative;z-index:1}
+  .trial-icon svg{width:60px;height:60px;animation:spin 12s linear infinite}
+  @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  .trial-content{position:relative;z-index:1}
+  .trial-eyebrow{background:linear-gradient(135deg,#FEF3C7,#FDE68A)!important;color:#D97706!important}
+  .trial-desc{font-size:16px;color:var(--gray-700);line-height:1.7;margin-bottom:28px;max-width:620px}
+  .trial-desc strong{color:var(--primary);font-weight:700}
+  .trial-features{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px}
+  .tf-item{display:flex;gap:12px;align-items:flex-start;text-align:left}
+  .tf-check{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#F59E0B,#D97706);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(245,158,11,.30)}
+  .tf-item strong{display:block;font-size:14px;color:var(--dark);margin-bottom:2px;font-weight:700}
+  .tf-item span{font-size:13px;color:var(--gray-500);line-height:1.5}
+  .trial-cta{margin-top:8px}
 </style>
 </head>
 <body data-lang="th">
@@ -447,7 +525,7 @@
     <!-- === Search Box === -->
     <div class="search-box">
       <div class="search-input-wrap">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.55;flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <input type="text" class="search-input" placeholder="คุณอยากเรียนวิชาอะไร? เช่น คณิต ม.5, ฟิสิกส์, ภาษาอังกฤษ" aria-label="Search">
       </div>
       <div class="search-divider"></div>
@@ -460,7 +538,6 @@
         <option>เตรียมสอบเข้า</option>
       </select>
       <button class="search-btn" onclick="handleSearchClick()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <span data-th>หาคลาส</span><span data-en>Find a class</span>
       </button>
     </div>
@@ -524,7 +601,7 @@
       <div class="trust-item">
         <div class="trust-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></div>
         <div>
-          <div style="font-weight:700"><span data-th>คืนเงินภายใน 7 วัน</span><span data-en>7-day money back</span></div>
+          <div style="font-weight:700"><span data-th>ทดลองเรียนฟรีช่วงเปิดตัว</span><span data-en>Free trial at launch</span></div>
         </div>
       </div>
       <div class="trust-item">
@@ -549,32 +626,26 @@
     </div>
     <div class="grade-pills">
       <a class="grade-pill" onclick="browseGrade('ป.1-3')" style="--gp-c1:#FBBF24;--gp-c2:#F59E0B">
-        <div class="gp-emoji">P1-3</div>
         <div class="gp-name"><span data-th>ป.1 - ป.3</span><span data-en>Grade 1-3</span></div>
         <div class="gp-sub"><span data-th>ประถมต้น</span><span data-en>Lower Primary</span></div>
       </a>
       <a class="grade-pill" onclick="browseGrade('ป.4-6')" style="--gp-c1:#F97316;--gp-c2:#EA580C">
-        <div class="gp-emoji">P4-6</div>
         <div class="gp-name"><span data-th>ป.4 - ป.6</span><span data-en>Grade 4-6</span></div>
         <div class="gp-sub"><span data-th>ประถมปลาย · สอบเข้า ม.1</span><span data-en>Upper Primary · M.1 entrance</span></div>
       </a>
       <a class="grade-pill" onclick="browseGrade('ม.1-3')" style="--gp-c1:#3B82F6;--gp-c2:#2563EB">
-        <div class="gp-emoji">M1-3</div>
         <div class="gp-name"><span data-th>ม.1 - ม.3</span><span data-en>Grade 7-9</span></div>
         <div class="gp-sub"><span data-th>มัธยมต้น</span><span data-en>Junior High</span></div>
       </a>
       <a class="grade-pill" onclick="browseGrade('ม.4-6')" style="--gp-c1:#1E40AF;--gp-c2:#1E3A8A">
-        <div class="gp-emoji">M4-6</div>
         <div class="gp-name"><span data-th>ม.4 - ม.6</span><span data-en>Grade 10-12</span></div>
         <div class="gp-sub"><span data-th>มัธยมปลาย</span><span data-en>Senior High</span></div>
       </a>
       <a class="grade-pill" onclick="browseGrade('TCAS')" style="--gp-c1:#7C3AED;--gp-c2:#6D28D9">
-        <div class="gp-emoji">⊕</div>
         <div class="gp-name">TCAS / TGAT</div>
         <div class="gp-sub"><span data-th>เตรียมสอบเข้ามหาวิทยาลัย</span><span data-en>University Entrance</span></div>
       </a>
       <a class="grade-pill" onclick="browseGrade('Inter')" style="--gp-c1:#10B981;--gp-c2:#059669">
-        <div class="gp-emoji">EN</div>
         <div class="gp-name">IB / IGCSE / A-Level</div>
         <div class="gp-sub"><span data-th>หลักสูตรนานาชาติ</span><span data-en>International</span></div>
       </a>
@@ -583,7 +654,7 @@
 </section>
 
 <!-- ============ CATEGORIES ============ -->
-<section id="categories" class="cat-bg">
+<section id="categories" class="cat-bg bg-gradient">
   <div class="section-inner">
     <div class="section-head-row">
       <div class="section-head" style="text-align:left;margin-left:0">
@@ -594,65 +665,53 @@
       <a href="#" class="view-all"><span data-th>ดูทั้งหมด</span><span data-en>View all</span> →</a>
     </div>
     <div class="cat-grid">
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></svg></span>
+      <a class="cat-card" onclick="setSearch('คณิตศาสตร์')">
         <div class="cat-name"><span data-th>คณิตศาสตร์</span><span data-en>Mathematics</span></div>
         <div class="cat-meta"><span data-th>ป.1 - ม.6</span><span data-en>Grades 1-12</span></div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 7 6 0"/><path d="m7 4 0 13"/><path d="m17 14 4-7-4 7"/><path d="m13 14 8 0"/></svg></span>
+      </a>
+      <a class="cat-card" onclick="setSearch('ภาษาอังกฤษ')">
         <div class="cat-name"><span data-th>ภาษาอังกฤษ</span><span data-en>English</span></div>
         <div class="cat-meta"><span data-th>ทุกระดับ</span><span data-en>All levels</span></div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></svg></span>
+      </a>
+      <a class="cat-card" onclick="setSearch('วิทยาศาสตร์')">
         <div class="cat-name"><span data-th>วิทยาศาสตร์</span><span data-en>Science</span></div>
         <div class="cat-meta"><span data-th>ฟิสิกส์ · เคมี · ชีวะ</span><span data-en>Physics · Chem · Bio</span></div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+      </a>
+      <a class="cat-card" onclick="setSearch('ภาษาไทย')">
         <div class="cat-name"><span data-th>ภาษาไทย</span><span data-en>Thai Language</span></div>
         <div class="cat-meta"><span data-th>ทุกระดับ</span><span data-en>All levels</span></div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
+      </a>
+      <a class="cat-card" onclick="setSearch('สังคมศึกษา')">
         <div class="cat-name"><span data-th>สังคมศึกษา</span><span data-en>Social Studies</span></div>
         <div class="cat-meta"><span data-th>ม.1 - ม.6</span><span data-en>Grades 7-12</span></div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
-        <div class="cat-name">TGAT/A-Level</div>
+      </a>
+      <a class="cat-card" onclick="setSearch('TGAT')">
+        <div class="cat-name">TGAT / A-Level</div>
         <div class="cat-meta"><span data-th>เตรียมสอบเข้ามหาลัย</span><span data-en>University Prep</span></div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10"/><path d="M18 5v17"/><path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6"/><path d="M6 5v17"/></svg></span>
-        <div class="cat-name"><span data-th>สอบเข้า ม.1/ม.4</span><span data-en>M.1/M.4 Entrance</span></div>
-        <div class="cat-meta"><span data-th>โรงเรียนสาธิต/รัฐ</span><span data-en>Top schools</span></div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
+      </a>
+      <a class="cat-card" onclick="setSearch('สอบเข้า ม.1')">
+        <div class="cat-name"><span data-th>สอบเข้า ม.1 / ม.4</span><span data-en>M.1 / M.4 Entrance</span></div>
+        <div class="cat-meta"><span data-th>โรงเรียนสาธิต / รัฐ</span><span data-en>Top schools</span></div>
+      </a>
+      <a class="cat-card" onclick="setSearch('ภาษาจีน')">
         <div class="cat-name"><span data-th>ภาษาจีน</span><span data-en>Chinese</span></div>
         <div class="cat-meta"><span data-th>HSK · พื้นฐาน</span><span data-en>HSK · Basics</span></div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></span>
+      </a>
+      <a class="cat-card" onclick="setSearch('ภาษาญี่ปุ่น')">
         <div class="cat-name"><span data-th>ภาษาญี่ปุ่น</span><span data-en>Japanese</span></div>
-        <div class="cat-meta">JLPT N5-N1</div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+        <div class="cat-meta">JLPT N5 - N1</div>
+      </a>
+      <a class="cat-card" onclick="setSearch('คอมพิวเตอร์')">
         <div class="cat-name"><span data-th>คอมพิวเตอร์</span><span data-en>Coding</span></div>
-        <div class="cat-meta"><span data-th>Python · Web · AI</span><span data-en>Python · Web · AI</span></div>
-      </div>
-      <div class="cat-card">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0-9.96 9.06A10 10 0 0 0 12 22a4 4 0 0 0 4-4 2 2 0 0 1 2-2 2 2 0 0 1 2-2 1 1 0 0 1 1-1 1 1 0 0 0 1-1A10 10 0 0 0 12 2z"/></svg></span>
+        <div class="cat-meta">Python · Web · AI</div>
+      </a>
+      <a class="cat-card" onclick="setSearch('ศิลปะ')">
         <div class="cat-name"><span data-th>ศิลปะ · ดนตรี</span><span data-en>Arts · Music</span></div>
         <div class="cat-meta"><span data-th>วาดรูป · เปียโน · กีตาร์</span><span data-en>Drawing · Piano · Guitar</span></div>
-      </div>
-      <a href="/subjects.html" class="cat-card" style="background:linear-gradient(135deg,var(--primary-50),var(--teacher-light));border-color:var(--primary-light);text-decoration:none">
-        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></span>
-        <div class="cat-name" style="color:var(--primary)"><span data-th>ดูหลักสูตรทั้งหมด</span><span data-en>View all subjects</span></div>
-        <div class="cat-meta" style="color:var(--primary-dark);font-weight:600"><span data-th>100+ วิชา ครบทุกระดับ →</span><span data-en>100+ subjects, all grades →</span></div>
+      </a>
+      <a href="/subjects.html" class="cat-card cat-card-feature">
+        <div class="cat-name"><span data-th>ดูหลักสูตรทั้งหมด</span><span data-en>View all subjects</span></div>
+        <div class="cat-meta"><span data-th>100+ วิชา ครบทุกระดับ →</span><span data-en>100+ subjects, all grades →</span></div>
       </a>
     </div>
     
@@ -667,7 +726,7 @@
 </section>
 
 <!-- ============ FEATURED TUTORS ============ -->
-<section id="tutors">
+<section id="tutors" class="bg-soft">
   <div class="section-inner">
     <div class="section-head-row">
       <div class="section-head" style="text-align:left;margin-left:0">
@@ -807,7 +866,7 @@
 </section>
 
 <!-- ============ HOW IT WORKS ============ -->
-<section id="how" class="how-bg">
+<section id="how" class="how-bg bg-tint">
   <div class="section-inner">
     <div class="section-head">
       <div class="section-eyebrow"><span data-th>วิธีใช้งาน</span><span data-en>How It Works</span></div>
@@ -826,7 +885,7 @@
         </div>
         <div class="step"><div class="step-num">2</div>
           <h3><span data-th>ทดลองเรียนฟรี 7 วัน</span><span data-en>7-day free trial</span></h3>
-          <p><span data-th>ลองดูคอร์สก่อน · ถ้าลูกไม่เข้าใจหรือไม่ชอบสไตล์ครู · ขอเงินคืนได้ 100%</span><span data-en>Preview courses risk-free · Not satisfied? Full refund within 7 days.</span></p>
+          <p><span data-th>ทดลองเรียนกับครูจริงก่อนตัดสินใจ · เปลี่ยนครูได้ฟรีถ้าไม่ตรงกับสไตล์ลูก · ไม่ผูกมัด</span><span data-en>Try real classes before committing · Switch tutors free if needed · No commitment</span></p>
         </div>
         <div class="step"><div class="step-num">3</div>
           <h3><span data-th>เริ่มเรียนได้ทันที</span><span data-en>Start learning instantly</span></h3>
@@ -855,7 +914,7 @@
 </section>
 
 <!-- ============ WHY PANYA ============ -->
-<section>
+<section class="bg-soft">
   <div class="section-inner">
     <div class="section-head">
       <div class="section-eyebrow"><span data-th>ทำไม Panya</span><span data-en>Why Panya</span></div>
@@ -949,44 +1008,59 @@
 </section>
 
 <!-- ============ DUAL CTA / WAITLIST ============ -->
-<section id="waitlist" class="dual-bg">
+
+
+
+<!-- ============ FREE TRIAL OFFER (LAUNCH PROMO) ============ -->
+<section class="trial-section">
   <div class="section-inner">
-    <div class="section-head">
-      <div class="section-eyebrow"><span data-th>เข้าร่วม Panya</span><span data-en>Join Panya</span></div>
-      <h2 class="section-title"><span data-th>เริ่มต้นวันนี้</span><span data-en>Start today</span></h2>
-      <p class="section-sub"><span data-th>เลือกบทบาทของคุณ · เราจะติดต่อกลับภายใน 48 ชม.</span><span data-en>Pick your role · We'll get back to you within 48 hours.</span></p>
-    </div>
-    
-    <div class="dual-cta">
-      <div class="cta-card learner">
-        <div class="cta-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
-        <div class="cta-card-title"><span data-th>สำหรับผู้ปกครอง</span><span data-en>For Parents</span></div>
-        <div class="cta-card-sub"><span data-th>รับสิทธิ์ส่วนลด 50% สำหรับ 100 คนแรก ที่ลงทะเบียน</span><span data-en>50% off for the first 100 sign-ups</span></div>
-        <ul class="cta-perk-list">
-          <li><span class="ck">✓</span> <span data-th>สิทธิ์เข้าใช้งานก่อนใคร</span><span data-en>Early access</span></li>
-          <li><span class="ck">✓</span> <span data-th>ทดลองเรียนฟรี 7 วัน</span><span data-en>7-day free trial</span></li>
-          <li><span class="ck">✓</span> <span data-th>คืนเงิน 100% ถ้าไม่พอใจ</span><span data-en>100% money-back guarantee</span></li>
-        </ul>
-        <form class="email-form" onsubmit="handleSubmit(event,'parent')">
-          <input type="email" name="email" placeholder="email@example.com" required />
-          <input type="tel" name="phone" placeholder="เบอร์โทร / Phone (optional)" pattern="[0-9\-\s\+]+" />
-          <button type="submit" class="btn-primary"><span data-th>เข้าร่วม Waitlist</span><span data-en>Join Waitlist</span></button>
-        </form>
+    <div class="trial-card">
+      <div class="trial-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
       </div>
-      
-      <div class="cta-card teacher">
-        <div class="cta-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h20"/><path d="M3 6v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6"/><circle cx="12" cy="12" r="3"/><path d="M8 18h8"/></svg></div>
-        <div class="cta-card-title"><span data-th>สำหรับครู</span><span data-en>For Teachers</span></div>
-        <div class="cta-card-sub"><span data-th>ส่งใบสมัครและรอทีมเราติดต่อกลับ</span><span data-en>Submit your application · we will reach out</span></div>
-        <ul class="cta-perk-list">
-          <li><span class="ck">✓</span> <span data-th>รายละเอียดทั้งหมดแจ้งหลังผ่านการคัดเลือก</span><span data-en>Full details shared after selection</span></li>
-          <li><span class="ck">✓</span> <span data-th>Featured บนหน้าแรก ฟรี</span><span data-en>Free homepage feature</span></li>
-          <li><span class="ck">✓</span> <span data-th>ทีมช่วยตัดต่อ VDO ให้</span><span data-en>Free video editing support</span></li>
-        </ul>
-        <form class="email-form" onsubmit="handleSubmit(event,'teacher')">
-          <input type="email" name="email" placeholder="email@example.com" required />
-          <button type="submit" class="btn-teacher"><span data-th>สมัครเป็นครู Panya</span><span data-en>Apply to teach</span></button>
-        </form>
+      <div class="trial-content">
+        <div class="section-eyebrow trial-eyebrow"><span data-th>โปรโมชั่นเปิดตัว</span><span data-en>Launch Promotion</span></div>
+        <h2 class="section-title"><span data-th>ทดลองเรียน <span style="color:var(--primary)">ฟรี</span> ในช่วงเปิดตัว</span><span data-en>Try classes <span style="color:var(--primary)">free</span> at launch</span></h2>
+        <p class="trial-desc">
+          <span data-th>นักเรียนชุดแรกที่ลงทะเบียนล่วงหน้า · ได้สิทธิ์ทดลองเรียนกับครูที่คัดสรร · เพื่อให้คุณมั่นใจก่อนตัดสินใจ — เรามาเพื่อทำให้การเรียนรู้ดีขึ้น</span>
+          <span data-en>First sign-ups get free trial classes with hand-picked teachers · So you can be confident before committing — we're here to make learning better.</span>
+        </p>
+        <div class="trial-features">
+          <div class="tf-item">
+            <div class="tf-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <strong><span data-th>ทดลองฟรีช่วงเปิดตัว</span><span data-en>Free trial at launch</span></strong>
+              <span><span data-th>เฉพาะนักเรียนชุดแรกที่ลงทะเบียน</span><span data-en>For early registrants only</span></span>
+            </div>
+          </div>
+          <div class="tf-item">
+            <div class="tf-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <strong><span data-th>ครูคัดสรร</span><span data-en>Hand-picked teachers</span></strong>
+              <span><span data-th>ทุกคนผ่านการตรวจสอบคุณภาพ</span><span data-en>Every teacher quality-vetted</span></span>
+            </div>
+          </div>
+          <div class="tf-item">
+            <div class="tf-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <strong><span data-th>ไม่ผูกมัด</span><span data-en>No commitment</span></strong>
+              <span><span data-th>เลือกเรียนต่อหรือไม่ก็ได้</span><span data-en>Continue or stop anytime</span></span>
+            </div>
+          </div>
+          <div class="tf-item">
+            <div class="tf-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <strong><span data-th>เปลี่ยนครูได้</span><span data-en>Switch tutors</span></strong>
+              <span><span data-th>ไม่ถูกใจ เปลี่ยนครูใหม่ได้</span><span data-en>Not a fit? Try another teacher</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="trial-cta">
+          <button class="btn-bold" onclick="openModal('signup','student')" style="padding:14px 28px;font-size:15px">
+            <span data-th>ลงทะเบียนรับสิทธิ์</span><span data-en>Register for trial</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1009,10 +1083,10 @@
         <div class="faq-item-body"><span data-th>ตั้งเป้าเปิดตัว Q3 2026 · ผู้ที่ลงทะเบียนล่วงหน้าจะได้ใช้งานก่อน · พร้อมสิทธิพิเศษสำหรับนักเรียนกลุ่มแรก</span><span data-en>Targeting Q3 2026 launch · Early sign-ups get first access · Special perks for our first students.</span></div>
       </details>
       <details class="faq-item"><summary><span data-th>ราคาเท่าไหร่?</span><span data-en>How much do courses cost?</span></summary>
-        <div class="faq-item-body"><span data-th>คลาสมีหลายช่วงราคา ขึ้นอยู่กับวิชา ครู และรูปแบบการเรียน — ทดลองเรียนฟรี 7 วัน คืนเงินภายใน 7 วันถ้าไม่พอใจ</span><span data-en>Prices vary by subject, teacher, and class format. 7-day free trial · 7-day money-back if not satisfied.</span></div>
+        <div class="faq-item-body"><span data-th>คลาสมีหลายช่วงราคา ขึ้นอยู่กับวิชา ครู และรูปแบบการเรียน · นักเรียนชุดแรกได้ทดลองเรียนฟรีในช่วงเปิดตัว</span><span data-en>Prices vary by subject, teacher, and class format. Early sign-ups get free trial classes at launch.</span></div>
       </details>
       <details class="faq-item"><summary><span data-th>ถ้าลูกเรียนแล้วไม่เข้าใจ ทำยังไง?</span><span data-en>What if my child doesn't understand?</span></summary>
-        <div class="faq-item-body"><span data-th>ทุกคอร์สมีระบบถาม-ตอบกับครู · ดูซ้ำได้ไม่จำกัด · ทดลองเรียนฟรี 7 วัน · คืนเงิน 100% ถ้าไม่พอใจ</span><span data-en>Every course includes Q&A with the teacher, unlimited replays, 7-day free trial, and 100% money-back guarantee.</span></div>
+        <div class="faq-item-body"><span data-th>ทุกคลาสมีระบบถาม-ตอบกับครู · ดูซ้ำได้ไม่จำกัด · เปลี่ยนครูได้ฟรีถ้าไม่ตรงกับสไตล์ของผู้เรียน</span><span data-en>Every class includes Q&A with the teacher, unlimited replays, and free tutor swap if the style doesn't fit.</span></div>
       </details>
       <details class="faq-item"><summary><span data-th>ครูเป็นใคร? เชื่อถือได้ไหม?</span><span data-en>Who are the teachers? Are they qualified?</span></summary>
         <div class="faq-item-body"><span data-th>ครูทุกคนผ่านการตรวจสอบประวัติ · ส่งตัวอย่างการสอนให้เราดูก่อน · มีรีวิวจากผู้ปกครองคนอื่น · เราเปิดเผยคุณวุฒิ ประสบการณ์ และผลงานของครูทุกคน</span><span data-en>Every teacher is background-checked, submits a teaching sample, and gets reviewed by other parents. We display each teacher's credentials, experience, and track record openly.</span></div>
@@ -1136,7 +1210,7 @@
         <ul class="role-perks">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>ดูแลลูกได้หลายคนใน 1 บัญชี</span><span data-en>Manage multiple children</span></span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>รายงานความก้าวหน้าทุกสัปดาห์</span><span data-en>Weekly progress reports</span></span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>รับประกันคืนเงิน · จ่ายปลอดภัย</span><span data-en>Money-back · secure payment</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>จ่ายปลอดภัย · เปลี่ยนครูได้ฟรี</span><span data-en>Secure payment · free tutor swap</span></span></li>
         </ul>
         <button class="btn-role" onclick="openModal('signup','parent')">
           <span data-th>สมัครเป็นผู้ปกครอง</span><span data-en>Sign up as Parent</span>
