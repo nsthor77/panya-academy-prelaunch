@@ -1,0 +1,109 @@
+subject_id,subject_th,subject_en,category,grade_level,grade_label_th,grade_label_en,topics_th,topics_en,exam_target,priority,icon
+TH-P1,ภาษาไทย,Thai Language,languages,P1,ป.1,Grade 1,"พยัญชนะ สระ วรรณยุกต์ คำพื้นฐาน อ่านออกเขียนได้","Consonants, vowels, tones, basic words, reading & writing",,high,🇹🇭
+TH-P2,ภาษาไทย,Thai Language,languages,P2,ป.2,Grade 2,"คำควบกล้ำ การอ่าน การเขียนประโยคง่าย","Compound words, reading, simple sentences",,high,🇹🇭
+TH-P3,ภาษาไทย,Thai Language,languages,P3,ป.3,Grade 3,"การแต่งประโยค คำคล้องจอง การเล่าเรื่อง","Sentence construction, rhymes, storytelling",,high,🇹🇭
+TH-P4,ภาษาไทย,Thai Language,languages,P4,ป.4,Grade 4,"คำราชาศัพท์ ชนิดของคำ การเขียนเรียงความ","Royal vocabulary, word types, essay writing",,high,🇹🇭
+TH-P5,ภาษาไทย,Thai Language,languages,P5,ป.5,Grade 5,"วรรณคดี การอ่านจับใจความ การย่อความ","Literature, reading comprehension, summarization",,high,🇹🇭
+TH-P6,ภาษาไทย,Thai Language,languages,P6,ป.6,Grade 6,"การเขียนรายงาน วรรณคดีไทย เตรียม O-NET","Report writing, Thai literature, O-NET prep",O-NET,critical,🇹🇭
+TH-M1,ภาษาไทย,Thai Language,languages,M1,ม.1,Grade 7,"หลักภาษา การเขียนเชิงสร้างสรรค์ วรรณคดีพื้นบ้าน","Grammar, creative writing, folk literature",,high,🇹🇭
+TH-M2,ภาษาไทย,Thai Language,languages,M2,ม.2,Grade 8,"การเขียนเชิงวิชาการ ฉันท์ กลอน","Academic writing, classical Thai poetry",,high,🇹🇭
+TH-M3,ภาษาไทย,Thai Language,languages,M3,ม.3,Grade 9,"วรรณคดีไทย การวิเคราะห์ เตรียม O-NET","Thai literature, analysis, O-NET prep",O-NET,critical,🇹🇭
+TH-M4,ภาษาไทย,Thai Language,languages,M4,ม.4,Grade 10,"หลักภาษาขั้นสูง วรรณคดีสำคัญ","Advanced grammar, major literature",,high,🇹🇭
+TH-M5,ภาษาไทย,Thai Language,languages,M5,ม.5,Grade 11,"วรรณคดีไทย การวิเคราะห์ การเขียนวิจารณ์","Thai literature, analysis, critical writing",,high,🇹🇭
+TH-M6,ภาษาไทย,Thai Language,languages,M6,ม.6,Grade 12,"เตรียม TGAT/A-Level ไทย วรรณคดีสำคัญ","TGAT/A-Level Thai prep, major works",TGAT,critical,🇹🇭
+
+MATH-P1,คณิตศาสตร์,Mathematics,math_science,P1,ป.1,Grade 1,"นับเลข บวกลบเบื้องต้น รูปทรง","Counting, basic addition/subtraction, shapes",,high,📐
+MATH-P2,คณิตศาสตร์,Mathematics,math_science,P2,ป.2,Grade 2,"บวกลบในใจ คูณเบื้องต้น เวลา","Mental math, basic multiplication, time",,high,📐
+MATH-P3,คณิตศาสตร์,Mathematics,math_science,P3,ป.3,Grade 3,"คูณหาร เศษส่วนเบื้องต้น การวัด","Multiplication/division, basic fractions, measurement",,high,📐
+MATH-P4,คณิตศาสตร์,Mathematics,math_science,P4,ป.4,Grade 4,"เศษส่วน ทศนิยม โจทย์ปัญหา","Fractions, decimals, word problems",,high,📐
+MATH-P5,คณิตศาสตร์,Mathematics,math_science,P5,ป.5,Grade 5,"ร้อยละ พื้นที่ ปริมาตร","Percentages, area, volume",,high,📐
+MATH-P6,คณิตศาสตร์,Mathematics,math_science,P6,ป.6,Grade 6,"พีชคณิตเบื้องต้น เตรียมสอบเข้า ม.1","Basic algebra, M.1 entrance prep","M.1 Entrance, O-NET",critical,📐
+MATH-M1,คณิตศาสตร์,Mathematics,math_science,M1,ม.1,Grade 7,"จำนวนเต็ม สมการ พีชคณิต","Integers, equations, algebra",,critical,📐
+MATH-M2,คณิตศาสตร์,Mathematics,math_science,M2,ม.2,Grade 8,"พีชคณิต อสมการ ทฤษฎีบทพีทาโกรัส","Algebra, inequalities, Pythagorean theorem",,critical,📐
+MATH-M3,คณิตศาสตร์,Mathematics,math_science,M3,ม.3,Grade 9,"ฟังก์ชัน ตรีโกณมิติ เตรียม O-NET","Functions, trigonometry, O-NET prep","O-NET, M.4 Entrance",critical,📐
+MATH-M4,คณิตศาสตร์,Mathematics,math_science,M4,ม.4,Grade 10,"เซต ตรรกศาสตร์ จำนวนจริง","Sets, logic, real numbers",,critical,📐
+MATH-M5,คณิตศาสตร์,Mathematics,math_science,M5,ม.5,Grade 11,"ฟังก์ชัน ลำดับอนุกรม ความน่าจะเป็น","Functions, sequences, probability",,critical,📐
+MATH-M6,คณิตศาสตร์,Mathematics,math_science,M6,ม.6,Grade 12,"แคลคูลัส เตรียม TGAT/A-Level Math","Calculus, TGAT/A-Level Math prep","TGAT, A-Level",critical,📐
+
+SCI-P1,วิทยาศาสตร์,Science,math_science,P1,ป.1,Grade 1,"สิ่งมีชีวิต-ไม่มีชีวิต สัตว์-พืช","Living/non-living, animals & plants",,high,🔬
+SCI-P2,วิทยาศาสตร์,Science,math_science,P2,ป.2,Grade 2,"การเจริญเติบโต ดิน หิน","Growth, soil, rocks",,high,🔬
+SCI-P3,วิทยาศาสตร์,Science,math_science,P3,ป.3,Grade 3,"แรง พลังงาน อากาศ","Force, energy, air",,high,🔬
+SCI-P4,วิทยาศาสตร์,Science,math_science,P4,ป.4,Grade 4,"ระบบสุริยะ น้ำ การเปลี่ยนแปลง","Solar system, water, changes",,high,🔬
+SCI-P5,วิทยาศาสตร์,Science,math_science,P5,ป.5,Grade 5,"แสง เสียง ไฟฟ้าเบื้องต้น","Light, sound, basic electricity",,high,🔬
+SCI-P6,วิทยาศาสตร์,Science,math_science,P6,ป.6,Grade 6,"ระบบในร่างกาย เตรียมสอบเข้า ม.1","Body systems, M.1 entrance prep",M.1 Entrance,critical,🔬
+
+PHY-M1,ฟิสิกส์,Physics,math_science,M1,ม.1,Grade 7,"การวัด แรง การเคลื่อนที่","Measurement, force, motion",,high,⚛️
+PHY-M2,ฟิสิกส์,Physics,math_science,M2,ม.2,Grade 8,"งาน พลังงาน เครื่องกลอย่างง่าย","Work, energy, simple machines",,high,⚛️
+PHY-M3,ฟิสิกส์,Physics,math_science,M3,ม.3,Grade 9,"ไฟฟ้า แม่เหล็ก คลื่น เตรียม O-NET","Electricity, magnetism, waves, O-NET prep",O-NET,critical,⚛️
+PHY-M4,ฟิสิกส์,Physics,math_science,M4,ม.4,Grade 10,"จลนศาสตร์ กฎนิวตัน","Kinematics, Newton's laws",,critical,⚛️
+PHY-M5,ฟิสิกส์,Physics,math_science,M5,ม.5,Grade 11,"ของไหล ความร้อน คลื่นกล","Fluids, heat, mechanical waves",,critical,⚛️
+PHY-M6,ฟิสิกส์,Physics,math_science,M6,ม.6,Grade 12,"ฟิสิกส์ยุคใหม่ เตรียม A-Level Physics","Modern physics, A-Level Physics prep","A-Level, TPAT",critical,⚛️
+
+CHEM-M1,เคมี,Chemistry,math_science,M1,ม.1,Grade 7,"สารและการเปลี่ยนแปลง","Matter and changes",,high,🧪
+CHEM-M2,เคมี,Chemistry,math_science,M2,ม.2,Grade 8,"สารบริสุทธิ์ สารผสม","Pure substances, mixtures",,high,🧪
+CHEM-M3,เคมี,Chemistry,math_science,M3,ม.3,Grade 9,"อะตอม ธาตุ ปฏิกิริยา O-NET","Atoms, elements, reactions, O-NET",O-NET,critical,🧪
+CHEM-M4,เคมี,Chemistry,math_science,M4,ม.4,Grade 10,"อะตอม พันธะเคมี","Atoms, chemical bonds",,critical,🧪
+CHEM-M5,เคมี,Chemistry,math_science,M5,ม.5,Grade 11,"กรด-เบส สารละลาย เคมีอินทรีย์","Acid-base, solutions, organic chemistry",,critical,🧪
+CHEM-M6,เคมี,Chemistry,math_science,M6,ม.6,Grade 12,"สมดุลเคมี เตรียม A-Level Chemistry","Chemical equilibrium, A-Level Chemistry prep","A-Level, TPAT",critical,🧪
+
+BIO-M1,ชีววิทยา,Biology,math_science,M1,ม.1,Grade 7,"เซลล์ พืช สัตว์","Cells, plants, animals",,high,🧬
+BIO-M2,ชีววิทยา,Biology,math_science,M2,ม.2,Grade 8,"ระบบในร่างกาย พันธุกรรมเบื้องต้น","Body systems, basic genetics",,high,🧬
+BIO-M3,ชีววิทยา,Biology,math_science,M3,ม.3,Grade 9,"นิเวศวิทยา สิ่งแวดล้อม O-NET","Ecology, environment, O-NET",O-NET,critical,🧬
+BIO-M4,ชีววิทยา,Biology,math_science,M4,ม.4,Grade 10,"เซลล์ การลำเลียงสาร","Cell biology, transport",,critical,🧬
+BIO-M5,ชีววิทยา,Biology,math_science,M5,ม.5,Grade 11,"พันธุศาสตร์ วิวัฒนาการ","Genetics, evolution",,critical,🧬
+BIO-M6,ชีววิทยา,Biology,math_science,M6,ม.6,Grade 12,"นิเวศวิทยา เตรียม A-Level Biology กสพท.","Ecology, A-Level Biology, KPSAT prep","A-Level, KPSAT",critical,🧬
+
+ENG-P1,ภาษาอังกฤษ,English,languages,P1,ป.1,Grade 1,"ABC คำศัพท์พื้นฐาน Phonics","ABC, basic vocabulary, phonics",,high,🔤
+ENG-P2,ภาษาอังกฤษ,English,languages,P2,ป.2,Grade 2,"ประโยคพื้นฐาน คำกริยา","Basic sentences, verbs",,high,🔤
+ENG-P3,ภาษาอังกฤษ,English,languages,P3,ป.3,Grade 3,"Tense พื้นฐาน Reading สั้น ๆ","Basic tenses, short reading",,high,🔤
+ENG-P4,ภาษาอังกฤษ,English,languages,P4,ป.4,Grade 4,"Present/Past Tense Conversation","Present/Past tenses, conversation",,high,🔤
+ENG-P5,ภาษาอังกฤษ,English,languages,P5,ป.5,Grade 5,"Reading comprehension Vocabulary","Reading comprehension, vocabulary",,high,🔤
+ENG-P6,ภาษาอังกฤษ,English,languages,P6,ป.6,Grade 6,"Grammar Writing เตรียมสอบเข้า ม.1","Grammar, writing, M.1 entrance prep","M.1 Entrance, O-NET",critical,🔤
+ENG-M1,ภาษาอังกฤษ,English,languages,M1,ม.1,Grade 7,"All tenses Reading Writing พื้นฐาน","All tenses, reading, basic writing",,critical,🔤
+ENG-M2,ภาษาอังกฤษ,English,languages,M2,ม.2,Grade 8,"Conditional Passive voice Speaking","Conditionals, passive voice, speaking",,critical,🔤
+ENG-M3,ภาษาอังกฤษ,English,languages,M3,ม.3,Grade 9,"Advanced grammar Essay เตรียม O-NET","Advanced grammar, essay, O-NET prep","O-NET, M.4 Entrance",critical,🔤
+ENG-M4,ภาษาอังกฤษ,English,languages,M4,ม.4,Grade 10,"Reading academic Vocabulary","Academic reading, vocabulary",,critical,🔤
+ENG-M5,ภาษาอังกฤษ,English,languages,M5,ม.5,Grade 11,"Essay writing IELTS basics","Essay writing, IELTS basics",,critical,🔤
+ENG-M6,ภาษาอังกฤษ,English,languages,M6,ม.6,Grade 12,"TGAT English IELTS TOEFL","TGAT English, IELTS, TOEFL prep","TGAT, IELTS, TOEFL",critical,🔤
+
+SOC-P1,สังคมศึกษา,Social Studies,humanities,P1,ป.1,Grade 1,"ครอบครัว ชุมชน หน้าที่พลเมือง","Family, community, civic duties",,medium,🌏
+SOC-P2,สังคมศึกษา,Social Studies,humanities,P2,ป.2,Grade 2,"ประวัติศาสตร์ไทยเบื้องต้น","Basic Thai history",,medium,🌏
+SOC-P3,สังคมศึกษา,Social Studies,humanities,P3,ป.3,Grade 3,"ภูมิศาสตร์ไทย ทรัพยากร","Thai geography, resources",,medium,🌏
+SOC-P4,สังคมศึกษา,Social Studies,humanities,P4,ป.4,Grade 4,"อาณาจักรไทย เศรษฐกิจ","Thai kingdoms, economy",,medium,🌏
+SOC-P5,สังคมศึกษา,Social Studies,humanities,P5,ป.5,Grade 5,"พระพุทธศาสนา ASEAN","Buddhism, ASEAN",,medium,🌏
+SOC-P6,สังคมศึกษา,Social Studies,humanities,P6,ป.6,Grade 6,"ประวัติศาสตร์ไทยรวบยอด O-NET","Thai history overview, O-NET",O-NET,high,🌏
+SOC-M1,สังคมศึกษา,Social Studies,humanities,M1,ม.1,Grade 7,"อารยธรรมโลก เศรษฐศาสตร์","World civilizations, economics",,medium,🌏
+SOC-M2,สังคมศึกษา,Social Studies,humanities,M2,ม.2,Grade 8,"ประวัติศาสตร์เอเชีย ภูมิศาสตร์","Asian history, geography",,medium,🌏
+SOC-M3,สังคมศึกษา,Social Studies,humanities,M3,ม.3,Grade 9,"ประวัติศาสตร์ไทย-โลก O-NET","Thai-World history, O-NET",O-NET,high,🌏
+SOC-M4,สังคมศึกษา,Social Studies,humanities,M4,ม.4,Grade 10,"พระพุทธศาสนา เศรษฐศาสตร์","Buddhism, economics",,medium,🌏
+SOC-M5,สังคมศึกษา,Social Studies,humanities,M5,ม.5,Grade 11,"กฎหมาย รัฐศาสตร์ ภูมิศาสตร์","Law, political science, geography",,medium,🌏
+SOC-M6,สังคมศึกษา,Social Studies,humanities,M6,ม.6,Grade 12,"เตรียม TGAT สังคม A-Level สังคม","TGAT Social, A-Level Social prep","TGAT, A-Level",critical,🌏
+
+CN-P,ภาษาจีน,Chinese,languages,P,ป.1-ป.6,Grade 1-6,"พินอิน คำพื้นฐาน บทสนทนา HSK 1-2","Pinyin, basic vocabulary, conversation, HSK 1-2",HSK,medium,🇨🇳
+CN-M-EARLY,ภาษาจีน,Chinese,languages,M-EARLY,ม.1-ม.3,Grade 7-9,"ไวยากรณ์จีน Reading HSK 3-4","Chinese grammar, reading, HSK 3-4",HSK,high,🇨🇳
+CN-M-LATE,ภาษาจีน,Chinese,languages,M-LATE,ม.4-ม.6,Grade 10-12,"HSK 5-6 PAT จีน TGAT จีน","HSK 5-6, PAT Chinese, TGAT Chinese","HSK, PAT, TGAT",critical,🇨🇳
+
+JP-P,ภาษาญี่ปุ่น,Japanese,languages,P,ป.4-ป.6,Grade 4-6,"ฮิรากานะ คำพื้นฐาน N5","Hiragana, basic vocabulary, JLPT N5",JLPT,medium,🇯🇵
+JP-M-EARLY,ภาษาญี่ปุ่น,Japanese,languages,M-EARLY,ม.1-ม.3,Grade 7-9,"คาตากานะ คันจิ N5-N4","Katakana, kanji, JLPT N5-N4",JLPT,medium,🇯🇵
+JP-M-LATE,ภาษาญี่ปุ่น,Japanese,languages,M-LATE,ม.4-ม.6,Grade 10-12,"N3-N2 PAT ญี่ปุ่น TGAT ญี่ปุ่น","JLPT N3-N2, PAT Japanese, TGAT Japanese","JLPT, PAT, TGAT",high,🇯🇵
+
+KR-ALL,ภาษาเกาหลี,Korean,languages,ALL,ม.1-ม.6,Grade 7-12,"ฮันกึล TOPIK 1-2","Hangul, TOPIK 1-2",TOPIK,medium,🇰🇷
+
+ART-ALL,ศิลปะ,Art,arts,ALL,ป.1-ม.6,All grades,"วาดเขียน ระบายสี ดิจิทัลอาร์ต","Drawing, painting, digital art",Portfolio,medium,🎨
+MUSIC-ALL,ดนตรี,Music,arts,ALL,ป.1-ม.6,All grades,"เปียโน กีตาร์ ขับร้อง ทฤษฎีดนตรี","Piano, guitar, vocals, music theory",,medium,🎵
+
+CODE-ELEMENTARY,Coding for Kids,Coding for Kids,coding,P,ป.4-ป.6,Grade 4-6,"Scratch Python พื้นฐาน","Scratch, basic Python",,high,💻
+CODE-MIDDLE,Coding & Web,Coding & Web,coding,M-EARLY,ม.1-ม.3,Grade 7-9,"Python HTML/CSS JavaScript","Python, HTML/CSS, JavaScript",,high,💻
+CODE-HIGH,Programming & AI,Programming & AI,coding,M-LATE,ม.4-ม.6,Grade 10-12,"Advanced Python AI/ML Web/App dev","Advanced Python, AI/ML, web/app dev","TCAS Computer",high,💻
+
+PE-ALL,สุขศึกษา-พลศึกษา,PE & Health,health,ALL,ป.1-ม.6,All grades,"สุขภาพ โภชนาการ การออกกำลังกาย","Health, nutrition, exercise",,low,🏃
+HOMEEC-ALL,การงานอาชีพ,Home Economics,vocational,ALL,ป.4-ม.6,Grade 4-12,"ทำอาหาร เย็บปัก ช่างพื้นฐาน","Cooking, sewing, basic crafts",,low,🛠️
+
+EXAM-M1,สอบเข้า ม.1,M.1 Entrance Exam,exam_prep,P5-P6,ป.5-ป.6,Grade 5-6,"คณิต ไทย อังกฤษ วิทย์ สอบสาธิต/รัฐ","Math, Thai, English, Science for top schools","Demo Schools, Suankularb, Triam Udom",critical,🏫
+EXAM-M4,สอบเข้า ม.4,M.4 Entrance Exam,exam_prep,M3,ม.3,Grade 9,"คณิต วิทย์ อังกฤษ สอบเตรียมอุดม สาธิต","Math, Science, English for Triam Udom","Triam Udom, Demo Schools",critical,🏫
+EXAM-TGAT,TGAT,TGAT,exam_prep,M6,ม.6,Grade 12,"TGAT1 ภาษาอังกฤษ TGAT2 การคิด TGAT3 สมรรถนะ","TGAT1 English, TGAT2 Thinking, TGAT3 Skills",TGAT,critical,🎓
+EXAM-TPAT,TPAT,TPAT,exam_prep,M6,ม.6,Grade 12,"TPAT1 กสพท. TPAT2 ศิลปะ TPAT3 วิศวะ TPAT5 ครู","TPAT1 KPSAT, TPAT2 Arts, TPAT3 Engineering, TPAT5 Teaching",TPAT,critical,🎓
+EXAM-ALEVEL,A-Level,A-Level,exam_prep,M6,ม.6,Grade 12,"คณิต1 คณิต2 ฟิสิกส์ เคมี ชีวะ ไทย สังคม อังกฤษ","Math1, Math2, Physics, Chem, Bio, Thai, Social, English",A-Level,critical,🎓
+EXAM-IELTS,IELTS,IELTS,exam_prep,M4-M6,ม.4-ม.6,Grade 10-12,"Reading Writing Listening Speaking 7.0+","Reading, Writing, Listening, Speaking 7.0+",IELTS,high,🌍
+EXAM-TOEFL,TOEFL,TOEFL,exam_prep,M4-M6,ม.4-ม.6,Grade 10-12,"iBT 90+ Reading Listening Speaking Writing","iBT 90+ Reading, Listening, Speaking, Writing",TOEFL,high,🌍
+EXAM-SAT,SAT,SAT,exam_prep,M4-M6,ม.4-ม.6,Grade 10-12,"Math Reading Writing 1400+","Math, Reading, Writing, 1400+",SAT,high,🌍
