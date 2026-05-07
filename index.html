@@ -39,21 +39,107 @@
   /* === Lang === */
   body[data-lang="en"] [data-th]{display:none}body[data-lang="th"] [data-en]{display:none}
   
-  /* === Lang switch === */
-  .lang-switch{display:inline-flex;background:var(--gray-100);border-radius:var(--radius-sm);padding:3px;gap:2px}
-  .lang-switch button{padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;color:var(--gray-500);transition:all .2s}
-  .lang-switch button.active{background:var(--white);color:var(--primary);box-shadow:var(--shadow-xs)}
-  
-  /* === Header === */
-  .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--gray-100)}
+  /* === Header (DARK glass) === */
+  .header{position:sticky;top:0;z-index:100;background:rgba(15,15,30,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
   .nav{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--primary);letter-spacing:-.02em}
-  .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--white);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;box-shadow:0 4px 12px rgba(30,64,175,.25)}
-  .nav-links{display:none;gap:32px;font-size:14px;font-weight:500;color:var(--gray-700)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.02em}
+  .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,#EC4899,#F97316);color:var(--white);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;box-shadow:0 4px 12px rgba(236,72,153,.4)}
+  .nav-links{display:none;gap:32px;font-size:14px;font-weight:500;color:rgba(255,255,255,.8)}
   @media(min-width:1024px){.nav-links{display:flex}}
   .nav-links a{position:relative;padding:6px 0;transition:color .2s}
-  .nav-links a:hover{color:var(--primary)}
+  .nav-links a:hover{color:#fff}
   .nav-cta{display:flex;gap:10px;align-items:center}
+  .btn-ghost-dark{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2);padding:9px 16px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s}
+  .btn-ghost-dark:hover{background:rgba(255,255,255,.1)}
+  .btn-bold{background:linear-gradient(135deg,#EC4899,#F97316);color:#fff;padding:10px 18px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:all .2s;box-shadow:0 4px 14px rgba(236,72,153,.4);display:inline-flex;align-items:center;gap:6px}
+  .btn-bold:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(236,72,153,.5)}
+  .lang-switch{display:inline-flex;background:rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:3px;gap:2px}
+  .lang-switch button{padding:5px 10px;border-radius:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.7);transition:all .2s}
+  /* === SIGNUP / ROLE SECTION (v4) === */
+  .role-section{background:linear-gradient(180deg,#FFF 0%,#FAF5FF 100%);padding:80px 24px}
+  .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;max-width:1080px;margin-left:auto;margin-right:auto}
+  @media(max-width:900px){.role-grid{grid-template-columns:1fr}}
+  .role-card{background:#fff;border:2px solid var(--gray-200);border-radius:24px;padding:36px 28px;text-align:center;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+  .role-card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--rc1),var(--rc2))}
+  .role-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(91,33,182,.15);border-color:transparent}
+  .role-icon-big{width:80px;height:80px;border-radius:20px;background:linear-gradient(135deg,var(--rc1),var(--rc2));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:#fff;box-shadow:0 10px 30px rgba(91,33,182,.2)}
+  .role-icon-big svg{width:40px;height:40px}
+  .role-card h3{font-size:22px;font-weight:800;margin-bottom:8px;color:var(--dark)}
+  .role-card p.role-desc{font-size:14px;color:var(--gray-500);margin-bottom:20px;min-height:42px}
+  .role-perks{text-align:left;margin-bottom:20px;padding-top:16px;border-top:1px solid var(--gray-100);list-style:none}
+  .role-perks li{display:flex;gap:8px;align-items:flex-start;font-size:13px;margin-bottom:8px;color:var(--gray-700)}
+  .role-perks li svg{width:14px;height:14px;color:var(--green);flex-shrink:0;margin-top:3px}
+  .role-card .btn-role{display:inline-flex;width:100%;justify-content:center;align-items:center;gap:6px;padding:12px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;border:none;background:linear-gradient(135deg,var(--rc1),var(--rc2));color:#fff;transition:all .2s}
+  .role-card .btn-role:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+
+  /* === Modal (v4) === */
+  .modal-bg{display:none;position:fixed;inset:0;background:rgba(15,15,30,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:1000;align-items:center;justify-content:center;padding:20px;animation:fadeInModal .2s}
+  .modal-bg.show{display:flex}
+  @keyframes fadeInModal{from{opacity:0}to{opacity:1}}
+  .modal{background:#fff;border-radius:24px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:slideUpModal .3s}
+  @keyframes slideUpModal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:#F3F4F6;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gray-500);transition:all .2s;z-index:1}
+  .modal-close:hover{background:var(--gray-200);color:var(--dark)}
+  .modal-head{padding:32px 32px 0;text-align:center}
+  .modal-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;transition:all .3s}
+  .modal-icon.student{background:linear-gradient(135deg,#3B82F6,#06B6D4)}
+  .modal-icon.parent{background:linear-gradient(135deg,#1E40AF,#3B82F6)}
+  .modal-icon.teacher{background:linear-gradient(135deg,#10B981,#14B8A6)}
+  .modal-icon.login{background:linear-gradient(135deg,#1E40AF,#3B82F6)}
+  .modal-icon svg{width:32px;height:32px}
+  .modal h3{font-size:24px;font-weight:800;margin-bottom:6px;color:var(--dark)}
+  .modal-sub{color:var(--gray-500);font-size:14px;margin-bottom:24px}
+  .role-tabs{display:flex;background:var(--gray-100);border-radius:12px;padding:4px;margin:0 32px 24px;gap:4px}
+  .role-tab{flex:1;padding:10px;background:transparent;border:none;border-radius:8px;font-weight:600;font-size:13px;color:var(--gray-500);cursor:pointer;transition:all .2s;font-family:inherit}
+  .role-tab.active{background:#fff;color:var(--dark);box-shadow:0 2px 6px rgba(0,0,0,.05)}
+  .modal-form{padding:0 32px 32px}
+  .form-group{margin-bottom:14px}
+  .form-group label{display:block;font-size:13px;font-weight:600;color:var(--gray-700);margin-bottom:6px}
+  .form-group input{width:100%;padding:12px 14px;border:1.5px solid var(--gray-200);border-radius:10px;font-size:15px;font-family:inherit;background:#fff;transition:all .2s}
+  .form-group input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(30,64,175,.12)}
+  .modal-form .btn-submit{width:100%;display:inline-flex;justify-content:center;align-items:center;gap:6px;padding:14px;font-size:15px;margin-top:6px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(30,64,175,.22)}
+  .modal-form .btn-submit:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 6px 16px rgba(30,64,175,.30)}
+  .modal-foot{text-align:center;padding:18px 32px 24px;border-top:1px solid var(--gray-100);font-size:13px;color:var(--gray-500)}
+  .modal-foot a{color:var(--primary);font-weight:600;cursor:pointer}
+  /* === For Teachers v4 layout === */
+  .teachers-row{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;max-width:1180px;margin:0 auto}
+  @media(max-width:900px){.teachers-row{grid-template-columns:1fr;gap:32px}}
+  .teachers-text .section-eyebrow{margin-bottom:12px}
+  .teachers-text .section-title{margin-bottom:18px;line-height:1.15}
+  .teachers-desc{color:rgba(255,255,255,.85);font-size:16px;line-height:1.7;margin-bottom:28px;max-width:560px}
+  .teach-perks-list{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px}
+  .teach-perks-list li{display:flex;gap:14px;align-items:flex-start;color:rgba(255,255,255,.92);font-size:15px;line-height:1.55}
+  .teach-perks-list li strong{color:#fff;font-weight:700}
+  .tp-ico{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.10);backdrop-filter:blur(10px);color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(255,255,255,.10)}
+
+  .teachers-card{background:rgba(255,255,255,.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.10);border-radius:24px;padding:28px}
+  .teach-card-head{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.10)}
+  .teach-card-ico{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#FBBF24);color:var(--dark);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .teach-card-head h4{font-size:18px;font-weight:800;color:#fff}
+  .teach-card-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  .teach-card-list li{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.92);font-size:14px}
+  .teach-card-list li svg{color:var(--accent);flex-shrink:0}
+
+  /* === BROWSE BY GRADE (v4 — easy class finding) === */
+  .browse-section{padding:24px 24px 56px;background:#fff;position:relative;z-index:5}
+  .browse-inner{max-width:1180px;margin:-44px auto 0;background:#fff;border-radius:24px;padding:28px 28px 24px;box-shadow:0 20px 60px rgba(15,23,42,.08);border:1px solid var(--gray-100);position:relative}
+  .browse-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:12px}
+  .browse-head h3{font-size:18px;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:10px}
+  .browse-head h3 svg{color:var(--primary)}
+  .browse-head p{font-size:13px;color:var(--gray-500)}
+  .grade-pills{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+  .grade-pill{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:14px 10px;border:1.5px solid var(--gray-200);border-radius:14px;background:#fff;cursor:pointer;transition:all .2s;text-decoration:none;color:inherit}
+  .grade-pill:hover{border-color:var(--primary);background:var(--primary-50);transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,64,175,.10)}
+  .grade-pill .gp-emoji{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--gp-c1),var(--gp-c2));color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:4px;font-weight:800;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif}
+  .grade-pill .gp-name{font-weight:700;font-size:14px;color:var(--dark)}
+  .grade-pill .gp-sub{font-size:11px;color:var(--gray-500)}
+
+  /* === Quick-find row (also under hero) === */
+  .quickfind-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px;align-items:center}
+  .quickfind-row .qf-label{color:var(--gray-500);font-size:13px;margin-right:4px}
+  .qf-chip{padding:8px 14px;border-radius:999px;background:var(--primary-50);color:var(--primary);border:1px solid var(--primary-light);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+  .qf-chip:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+  .qf-chip svg{width:13px;height:13px}
   
   /* === Buttons === */
   .btn{padding:11px 20px;border-radius:10px;font-weight:600;font-size:14px;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;cursor:pointer}
@@ -69,53 +155,55 @@
   .btn-amber:hover{background:#FBBF24;transform:translateY(-1px);box-shadow:0 6px 16px rgba(245,158,11,.30)}
   .btn-large{padding:14px 28px;font-size:15px}
   
-  /* === Hero === */
-  .hero{position:relative;padding:64px 24px 80px;overflow:hidden;background:linear-gradient(180deg,#F8FAFC 0%,#FFFFFF 100%)}
-  .hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(30,64,175,.07) 0%,transparent 70%);border-radius:50%;z-index:0}
-  .hero::after{content:'';position:absolute;bottom:-200px;left:-150px;width:450px;height:450px;background:radial-gradient(circle,rgba(245,158,11,.06) 0%,transparent 70%);border-radius:50%;z-index:0}
+  /* === Hero (LIGHT BLUE-WHITE clean) === */
+  .hero{position:relative;padding:64px 24px 90px;overflow:hidden;background:linear-gradient(180deg,#EFF6FF 0%,#FFFFFF 60%,#F8FAFC 100%);color:var(--dark)}
+  .hero::before{content:'';position:absolute;top:-150px;right:-100px;width:560px;height:560px;background:radial-gradient(circle,rgba(30,64,175,.10) 0%,transparent 65%);border-radius:50%;z-index:0}
+  .hero::after{content:'';position:absolute;bottom:-200px;left:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(59,130,246,.08) 0%,transparent 65%);border-radius:50%;z-index:0}
   .hero-inner{max-width:980px;margin:0 auto;text-align:center;position:relative;z-index:1}
+
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--primary-dark);padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:24px;border:1px solid var(--primary-light);box-shadow:0 2px 12px rgba(30,64,175,.08)}
+  .hero-badge .dot{width:8px;height:8px;background:#10B981;border-radius:50%;box-shadow:0 0 0 4px rgba(16,185,129,.18);animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 4px rgba(16,185,129,.18)}50%{opacity:.7;box-shadow:0 0 0 8px rgba(16,185,129,.05)}}
+
+  .hero h1{font-size:clamp(36px,6vw,60px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--dark);margin-bottom:18px}
+  .hero h1 .accent{background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-sub{font-size:clamp(16px,2vw,19px);color:var(--gray-700);max-width:680px;margin:0 auto 32px;line-height:1.6}
   
-  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--primary-dark);padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:28px;border:1px solid var(--primary-light);box-shadow:var(--shadow-sm)}
-  .hero-badge .dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 0 4px rgba(16,185,129,.2);animation:pulse 2s ease-in-out infinite}
-  @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(16,185,129,.2)}50%{box-shadow:0 0 0 8px rgba(16,185,129,.05)}}
+  /* === Search Bar (Light, prominent) === */
+  .search-box{max-width:720px;margin:0 auto 24px;background:#fff;border-radius:18px;padding:8px;display:flex;gap:8px;border:2px solid var(--primary-light);box-shadow:0 12px 40px rgba(30,64,175,.12);align-items:center;flex-wrap:wrap;transition:all .2s}
+  .search-box:focus-within{border-color:var(--primary);box-shadow:0 16px 48px rgba(30,64,175,.18)}
+  .search-input-wrap{flex:1;min-width:200px;display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--primary)}
+  .search-input{flex:1;border:none;outline:none;font-family:inherit;font-size:16px;color:var(--dark);padding:14px 0;background:transparent;min-width:0;font-weight:500}
+  .search-input::placeholder{color:var(--gray-400);font-weight:400}
+  .search-divider{width:1px;height:28px;background:var(--gray-200);align-self:center}
+  .search-grade{padding:0 12px;color:var(--gray-700);font-size:14px;font-weight:600;border:none;background:transparent;font-family:inherit;outline:none;cursor:pointer}
+  .search-btn{padding:14px 28px;border-radius:12px;background:var(--primary);color:#fff;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(30,64,175,.25)}
+  .search-btn:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 6px 16px rgba(30,64,175,.35)}
+
+  .search-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+  .search-tag{padding:7px 16px;border-radius:999px;background:#fff;border:1px solid var(--gray-200);font-size:13px;color:var(--gray-700);cursor:pointer;transition:all .2s;font-weight:500}
+  .search-tag:hover{border-color:var(--primary);background:var(--primary-50);color:var(--primary)}
   
-  .hero h1{font-size:clamp(36px,6vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.03em;color:var(--dark);margin-bottom:20px}
-  .hero h1 .accent{background:linear-gradient(135deg,var(--primary) 0%,var(--teacher) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-  .hero-sub{font-size:clamp(16px,2vw,19px);color:var(--gray-700);max-width:680px;margin:0 auto 36px;line-height:1.6}
-  
-  /* === Search Bar === */
-  .search-box{max-width:680px;margin:0 auto 28px;background:var(--white);border-radius:16px;padding:8px;display:flex;gap:8px;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);align-items:center;flex-wrap:wrap}
-  .search-input-wrap{flex:1;min-width:200px;display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--gray-500)}
-  .search-input{flex:1;border:none;outline:none;font-family:inherit;font-size:15px;color:var(--gray-900);padding:12px 0;background:transparent;min-width:0}
-  .search-divider{width:1px;height:24px;background:var(--gray-200);align-self:center}
-  .search-grade{padding:0 12px;color:var(--gray-700);font-size:14px;font-weight:500;border:none;background:transparent;font-family:inherit;outline:none;cursor:pointer}
-  .search-btn{padding:12px 24px;border-radius:10px;background:var(--primary);color:var(--white);font-weight:600;font-size:14px;border:none;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px}
-  .search-btn:hover{background:var(--primary-dark)}
-  
-  .search-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:32px}
-  .search-tag{padding:6px 14px;border-radius:999px;background:var(--white);border:1px solid var(--gray-200);font-size:13px;color:var(--gray-700);cursor:pointer;transition:all .2s}
-  .search-tag:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-50)}
-  
-  /* === Hero Tutor Preview (Hybrid) === */
-  .hero-tutor-preview{margin-top:40px;padding:20px;background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+  /* === Hero Tutor Preview === */
+  .hero-tutor-preview{margin-top:32px;padding:20px;background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius-lg);box-shadow:0 8px 32px rgba(15,23,42,.06)}
   .hero-tutor-preview-label{font-size:13px;font-weight:600;color:var(--gray-700);margin-bottom:14px;text-align:left}
   .mini-tutors{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
   .mini-tutor{display:flex;align-items:center;gap:10px;padding:10px;background:var(--gray-50);border:1px solid var(--gray-100);border-radius:var(--radius);transition:all .2s;text-decoration:none;color:inherit}
-  .mini-tutor:hover{background:var(--white);border-color:var(--primary-light);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+  .mini-tutor:hover{background:var(--white);border-color:#EC4899;box-shadow:var(--shadow-sm);transform:translateY(-1px)}
   .mini-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:16px;flex-shrink:0}
-  .mini-avatar.c1{background:linear-gradient(135deg,#1E40AF,#3B82F6)}
-  .mini-avatar.c2{background:linear-gradient(135deg,#7C3AED,#A78BFA)}
-  .mini-avatar.c4{background:linear-gradient(135deg,#059669,#10B981)}
+  .mini-avatar.c1{background:linear-gradient(135deg,#3B82F6,#06B6D4)}
+  .mini-avatar.c2{background:linear-gradient(135deg,#5B21B6,#EC4899)}
+  .mini-avatar.c4{background:linear-gradient(135deg,#10B981,#14B8A6)}
   .mini-info{flex:1;min-width:0;text-align:left}
   .mini-name{font-weight:700;font-size:13px;color:var(--dark);margin-bottom:2px}
   .mini-meta{font-size:11px;color:var(--gray-500);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .more-btn{background:linear-gradient(135deg,var(--primary-50),var(--accent-light))!important;border-color:var(--accent)!important;cursor:pointer}
-  .mini-more-num{width:42px;height:42px;border-radius:50%;background:var(--accent);color:var(--dark);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif}
+  .more-btn{background:linear-gradient(135deg,#FCE7F3,#FED7AA)!important;border-color:#EC4899!important;cursor:pointer}
+  .mini-more-num{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#EC4899,#F97316);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif}
 
   /* === Trust strip === */
   .trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:24px 40px;margin-top:48px;padding-top:32px;border-top:1px solid var(--gray-100)}
   .trust-item{display:flex;align-items:center;gap:10px;color:var(--gray-700);font-size:14px;font-weight:500}
-  .trust-item-icon{width:36px;height:36px;border-radius:10px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+  .trust-item-icon{width:36px;height:36px;border-radius:10px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   
   /* === Section === */
   section{padding:72px 24px}
@@ -322,17 +410,19 @@
 <!-- ============ HEADER ============ -->
 <header class="header">
   <nav class="nav">
-    <a href="#" class="logo"><span class="logo-mark">P</span><span>Panya</span></a>
+    <a href="#" class="logo" aria-label="Panya"><img src="data:image/png;base64,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AJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ37/wGbsG/kRVcHlwAAAABJRU5ErkJggg==" alt="Panya" class="logo-img"></a>
     <div class="nav-links">
       <a href="/subjects.html"><span data-th>หลักสูตร</span><span data-en>Curriculum</span></a>
       <a href="#categories"><span data-th>วิชาเรียน</span><span data-en>Subjects</span></a>
       <a href="#tutors"><span data-th>ครูแนะนำ</span><span data-en>Top Tutors</span></a>
       <a href="#how"><span data-th>วิธีใช้</span><span data-en>How it works</span></a>
       <a href="#teach"><span data-th>สอนกับเรา</span><span data-en>Teach with us</span></a>
+      <a href="#signup"><span data-th>สมัครสมาชิก</span><span data-en>Sign up</span></a>
     </div>
     <div class="nav-cta">
       <div class="lang-switch"><button data-set-lang="th" class="active">ไทย</button><button data-set-lang="en">EN</button></div>
-      <a href="#waitlist" class="btn btn-primary"><span data-th>เข้าร่วม</span><span data-en>Join</span></a>
+      <button class="btn-ghost-dark" onclick="openModal('login')"><span data-th>เข้าสู่ระบบ</span><span data-en>Log in</span></button>
+      <button class="btn-bold" onclick="openModal('signup')"><span data-th>สมัครฟรี</span><span data-en>Sign up free</span></button>
     </div>
   </nav>
 </header>
@@ -342,23 +432,23 @@
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="dot"></span>
-      <span data-th>เปิดตัวเร็ว ๆ นี้ · เปิดรับครู Founding 50 คนแรก</span>
-      <span data-en>Coming soon · Founding Teachers program now open</span>
+      <span data-th>เปิดตัวเร็ว ๆ นี้ · เริ่มต้นเรียนกับครูคุณภาพ</span>
+      <span data-en>Coming soon · Quality K-12 tutoring</span>
     </div>
     <h1>
-      <span data-th>เลือกครูที่ใช่<br>ให้ลูก<span class="accent">เริ่มต้นที่นี่</span></span>
-      <span data-en>Find the right tutor.<br><span class="accent">Wisdom begins here.</span></span>
+      <span data-th>หาคลาสที่ใช่<br><span class="accent">ใน 30 วินาที</span></span>
+      <span data-en>Find your class<br><span class="accent">in 30 seconds</span></span>
     </h1>
     <p class="hero-sub">
-      <span data-th>Marketplace สอนพิเศษออนไลน์ K-12 ของไทย<br>ครูเปิดคอร์สเอง · ผู้ปกครองเลือกครูที่ใช่ · เริ่มเรียนได้ทันที</span>
-      <span data-en>Thailand's K-12 online tutoring marketplace.<br>Teachers launch courses · Parents pick the right fit · Start instantly.</span>
+      <span data-th>เรียนพิเศษออนไลน์ K-12 ของไทย · เลือกวิชา ระดับชั้น และเวลาที่สะดวก แล้วเริ่มเรียนได้เลย</span>
+      <span data-en>K-12 online tutoring · Pick a subject, grade, and time — start learning right away.</span>
     </p>
 
-    <!-- === Search Box (Preply style) === -->
+    <!-- === Search Box === -->
     <div class="search-box">
       <div class="search-input-wrap">
-        <span style="font-size:18px">🔍</span>
-        <input type="text" class="search-input" placeholder="ค้นหาวิชา หรือ ชื่อครู..." aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" class="search-input" placeholder="คุณอยากเรียนวิชาอะไร? เช่น คณิต ม.5, ฟิสิกส์, ภาษาอังกฤษ" aria-label="Search">
       </div>
       <div class="search-divider"></div>
       <select class="search-grade" aria-label="Grade level">
@@ -370,12 +460,13 @@
         <option>เตรียมสอบเข้า</option>
       </select>
       <button class="search-btn" onclick="handleSearchClick()">
-        <span data-th>ค้นหา</span><span data-en>Search</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span data-th>หาคลาส</span><span data-en>Find a class</span>
       </button>
     </div>
     
     <div class="search-tags">
-      <span style="font-size:13px;color:var(--gray-500);align-self:center;margin-right:6px"><span data-th>ยอดนิยม:</span><span data-en>Popular:</span></span>
+      <span style="font-size:13px;color:var(--gray-500);align-self:center;margin-right:6px"><span data-th>เริ่มจาก:</span><span data-en>Try:</span></span>
       <button class="search-tag" onclick="setSearch('คณิต ม.ปลาย')">คณิต ม.ปลาย</button>
       <button class="search-tag" onclick="setSearch('TGAT')">TGAT</button>
       <button class="search-tag" onclick="setSearch('ภาษาอังกฤษ')">ภาษาอังกฤษ</button>
@@ -385,9 +476,10 @@
 
     <!-- === Hero Tutor Preview (Hybrid) === -->
     <div class="hero-tutor-preview">
-      <div class="hero-tutor-preview-label">
-        <span data-th>👨‍🏫 Founding Teachers พร้อมรับนักเรียน</span>
-        <span data-en>👨‍🏫 Founding Teachers ready to teach</span>
+      <div class="hero-tutor-preview-label" style="display:flex;align-items:center;gap:8px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <span data-th>ครูของ Panya พร้อมรับนักเรียน</span>
+        <span data-en>Our teachers, ready to teach</span>
       </div>
       <div class="mini-tutors">
         <div class="mini-tutor">
@@ -424,23 +516,68 @@
     <!-- === Trust Strip === -->
     <div class="trust-strip">
       <div class="trust-item">
-        <div class="trust-item-icon">🛡️</div>
+        <div class="trust-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <div>
           <div style="font-weight:700"><span data-th>ครูทุกคนผ่านการตรวจสอบ</span><span data-en>Every tutor verified</span></div>
         </div>
       </div>
       <div class="trust-item">
-        <div class="trust-item-icon">💰</div>
+        <div class="trust-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></div>
         <div>
           <div style="font-weight:700"><span data-th>คืนเงินภายใน 7 วัน</span><span data-en>7-day money back</span></div>
         </div>
       </div>
       <div class="trust-item">
-        <div class="trust-item-icon">🇹🇭</div>
+        <div class="trust-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/></svg></div>
         <div>
           <div style="font-weight:700"><span data-th>หลักสูตรไทย · PDPA Compliant</span><span data-en>Thai curriculum · PDPA Compliant</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BROWSE BY GRADE (NEW v4 — easy class finding) ============ -->
+<section class="browse-section">
+  <div class="browse-inner">
+    <div class="browse-head">
+      <h3>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <span data-th>หาคลาสตามระดับชั้น</span><span data-en>Browse by grade level</span>
+      </h3>
+      <p><span data-th>เลือกชั้นเรียนของคุณ — เราจะแสดงครูและคลาสที่เหมาะสม</span><span data-en>Pick your grade — we'll show matching tutors and classes</span></p>
+    </div>
+    <div class="grade-pills">
+      <a class="grade-pill" onclick="browseGrade('ป.1-3')" style="--gp-c1:#FBBF24;--gp-c2:#F59E0B">
+        <div class="gp-emoji">P1-3</div>
+        <div class="gp-name"><span data-th>ป.1 - ป.3</span><span data-en>Grade 1-3</span></div>
+        <div class="gp-sub"><span data-th>ประถมต้น</span><span data-en>Lower Primary</span></div>
+      </a>
+      <a class="grade-pill" onclick="browseGrade('ป.4-6')" style="--gp-c1:#F97316;--gp-c2:#EA580C">
+        <div class="gp-emoji">P4-6</div>
+        <div class="gp-name"><span data-th>ป.4 - ป.6</span><span data-en>Grade 4-6</span></div>
+        <div class="gp-sub"><span data-th>ประถมปลาย · สอบเข้า ม.1</span><span data-en>Upper Primary · M.1 entrance</span></div>
+      </a>
+      <a class="grade-pill" onclick="browseGrade('ม.1-3')" style="--gp-c1:#3B82F6;--gp-c2:#2563EB">
+        <div class="gp-emoji">M1-3</div>
+        <div class="gp-name"><span data-th>ม.1 - ม.3</span><span data-en>Grade 7-9</span></div>
+        <div class="gp-sub"><span data-th>มัธยมต้น</span><span data-en>Junior High</span></div>
+      </a>
+      <a class="grade-pill" onclick="browseGrade('ม.4-6')" style="--gp-c1:#1E40AF;--gp-c2:#1E3A8A">
+        <div class="gp-emoji">M4-6</div>
+        <div class="gp-name"><span data-th>ม.4 - ม.6</span><span data-en>Grade 10-12</span></div>
+        <div class="gp-sub"><span data-th>มัธยมปลาย</span><span data-en>Senior High</span></div>
+      </a>
+      <a class="grade-pill" onclick="browseGrade('TCAS')" style="--gp-c1:#7C3AED;--gp-c2:#6D28D9">
+        <div class="gp-emoji">⊕</div>
+        <div class="gp-name">TCAS / TGAT</div>
+        <div class="gp-sub"><span data-th>เตรียมสอบเข้ามหาวิทยาลัย</span><span data-en>University Entrance</span></div>
+      </a>
+      <a class="grade-pill" onclick="browseGrade('Inter')" style="--gp-c1:#10B981;--gp-c2:#059669">
+        <div class="gp-emoji">EN</div>
+        <div class="gp-name">IB / IGCSE / A-Level</div>
+        <div class="gp-sub"><span data-th>หลักสูตรนานาชาติ</span><span data-en>International</span></div>
+      </a>
     </div>
   </div>
 </section>
@@ -458,62 +595,62 @@
     </div>
     <div class="cat-grid">
       <div class="cat-card">
-        <span class="cat-icon">📐</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></svg></span>
         <div class="cat-name"><span data-th>คณิตศาสตร์</span><span data-en>Mathematics</span></div>
         <div class="cat-meta"><span data-th>ป.1 - ม.6</span><span data-en>Grades 1-12</span></div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">🔤</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 7 6 0"/><path d="m7 4 0 13"/><path d="m17 14 4-7-4 7"/><path d="m13 14 8 0"/></svg></span>
         <div class="cat-name"><span data-th>ภาษาอังกฤษ</span><span data-en>English</span></div>
         <div class="cat-meta"><span data-th>ทุกระดับ</span><span data-en>All levels</span></div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">⚗️</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></svg></span>
         <div class="cat-name"><span data-th>วิทยาศาสตร์</span><span data-en>Science</span></div>
         <div class="cat-meta"><span data-th>ฟิสิกส์ · เคมี · ชีวะ</span><span data-en>Physics · Chem · Bio</span></div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">🇹🇭</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
         <div class="cat-name"><span data-th>ภาษาไทย</span><span data-en>Thai Language</span></div>
         <div class="cat-meta"><span data-th>ทุกระดับ</span><span data-en>All levels</span></div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">🌏</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
         <div class="cat-name"><span data-th>สังคมศึกษา</span><span data-en>Social Studies</span></div>
         <div class="cat-meta"><span data-th>ม.1 - ม.6</span><span data-en>Grades 7-12</span></div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">🎓</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
         <div class="cat-name">TGAT/A-Level</div>
         <div class="cat-meta"><span data-th>เตรียมสอบเข้ามหาลัย</span><span data-en>University Prep</span></div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">🏫</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10"/><path d="M18 5v17"/><path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6"/><path d="M6 5v17"/></svg></span>
         <div class="cat-name"><span data-th>สอบเข้า ม.1/ม.4</span><span data-en>M.1/M.4 Entrance</span></div>
         <div class="cat-meta"><span data-th>โรงเรียนสาธิต/รัฐ</span><span data-en>Top schools</span></div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">📚</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
         <div class="cat-name"><span data-th>ภาษาจีน</span><span data-en>Chinese</span></div>
         <div class="cat-meta"><span data-th>HSK · พื้นฐาน</span><span data-en>HSK · Basics</span></div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">🎌</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></span>
         <div class="cat-name"><span data-th>ภาษาญี่ปุ่น</span><span data-en>Japanese</span></div>
         <div class="cat-meta">JLPT N5-N1</div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">💻</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
         <div class="cat-name"><span data-th>คอมพิวเตอร์</span><span data-en>Coding</span></div>
         <div class="cat-meta"><span data-th>Python · Web · AI</span><span data-en>Python · Web · AI</span></div>
       </div>
       <div class="cat-card">
-        <span class="cat-icon">🎨</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2a10 10 0 0 0-9.96 9.06A10 10 0 0 0 12 22a4 4 0 0 0 4-4 2 2 0 0 1 2-2 2 2 0 0 1 2-2 1 1 0 0 1 1-1 1 1 0 0 0 1-1A10 10 0 0 0 12 2z"/></svg></span>
         <div class="cat-name"><span data-th>ศิลปะ · ดนตรี</span><span data-en>Arts · Music</span></div>
         <div class="cat-meta"><span data-th>วาดรูป · เปียโน · กีตาร์</span><span data-en>Drawing · Piano · Guitar</span></div>
       </div>
       <a href="/subjects.html" class="cat-card" style="background:linear-gradient(135deg,var(--primary-50),var(--teacher-light));border-color:var(--primary-light);text-decoration:none">
-        <span class="cat-icon">📚</span>
+        <span class="cat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></span>
         <div class="cat-name" style="color:var(--primary)"><span data-th>ดูหลักสูตรทั้งหมด</span><span data-en>View all subjects</span></div>
         <div class="cat-meta" style="color:var(--primary-dark);font-weight:600"><span data-th>100+ วิชา ครบทุกระดับ →</span><span data-en>100+ subjects, all grades →</span></div>
       </a>
@@ -521,8 +658,8 @@
     
     <div style="text-align:center;margin-top:32px">
       <a href="/subjects.html" class="btn btn-secondary btn-large" style="text-decoration:none">
-        <span data-th>📖 ดูหลักสูตรครบทุกระดับชั้น</span>
-        <span data-en>📖 Browse complete K-12 curriculum</span>
+        <span data-th>ดูหลักสูตรครบทุกระดับชั้น</span>
+        <span data-en>Browse complete K-12 curriculum</span>
         →
       </a>
     </div>
@@ -534,8 +671,8 @@
   <div class="section-inner">
     <div class="section-head-row">
       <div class="section-head" style="text-align:left;margin-left:0">
-        <div class="section-eyebrow"><span data-th>ครู Founding</span><span data-en>Founding Teachers</span></div>
-        <h2 class="section-title" style="margin-bottom:8px"><span data-th>พบกับครูชุดแรกของ Panya</span><span data-en>Meet our Founding Teachers</span></h2>
+        <div class="section-eyebrow"><span data-th>ครูของ Panya</span><span data-en>Our Teachers</span></div>
+        <h2 class="section-title" style="margin-bottom:8px"><span data-th>พบกับครูชุดแรกของ Panya</span><span data-en>Meet our Our Teachers</span></h2>
         <p class="section-sub"><span data-th>ครูคุณภาพที่เราคัดสรรเองเพื่อเปิดตัว · เพิ่มครูใหม่ทุกสัปดาห์</span><span data-en>Hand-picked tutors for our launch · New tutors added weekly</span></p>
       </div>
       <a href="#waitlist" class="view-all"><span data-th>เข้าร่วม Waitlist</span><span data-en>Join Waitlist</span> →</a>
@@ -543,18 +680,18 @@
     
     <div class="status-bar">
       <span style="font-size:18px">⏳</span>
-      <span data-th>โปรไฟล์ตัวอย่างก่อนเปิดตัว · กำลังเปิดรับครู Founding 50 คนแรก พร้อม 0% ค่าธรรมเนียม 3 เดือน</span>
-      <span data-en>Sample profiles before launch · Now recruiting first 50 Founding Teachers · 0% fees for 3 months</span>
+      <span data-th>โปรไฟล์ตัวอย่างก่อนเปิดตัว · กำลังเปิดรับครูของ Panya 50 คนแรก พร้อมสิทธิพิเศษ</span>
+      <span data-en>Sample profiles before launch · Now recruiting first 50 Our Teachers with exclusive benefits</span>
     </div>
 
     <div class="tutors-grid">
       <!-- Tutor 1 -->
       <div class="tutor-card">
         <div class="tutor-cover c1">
-          <div class="tutor-badge top">⭐ Founding</div>
+          <div class="tutor-badge top"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Founding</div>
           <div class="tutor-spots-badge">
-            <span data-th>🔥 เหลือ 8 ที่</span>
-            <span data-en>🔥 8 spots left</span>
+            <span data-th>เปิดรับสมัคร</span>
+            <span data-en>Apply now</span>
           </div>
         </div>
         <div class="tutor-info">
@@ -568,7 +705,7 @@
             <span class="review-count" data-en>· no reviews yet</span>
           </div>
           <div class="tutor-creds">
-            <span class="cred-item">🎓 <span data-th>ป.โท คณิต จุฬาฯ</span><span data-en>M.Sc. Math, CU</span></span>
+            <span class="cred-item" style="display:inline-flex;align-items:center;gap:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg><span data-th>ป.โท คณิต จุฬาฯ</span><span data-en>M.Sc. Math, CU</span></span>
           </div>
           <div class="tutor-tags">
             <span class="tutor-tag">M.4-M.6</span>
@@ -587,7 +724,7 @@
       <!-- Tutor 2 -->
       <div class="tutor-card">
         <div class="tutor-cover c2">
-          <div class="tutor-badge verified">✓ Verified</div>
+          <div class="tutor-badge verified"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px"><polyline points="20 6 9 17 4 12"/></svg> Verified</div>
         </div>
         <div class="tutor-info">
           <div class="tutor-avatar" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">B</div>
@@ -600,7 +737,7 @@
             <span class="review-count" data-en>· no reviews yet</span>
           </div>
           <div class="tutor-creds">
-            <span class="cred-item">🎓 <span data-th>ป.ตรี อักษร จุฬาฯ</span><span data-en>B.A. Arts, CU</span></span>
+            <span class="cred-item" style="display:inline-flex;align-items:center;gap:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg><span data-th>ป.ตรี อักษร จุฬาฯ</span><span data-en>B.A. Arts, CU</span></span>
           </div>
           <div class="tutor-tags">
             <span class="tutor-tag">M.6</span>
@@ -619,7 +756,7 @@
       <!-- Tutor 3 -->
       <div class="tutor-card">
         <div class="tutor-cover c4">
-          <div class="tutor-badge verified">✓ Verified</div>
+          <div class="tutor-badge verified"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px"><polyline points="20 6 9 17 4 12"/></svg> Verified</div>
         </div>
         <div class="tutor-info">
           <div class="tutor-avatar" style="background:linear-gradient(135deg,#059669,#10B981)">C</div>
@@ -632,7 +769,7 @@
             <span class="review-count" data-en>· no reviews yet</span>
           </div>
           <div class="tutor-creds">
-            <span class="cred-item">🎓 <span data-th>ครู คศ.2 ร.ร.รัฐ 12 ปี</span><span data-en>12yrs public school teacher</span></span>
+            <span class="cred-item" style="display:inline-flex;align-items:center;gap:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg><span data-th>ครู คศ.2 ร.ร.รัฐ 12 ปี</span><span data-en>12yrs public school teacher</span></span>
           </div>
           <div class="tutor-tags">
             <span class="tutor-tag">M.1-M.3</span>
@@ -651,14 +788,14 @@
       <!-- Tutor 4 - Empty slot -->
       <div class="tutor-card" style="display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 24px;background:linear-gradient(135deg,var(--primary-50),var(--teacher-light));border:2px dashed var(--primary-light)">
         <div>
-          <div style="font-size:48px;margin-bottom:16px">👨‍🏫</div>
+          <div style="margin-bottom:16px"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h20"/><path d="M3 6v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6"/><circle cx="12" cy="12" r="3"/><path d="M8 18h8"/></svg></div>
           <div style="font-weight:700;color:var(--dark);margin-bottom:8px;font-size:16px">
             <span data-th>คุณคือครูคนต่อไป?</span>
             <span data-en>Be the next tutor?</span>
           </div>
           <div style="color:var(--gray-700);font-size:13px;margin-bottom:16px">
-            <span data-th>ครู Founding 50 คนแรก ได้ 0% ค่าธรรมเนียม 3 เดือน</span>
-            <span data-en>First 50 — 0% fees for 3 months</span>
+            <span data-th>นักเรียนกลุ่มแรกได้รับสิทธิ์พิเศษ</span>
+            <span data-en>Early students get exclusive access</span>
           </div>
           <a href="#teach" class="btn btn-teacher" style="font-size:13px;padding:9px 18px">
             <span data-th>สมัครเป็นครู</span><span data-en>Apply to teach</span>
@@ -677,8 +814,8 @@
       <h2 class="section-title"><span data-th>เริ่มต้นได้ใน 3 ขั้นตอน</span><span data-en>Get started in 3 steps</span></h2>
     </div>
     <div class="how-tabs">
-      <button class="how-tab active" data-tab="learner"><span data-th>👨‍👩‍👧 ผู้ปกครอง</span><span data-en>👨‍👩‍👧 Parents</span></button>
-      <button class="how-tab teacher-tab" data-tab="teacher-flow"><span data-th>👨‍🏫 ครู</span><span data-en>👨‍🏫 Teachers</span></button>
+      <button class="how-tab active" data-tab="learner"><span data-th>นักเรียน · ผู้ปกครอง</span><span data-en>Learner / Parent</span></button>
+      <button class="how-tab teacher-tab" data-tab="teacher-flow"><span data-th>ครู / ติวเตอร์</span><span data-en>Teacher / Tutor</span></button>
     </div>
     
     <div class="panel active" id="panel-learner">
@@ -706,11 +843,11 @@
         </div>
         <div class="step teacher-step"><div class="step-num">2</div>
           <h3><span data-th>อัปโหลดคอร์ส</span><span data-en>Upload your course</span></h3>
-          <p><span data-th>อัด VDO + worksheet + ตั้งราคาเอง · ระบบช่วยตัดต่อพื้นฐานให้ฟรี · มี template + guide ครบ</span><span data-en>Record videos, add worksheets, set your price · Free basic editing · Full templates & guides.</span></p>
+          <p><span data-th>เตรียมเนื้อหา · กำหนดตารางสอน · ระบบช่วยจัดการที่เหลือทั้งหมด</span><span data-en>Prepare content · set your schedule · we handle everything else</span></p>
         </div>
         <div class="step teacher-step"><div class="step-num">3</div>
-          <h3><span data-th>รับ 80% ของรายได้</span><span data-en>Earn 80% of revenue</span></h3>
-          <p><span data-th>โอนเงินทุกสิ้นเดือน · ดู dashboard real-time · Founding 50 คนแรก: 0% ค่าธรรมเนียม 3 เดือน</span><span data-en>Monthly payouts · Real-time dashboard · Founding 50: 0% fees for first 3 months.</span></p>
+          <h3><span data-th>โฟกัสที่การสอน</span><span data-en>Focus on teaching</span></h3>
+          <p><span data-th>เราจัดการระบบ การจองและการสื่อสารให้ทั้งหมด · คุณแค่เตรียมเนื้อหาและสอน</span><span data-en>We handle bookings, messaging, and the system. You just teach.</span></p>
         </div>
       </div>
     </div>
@@ -728,22 +865,22 @@
     
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-icon blue">🎯</div>
+        <div class="why-icon blue"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <h3><span data-th>หลักสูตรไทย</span><span data-en>Thai Curriculum</span></h3>
         <p><span data-th>ตรงตามหลักสูตรกระทรวง สอวน. สสวท. · เตรียม TGAT, A-Level, สอบเข้า ม.1 โดยเฉพาะ</span><span data-en>Aligned to MOE curriculum · Specialized in TGAT, A-Level, M.1 entrance.</span></p>
       </div>
       <div class="why-card">
-        <div class="why-icon green">🔍</div>
+        <div class="why-icon green"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
         <h3><span data-th>คัดครูคุณภาพ</span><span data-en>Vetted teachers</span></h3>
         <p><span data-th>ทุกคนผ่านการตรวจสอบประวัติ · ดูตัวอย่างการสอน · รับรีวิวจริงจากผู้ปกครอง</span><span data-en>Background checks · Teaching samples reviewed · Real parent reviews only.</span></p>
       </div>
       <div class="why-card">
-        <div class="why-icon amber">💸</div>
+        <div class="why-icon amber"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></div>
         <h3><span data-th>ราคาเข้าถึงได้</span><span data-en>Accessible pricing</span></h3>
-        <p><span data-th>ครูตั้งราคาเอง ทั่วไป 990-2,990 บาท · ถูกกว่าศูนย์สอนพิเศษ 3-5 เท่า</span><span data-en>Tutors set prices ฿990-2,990 · 3-5x cheaper than physical centers.</span></p>
+        <p><span data-th>คุณดูแลเนื้อหาและเวลา · เราดูแลระบบและการจองให้</span><span data-en>You manage the content and timing · we handle the system and bookings</span></p>
       </div>
       <div class="why-card">
-        <div class="why-icon purple">👨‍👩‍👧</div>
+        <div class="why-icon purple"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3><span data-th>เพื่อผู้ปกครอง</span><span data-en>Parent-first</span></h3>
         <p><span data-th>Dashboard ดูความก้าวหน้าลูก · แจ้งเตือนผ่าน LINE · PDPA compliant 100%</span><span data-en>Track your child's progress · LINE notifications · 100% PDPA compliant.</span></p>
       </div>
@@ -754,67 +891,58 @@
 <!-- ============ FOR TEACHERS ============ -->
 <section id="teach" class="for-teachers">
   <div class="section-inner">
-    <div class="teacher-content">
-      <div>
-        <div class="section-eyebrow" style="margin-bottom:12px"><span data-th>สำหรับครู</span><span data-en>For Teachers</span></div>
-        <h2 class="section-title" style="margin-bottom:16px;text-align:left">
-          <span data-th>เปิดร้านสอนพิเศษ<br>ของตัวเอง</span>
-          <span data-en>Open your own<br>teaching studio</span>
-        </h2>
-        <p class="section-sub" style="margin-bottom:32px;text-align:left;max-width:none">
-          <span data-th>สร้างคอร์ส ตั้งราคาเอง เก็บ 80% ของรายได้ · เราจัดการเรื่อง marketing, payment, hosting ให้ทั้งหมด</span>
-          <span data-en>Build courses, set your prices, keep 80% · We handle marketing, payments, hosting.</span>
+    <div class="teachers-row">
+      <div class="teachers-text">
+        <div class="section-eyebrow" style="color:var(--accent)"><span data-th>ร่วมเป็นครูกับเรา</span><span data-en>Join as a Teacher</span></div>
+        <h2 class="section-title" style="color:var(--white)"><span data-th>ส่งต่อความรู้<br>สร้างอนาคตให้นักเรียนไทย</span><span data-en>Share your knowledge.<br>Shape Thailand's future.</span></h2>
+        <p class="teachers-desc">
+          <span data-th>เปิดคลาสของคุณบน Panya · สร้างตารางเรียนเอง · เครื่องมือครบในที่เดียว — เราดูแลเรื่องระบบ การจัดตาราง และนักเรียนให้คุณ</span>
+          <span data-en>Launch your classes on Panya · Set your own schedule · All tools in one place — we handle the system, scheduling, and student matching.</span>
         </p>
-        
-        <div class="teacher-benefits">
-          <div class="benefit-item">
-            <div class="check">✓</div>
-            <h4><span data-th>คอมมิชชั่น 80/20</span><span data-en>80/20 commission</span></h4>
-            <p><span data-th>ครูได้ 80% · ดีกว่าค่าเฉลี่ยตลาด</span><span data-en>You keep 80% · Above market average</span></p>
-          </div>
-          <div class="benefit-item">
-            <div class="check">✓</div>
-            <h4><span data-th>เครื่องมือครบ</span><span data-en>All tools included</span></h4>
-            <p><span data-th>VDO, Live, Q&A ในที่เดียว</span><span data-en>VDO, Live, Q&A all-in-one</span></p>
-          </div>
-          <div class="benefit-item">
-            <div class="check">✓</div>
-            <h4><span data-th>เราหานักเรียนให้</span><span data-en>We bring students</span></h4>
-            <p><span data-th>SEO + FB Ads + Affiliate</span><span data-en>SEO + FB Ads + Affiliate</span></p>
-          </div>
-          <div class="benefit-item">
-            <div class="check">✓</div>
-            <h4><span data-th>โอนเงินอัตโนมัติ</span><span data-en>Auto monthly payouts</span></h4>
-            <p><span data-th>เข้าบัญชีทุกสิ้นเดือน</span><span data-en>Direct deposit monthly</span></p>
-          </div>
-        </div>
-        
-        <a href="mailto:nsthor77@gmail.com?subject=สมัครเป็นครู Founding ที่ Panya" class="btn btn-amber btn-large">
-          <span data-th>👨‍🏫 สมัคร Founding Teacher</span>
-          <span data-en>👨‍🏫 Apply as Founding Teacher</span>
-        </a>
+        <ul class="teach-perks-list">
+          <li>
+            <div class="tp-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+            <span><span data-th><strong>ออกแบบคลาสได้อิสระ</strong> — เลือกหัวข้อ · จัดเนื้อหา · รูปแบบสอนตามถนัด</span><span data-en><strong>Design your own classes</strong> — your topics, your content, your style</span></span>
+          </li>
+          <li>
+            <div class="tp-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <span><span data-th><strong>ตารางเรียนยืดหยุ่น</strong> — สอนเมื่อสะดวก · เปิดรับนักเรียนเท่าที่ไหว</span><span data-en><strong>Flexible schedule</strong> — teach when it suits you, take students you can manage</span></span>
+          </li>
+          <li>
+            <div class="tp-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <span><span data-th><strong>เครื่องมือครบ</strong> — ห้องเรียนสด · จัดการตาราง · ส่งงาน · ทั้งหมดในเว็บเดียว</span><span data-en><strong>All-in-one tools</strong> — live classroom, scheduling, assignments — all in one place</span></span>
+          </li>
+          <li>
+            <div class="tp-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <span><span data-th><strong>เราพานักเรียนมาให้</strong> — ทีมเราดูแลการตลาด · คุณโฟกัสที่การสอน</span><span data-en><strong>We bring students to you</strong> — we handle marketing, you focus on teaching</span></span>
+          </li>
+        </ul>
+        <button class="btn-amber btn-large" onclick="openModal('signup','teacher')" style="margin-top:8px">
+          <span data-th>สมัครเป็นครู Panya</span>
+          <span data-en>Apply to teach</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
       </div>
-      
-      <div class="calc">
-        <h4><span data-th>💰 คำนวณรายได้ของคุณ</span><span data-en>💰 Estimate your earnings</span></h4>
-        <div class="calc-sub"><span data-th>ตัวอย่างคอร์สเดียว · ราคา ฿1,990</span><span data-en>Example: 1 course at ฿1,990</span></div>
-        <div class="calc-row">
-          <span><span data-th>นักเรียนเดือนละ 50 คน</span><span data-en>50 students/month</span></span>
-          <strong>฿99,500</strong>
+      <div class="teachers-card">
+        <div class="teach-card-head">
+          <div class="teach-card-ico">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h20"/><path d="M3 6v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6"/><circle cx="12" cy="12" r="3"/><path d="M8 18h8"/></svg>
+          </div>
+          <div>
+            <h4><span data-th>ครูในใจเรา</span><span data-en>The Panya Teacher</span></h4>
+            <p style="color:rgba(255,255,255,.7);font-size:13px;margin-top:2px"><span data-th>คุณสมบัติที่เราตามหา</span><span data-en>What we look for</span></p>
+          </div>
         </div>
-        <div class="calc-row">
-          <span><span data-th>หัก Panya 20%</span><span data-en>Less Panya 20%</span></span>
-          <strong style="color:rgba(255,255,255,.6)">−฿19,900</strong>
-        </div>
-        <div class="calc-divider"></div>
-        <div class="calc-row" style="margin-bottom:0">
-          <span style="font-size:15px;font-weight:600"><span data-th>💵 ครูได้รับ/เดือน</span><span data-en>💵 You earn/month</span></span>
-          <span class="calc-result">฿79,600</span>
-        </div>
-        <div class="calc-note">
-          <span data-th>* Founding 50 คนแรก: 0% ค่าธรรมเนียม 3 เดือน = รับเต็ม ฿99,500</span>
-          <span data-en>* Founding 50: 0% fees for 3 months = full ฿99,500</span>
-        </div>
+        <ul class="teach-card-list">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-th>มีความเชี่ยวชาญในวิชาที่สอน</span><span data-en>Genuine subject expertise</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-th>ใจรักการสอน · เข้าใจเด็ก</span><span data-en>Love teaching · understand learners</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-th>สอนออนไลน์ได้คล่อง</span><span data-en>Comfortable teaching online</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-th>พร้อมสอนสม่ำเสมอ</span><span data-en>Available consistently</span></li>
+        </ul>
+        <p style="color:rgba(255,255,255,.65);font-size:12px;margin-top:14px;line-height:1.55">
+          <span data-th>* รายละเอียดอื่น ๆ — เช่น ตารางสอน หลักเกณฑ์ภายใน — แจ้งหลังผ่านการคัดเลือก</span>
+          <span data-en>* Further details shared after selection</span>
+        </p>
       </div>
     </div>
   </div>
@@ -831,33 +959,33 @@
     
     <div class="dual-cta">
       <div class="cta-card learner">
-        <div class="cta-icon">👨‍👩‍👧</div>
+        <div class="cta-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
         <div class="cta-card-title"><span data-th>สำหรับผู้ปกครอง</span><span data-en>For Parents</span></div>
         <div class="cta-card-sub"><span data-th>รับสิทธิ์ส่วนลด 50% สำหรับ 100 คนแรก ที่ลงทะเบียน</span><span data-en>50% off for the first 100 sign-ups</span></div>
         <ul class="cta-perk-list">
-          <li><span class="ck">✓</span> <span data-th>ส่วนลด 50% (100 คนแรก)</span><span data-en>50% off (first 100)</span></li>
+          <li><span class="ck">✓</span> <span data-th>สิทธิ์เข้าใช้งานก่อนใคร</span><span data-en>Early access</span></li>
           <li><span class="ck">✓</span> <span data-th>ทดลองเรียนฟรี 7 วัน</span><span data-en>7-day free trial</span></li>
           <li><span class="ck">✓</span> <span data-th>คืนเงิน 100% ถ้าไม่พอใจ</span><span data-en>100% money-back guarantee</span></li>
         </ul>
         <form class="email-form" onsubmit="handleSubmit(event,'parent')">
           <input type="email" name="email" placeholder="email@example.com" required />
-          <input type="tel" name="phone" placeholder="📱 เบอร์โทร / Phone (optional)" pattern="[0-9\-\s\+]+" />
+          <input type="tel" name="phone" placeholder="เบอร์โทร / Phone (optional)" pattern="[0-9\-\s\+]+" />
           <button type="submit" class="btn-primary"><span data-th>เข้าร่วม Waitlist</span><span data-en>Join Waitlist</span></button>
         </form>
       </div>
       
       <div class="cta-card teacher">
-        <div class="cta-icon">👨‍🏫</div>
+        <div class="cta-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h20"/><path d="M3 6v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6"/><circle cx="12" cy="12" r="3"/><path d="M8 18h8"/></svg></div>
         <div class="cta-card-title"><span data-th>สำหรับครู</span><span data-en>For Teachers</span></div>
-        <div class="cta-card-sub"><span data-th>เป็น Founding Teacher 50 คนแรก · 0% ค่าธรรมเนียม 3 เดือน</span><span data-en>Be a Founding Teacher · 0% fees for 3 months</span></div>
+        <div class="cta-card-sub"><span data-th>ส่งใบสมัครและรอทีมเราติดต่อกลับ</span><span data-en>Submit your application · we will reach out</span></div>
         <ul class="cta-perk-list">
-          <li><span class="ck">✓</span> <span data-th>0% ค่าธรรมเนียม 3 เดือนแรก</span><span data-en>0% commission for 3 months</span></li>
+          <li><span class="ck">✓</span> <span data-th>รายละเอียดทั้งหมดแจ้งหลังผ่านการคัดเลือก</span><span data-en>Full details shared after selection</span></li>
           <li><span class="ck">✓</span> <span data-th>Featured บนหน้าแรก ฟรี</span><span data-en>Free homepage feature</span></li>
           <li><span class="ck">✓</span> <span data-th>ทีมช่วยตัดต่อ VDO ให้</span><span data-en>Free video editing support</span></li>
         </ul>
         <form class="email-form" onsubmit="handleSubmit(event,'teacher')">
           <input type="email" name="email" placeholder="email@example.com" required />
-          <button type="submit" class="btn-teacher"><span data-th>สมัคร Founding Teacher</span><span data-en>Apply as Founding Teacher</span></button>
+          <button type="submit" class="btn-teacher"><span data-th>สมัครเป็นครู Panya</span><span data-en>Apply to teach</span></button>
         </form>
       </div>
     </div>
@@ -878,13 +1006,10 @@
     
     <div class="faq faq-panel active" id="faq-learner-faq">
       <details class="faq-item"><summary><span data-th>Panya เปิดตัวเมื่อไหร่?</span><span data-en>When does Panya launch?</span></summary>
-        <div class="faq-item-body"><span data-th>ตั้งเป้าเปิดตัว Q3 2026 โดยเริ่มจาก Founding Teachers 50 คนแรกที่เราคัดสรรเอง · ผู้ที่อยู่ใน waitlist จะได้ใช้ก่อนใคร พร้อมส่วนลด 50% สำหรับ 100 คนแรก</span><span data-en>We're targeting Q3 2026 launch with our first 50 Founding Teachers. Waitlist members get early access plus 50% off for the first 100 sign-ups.</span></div>
-      </details>
-      <details class="faq-item"><summary><span data-th>ต่างจาก SkillLane ยังไง?</span><span data-en>How is Panya different from SkillLane?</span></summary>
-        <div class="faq-item-body"><span data-th>Panya ออกแบบเพื่อ K-12 (ป.1 - ม.6) โดยเฉพาะ · เนื้อหาตรงตามหลักสูตรกระทรวง · ครูที่เข้าใจเด็กไทย · เตรียม TGAT, A-Level, สอบเข้า ม.1 SkillLane เน้นทักษะวัยทำงาน เราเน้นเด็กและผู้ปกครอง</span><span data-en>Panya is built specifically for K-12 — aligned to MOE curriculum, teachers who understand Thai students, focused on TGAT/A-Level/M.1 entrance. SkillLane focuses on adult professional skills; we focus on kids and parents.</span></div>
+        <div class="faq-item-body"><span data-th>ตั้งเป้าเปิดตัว Q3 2026 · ผู้ที่ลงทะเบียนล่วงหน้าจะได้ใช้งานก่อน · พร้อมสิทธิพิเศษสำหรับนักเรียนกลุ่มแรก</span><span data-en>Targeting Q3 2026 launch · Early sign-ups get first access · Special perks for our first students.</span></div>
       </details>
       <details class="faq-item"><summary><span data-th>ราคาเท่าไหร่?</span><span data-en>How much do courses cost?</span></summary>
-        <div class="faq-item-body"><span data-th>ครูเป็นคนตั้งราคาเอง ทั่วไป 990-2,990 บาท สำหรับคอร์สอัด · 300-500 บาท/ชม. สำหรับ Live · ถูกกว่าศูนย์สอนพิเศษ 3-5 เท่า · 100 คนแรกได้ลด 50%</span><span data-en>Teachers set their own prices — typically ฿990-2,990 for recorded courses, ฿300-500/hr for live · 3-5x cheaper than physical centers · First 100 sign-ups get 50% off.</span></div>
+        <div class="faq-item-body"><span data-th>คลาสมีหลายช่วงราคา ขึ้นอยู่กับวิชา ครู และรูปแบบการเรียน — ทดลองเรียนฟรี 7 วัน คืนเงินภายใน 7 วันถ้าไม่พอใจ</span><span data-en>Prices vary by subject, teacher, and class format. 7-day free trial · 7-day money-back if not satisfied.</span></div>
       </details>
       <details class="faq-item"><summary><span data-th>ถ้าลูกเรียนแล้วไม่เข้าใจ ทำยังไง?</span><span data-en>What if my child doesn't understand?</span></summary>
         <div class="faq-item-body"><span data-th>ทุกคอร์สมีระบบถาม-ตอบกับครู · ดูซ้ำได้ไม่จำกัด · ทดลองเรียนฟรี 7 วัน · คืนเงิน 100% ถ้าไม่พอใจ</span><span data-en>Every course includes Q&A with the teacher, unlimited replays, 7-day free trial, and 100% money-back guarantee.</span></div>
@@ -901,17 +1026,11 @@
       <details class="faq-item"><summary><span data-th>ฉันต้องเป็นครูในระบบไหม ถึงจะสมัครได้?</span><span data-en>Do I need to be a certified teacher?</span></summary>
         <div class="faq-item-body"><span data-th>ไม่จำเป็น · เปิดรับครูในระบบ ติวเตอร์ นักศึกษา ป.โท/เอก ผู้เชี่ยวชาญในวิชา · ทุกคนที่มีความรู้และตั้งใจสอน · เราตรวจสอบคุณภาพจากตัวอย่างการสอน 5 นาที</span><span data-en>No · We welcome teachers, tutors, grad students, and subject experts — anyone with knowledge and passion. We review based on a 5-min teaching sample.</span></div>
       </details>
-      <details class="faq-item"><summary><span data-th>คอมมิชชั่น 80/20 หมายถึงอะไร?</span><span data-en>What does 80/20 commission mean?</span></summary>
-        <div class="faq-item-body"><span data-th>ทุกครั้งที่นักเรียนซื้อคอร์สของคุณ · คุณได้ 80% Panya ได้ 20% (ค่า host VDO + payment + marketing) · Founding 50 คนแรก: 0% commission ใน 3 เดือนแรก = รับเต็ม 100%</span><span data-en>For every course sale, you keep 80%, Panya takes 20% (covers video hosting, payments, marketing). Founding 50: 0% commission for 3 months = you keep 100%.</span></div>
-      </details>
       <details class="faq-item"><summary><span data-th>ต้องอัด VDO เองไหม?</span><span data-en>Do I have to record videos myself?</span></summary>
-        <div class="faq-item-body"><span data-th>ใช่ ครูเป็นคนอัด VDO เอง · เรามี guide สอนใช้เครื่องมือฟรี (OBS, Zoom) · Founding 50 คนแรก ทีมเราช่วยตัดต่อให้ฟรี</span><span data-en>Yes, you record your own videos · We provide guides for free tools (OBS, Zoom) · Founding 50 get free editing support from our team.</span></div>
-      </details>
-      <details class="faq-item"><summary><span data-th>โอนเงินยังไง?</span><span data-en>How do I get paid?</span></summary>
-        <div class="faq-item-body"><span data-th>โอนเข้าบัญชีธนาคารทุกสิ้นเดือน (ขั้นต่ำ 1,000 บาท) · มี dashboard ติดตามยอดขาย real-time · ออกใบเสร็จ + เอกสารหัก ณ ที่จ่ายให้</span><span data-en>Direct bank transfer end of every month (฿1,000 minimum) · Real-time sales dashboard · We provide receipts + tax withholding documents.</span></div>
+        <div class="faq-item-body"><span data-th>ใช่ ครูเป็นคนอัด VDO เอง · เรามี guide สอนใช้เครื่องมือฟรี · ทีมเรามีให้คำปรึกษาตลอด</span><span data-en>Yes, you record your own videos · We provide guides for free tools · Our team is here to help.</span></div>
       </details>
       <details class="faq-item"><summary><span data-th>ฉันสอนที่อื่นได้ไหม?</span><span data-en>Can I teach on other platforms too?</span></summary>
-        <div class="faq-item-body"><span data-th>ได้ · ไม่มีสัญญาผูกขาด (non-exclusive) · ครูสามารถนำคอร์สเดียวกันไปขายที่อื่นได้ · แต่แนะนำราคาบน Panya ดีที่สุด เพื่อให้นักเรียนเลือกที่นี่</span><span data-en>Yes · Non-exclusive · You can sell the same course elsewhere · We recommend pricing it best on Panya so students prefer us.</span></div>
+        <div class="faq-item-body"><span data-th>ได้ · เราไม่มีสัญญาผูกขาด ครูสามารถสอนที่อื่นพร้อมกันได้</span><span data-en>Yes · We don't have exclusivity agreements; you can teach on other platforms too.</span></div>
       </details>
     </div>
   </div>
@@ -924,12 +1043,12 @@
     <p><span data-th>เลือกบทบาทของคุณ · เข้าร่วมตอนนี้ · เริ่มก่อนใคร</span><span data-en>Pick your role · Join now · Be first in line.</span></p>
     <div class="cta-buttons">
       <a href="#waitlist" class="btn btn-amber btn-large">
-        <span data-th>👨‍👩‍👧 ผู้ปกครอง · เข้าร่วม</span>
-        <span data-en>👨‍👩‍👧 Parents · Join</span>
+        <span data-th>นักเรียน · ผู้ปกครอง · เข้าร่วม</span>
+        <span data-en>Learners / Parents · Join</span>
       </a>
       <a href="#teach" class="btn btn-large" style="background:rgba(255,255,255,.1);color:white;border:1.5px solid rgba(255,255,255,.3)">
-        <span data-th>👨‍🏫 ครู · สมัคร Founding</span>
-        <span data-en>👨‍🏫 Teachers · Apply Founding</span>
+        <span data-th>ครู · สมัคร Founding</span>
+        <span data-en>Teachers · Apply Founding</span>
       </a>
     </div>
   </div>
@@ -940,7 +1059,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo"><span class="logo-mark">P</span><span>Panya</span></a>
+        <a href="#" class="logo" aria-label="Panya"><img src="data:image/png;base64,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AJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ0TQAAAAAAAAJ37/wGbsG/kRVcHlwAAAABJRU5ErkJggg==" alt="Panya" class="logo-img"></a>
         <p><span data-th>ปัญญาเริ่มต้นที่นี่ · Where Wisdom Begins<br><br>Marketplace สอนพิเศษออนไลน์ K-12 ของไทย ที่ครูเปิดคอร์สเอง ผู้ปกครองเลือกครูที่ใช่</span><span data-en>Where Wisdom Begins<br><br>Thailand's K-12 online tutoring marketplace where teachers launch courses and parents pick the perfect fit.</span></p>
       </div>
       <div>
@@ -957,7 +1076,7 @@
         <h4><span data-th>ครู</span><span data-en>Teachers</span></h4>
         <ul>
           <li><a href="#teach"><span data-th>สมัครเป็นครู</span><span data-en>Apply to teach</span></a></li>
-          <li><a href="#teach"><span data-th>คอมมิชชั่น 80/20</span><span data-en>80/20 commission</span></a></li>
+          <li><a href="#teach"><span data-th>คุณสมบัติครู</span><span data-en>Teacher requirements</span></a></li>
           <li><a href="#teach"><span data-th>Founding Program</span><span data-en>Founding Program</span></a></li>
           <li><a href="#"><span data-th>ครู FAQ</span><span data-en>Teacher FAQ</span></a></li>
         </ul>
@@ -965,19 +1084,171 @@
       <div>
         <h4><span data-th>ติดต่อ</span><span data-en>Contact</span></h4>
         <ul>
-          <li><a href="mailto:nsthor77@gmail.com">📧 nsthor77@gmail.com</a></li>
-          <li><a href="tel:0846416636">📞 084-641-6636</a></li>
-          <li><a href="#">💬 LINE: @panya</a></li>
+          <li><a href="mailto:nsthor77@gmail.com" style="display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>nsthor77@gmail.com</a></li>
+          <li><a href="tel:0846416636" style="display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>084-641-6636</a></li>
+          <li><a href="#" style="display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863a.63.63 0 0 1 0 1.26H17.61v1.125h1.755a.63.63 0 1 1 0 1.26h-2.385a.63.63 0 0 1-.63-.63V8.108a.63.63 0 0 1 .63-.63h2.385a.63.63 0 1 1 0 1.26H17.61v1.125zm-3.855 3.016a.63.63 0 0 1-.498.61.612.612 0 0 1-.18.022.63.63 0 0 1-.51-.252l-2.443-3.317v2.94a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 .43-.598.6.6 0 0 1 .195-.03.6.6 0 0 1 .495.247l2.46 3.33V8.108a.63.63 0 1 1 1.26 0v4.771zm-5.916 0a.63.63 0 1 1-1.26 0V8.108a.63.63 0 1 1 1.26 0zm-2.094.625H5.114a.63.63 0 0 1-.63-.624V8.108a.63.63 0 1 1 1.26 0v4.142h1.755a.63.63 0 1 1 0 1.254M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.302.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>LINE: @panya</a></li>
           <li><a href="#"><span data-th>นโยบายความเป็นส่วนตัว</span><span data-en>Privacy Policy</span></a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 บริษัท ปัญญา อคาเดมี่ จำกัด · Panya Academy Co., Ltd.</span>
-      <span><span data-th>🇹🇭 ทำในไทย ด้วยใจ</span><span data-en>🇹🇭 Made in Thailand</span></span>
+      <span><span data-th>ทำในไทย ด้วยใจ</span><span data-en>Made in Thailand</span></span>
     </div>
   </div>
 </footer>
+
+<!-- ============ SIGNUP / ROLE SECTION (NEW v4) ============ -->
+<section class="role-section" id="signup">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-eyebrow"><span data-th>เข้าร่วม Panya</span><span data-en>Join Panya</span></div>
+      <h2 class="section-title"><span data-th>เริ่มต้นใช้งาน <span style="color:var(--primary)">วันนี้</span></span><span data-en>Get Started <span style="color:var(--primary)">Today</span></span></h2>
+      <p class="section-sub"><span data-th>เลือกบทบาทของคุณ · สมัครฟรี ใช้เวลา 2 นาที</span><span data-en>Pick your role · Free signup, takes 2 minutes</span></p>
+    </div>
+
+    <div class="role-grid">
+      <!-- STUDENT -->
+      <div class="role-card" style="--rc1:#3B82F6;--rc2:#06B6D4">
+        <div class="role-icon-big">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+        </div>
+        <h3><span data-th>นักเรียน</span><span data-en>Student</span></h3>
+        <p class="role-desc"><span data-th>เรียนกับครูที่ใช่ พัฒนาตัวเองในแบบของคุณ</span><span data-en>Learn with the right tutor, grow your way</span></p>
+        <ul class="role-perks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>เลือกครูเอง · จองเวลาได้</span><span data-en>Choose your tutor · book your time</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>ห้องเรียนสด · บันทึกย้อนหลังได้</span><span data-en>Live class · replay anytime</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>การบ้าน · แบบฝึก · ติดตามผล</span><span data-en>Homework · drills · progress tracking</span></span></li>
+        </ul>
+        <button class="btn-role" onclick="openModal('signup','student')">
+          <span data-th>สมัครเป็นนักเรียน</span><span data-en>Sign up as Student</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- PARENT -->
+      <div class="role-card" style="--rc1:#1E40AF;--rc2:#3B82F6">
+        <div class="role-icon-big">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a6 6 0 0 1 12 0v2"/><circle cx="17" cy="9" r="2"/><path d="M21 21v-1a4 4 0 0 0-3-3.85"/></svg>
+        </div>
+        <h3><span data-th>ผู้ปกครอง</span><span data-en>Parent</span></h3>
+        <p class="role-desc"><span data-th>ดูแลการเรียนของลูก ติดตามผลได้แบบ real-time</span><span data-en>Manage your child's learning, see real-time progress</span></p>
+        <ul class="role-perks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>ดูแลลูกได้หลายคนใน 1 บัญชี</span><span data-en>Manage multiple children</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>รายงานความก้าวหน้าทุกสัปดาห์</span><span data-en>Weekly progress reports</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>รับประกันคืนเงิน · จ่ายปลอดภัย</span><span data-en>Money-back · secure payment</span></span></li>
+        </ul>
+        <button class="btn-role" onclick="openModal('signup','parent')">
+          <span data-th>สมัครเป็นผู้ปกครอง</span><span data-en>Sign up as Parent</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- TEACHER -->
+      <div class="role-card" style="--rc1:#10B981;--rc2:#14B8A6">
+        <div class="role-icon-big">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h20"/><path d="M3 6v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6"/><circle cx="12" cy="12" r="3"/><path d="M8 18h8"/></svg>
+        </div>
+        <h3><span data-th>ครู / ติวเตอร์</span><span data-en>Teacher / Tutor</span></h3>
+        <p class="role-desc"><span data-th>ส่งต่อความรู้ของคุณให้นักเรียนไทย · ออกแบบคลาสเอง</span><span data-en>Share your knowledge with Thai students · design your own classes</span></p>
+        <ul class="role-perks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>เครื่องมือครบ ใช้งานง่าย</span><span data-en>Easy-to-use complete toolkit</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>ออกแบบคลาสและตารางได้อิสระ</span><span data-en>Design your classes and schedule freely</span></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><span data-th>ทีมเราดูแลระบบและการตลาดให้</span><span data-en>We handle the system and marketing</span></span></li>
+        </ul>
+        <button class="btn-role" onclick="openModal('signup','teacher')">
+          <span data-th>สมัครเป็นครู</span><span data-en>Sign up as Teacher</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIGNUP MODAL ============ -->
+<div class="modal-bg" id="signupModal" onclick="if(event.target===this)closeModal('signup')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('signup')" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-head">
+      <div class="modal-icon student" id="modalIcon">
+        <svg id="modalIconSvg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+      </div>
+      <h3 id="modalTitle"><span data-th>สมัครเป็นนักเรียน</span><span data-en>Sign up as Student</span></h3>
+      <div class="modal-sub"><span data-th>ฟรี · ใช้เวลา 2 นาที · ไม่มีค่าใช้จ่ายแฝง</span><span data-en>Free · 2 minutes · No hidden fees</span></div>
+    </div>
+
+    <div class="role-tabs">
+      <button class="role-tab active" data-role="student" onclick="switchRole('student',this)"><span data-th>นักเรียน</span><span data-en>Student</span></button>
+      <button class="role-tab" data-role="parent" onclick="switchRole('parent',this)"><span data-th>ผู้ปกครอง</span><span data-en>Parent</span></button>
+      <button class="role-tab" data-role="teacher" onclick="switchRole('teacher',this)"><span data-th>ครู</span><span data-en>Teacher</span></button>
+    </div>
+
+    <form class="modal-form" onsubmit="handleSignup(event)">
+      <input type="hidden" id="roleField" value="student">
+      <div class="form-group">
+        <label><span data-th>ชื่อ-นามสกุล</span><span data-en>Full name</span></label>
+        <input type="text" name="name" required placeholder="เช่น สมชาย ใจดี">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label><span data-th>เบอร์โทรศัพท์</span><span data-en>Phone</span></label>
+        <input type="tel" name="phone" required placeholder="08X-XXX-XXXX">
+      </div>
+      <div class="form-group" id="extraField">
+        <label id="extraLabel"><span data-th>ระดับชั้น (ปัจจุบัน)</span><span data-en>Grade level (current)</span></label>
+        <input type="text" name="extra" id="extraInput" required placeholder="เช่น ม.5, ป.6">
+      </div>
+      <button type="submit" class="btn-submit">
+        <span data-th>สมัครฟรี</span><span data-en>Create my account</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </form>
+
+    <div class="modal-foot">
+      <span data-th>มีบัญชีอยู่แล้ว?</span><span data-en>Already have an account?</span>
+      <a onclick="closeModal('signup');openModal('login')"><span data-th>เข้าสู่ระบบ</span><span data-en>Log in</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LOGIN MODAL ============ -->
+<div class="modal-bg" id="loginModal" onclick="if(event.target===this)closeModal('login')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('login')" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-head">
+      <div class="modal-icon login">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      </div>
+      <h3><span data-th>เข้าสู่ระบบ</span><span data-en>Welcome back</span></h3>
+      <div class="modal-sub"><span data-th>ยินดีต้อนรับกลับสู่ Panya</span><span data-en>Sign in to your Panya account</span></div>
+    </div>
+    <form class="modal-form" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label><span data-th>รหัสผ่าน</span><span data-en>Password</span></label>
+        <input type="password" name="password" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn-submit">
+        <span data-th>เข้าสู่ระบบ</span><span data-en>Log in</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </form>
+    <div class="modal-foot">
+      <span data-th>ยังไม่มีบัญชี?</span><span data-en>No account yet?</span>
+      <a onclick="closeModal('login');openModal('signup')"><span data-th>สมัครฟรี</span><span data-en>Sign up free</span></a>
+    </div>
+  </div>
+</div>
 
 <div id="toast" class="toast"></div>
 
@@ -1054,7 +1325,7 @@
     const lang = document.body.dataset.lang;
     let msg;
     if (type === 'teacher') {
-      msg = lang === 'th' ? '✓ ขอบคุณ! เราจะติดต่อกลับเรื่อง Founding Teacher ภายใน 48 ชม.' : '✓ Thanks! We will reach out about Founding Teacher within 48 hours.';
+      msg = lang === 'th' ? '✓ ขอบคุณ! ทีมจะติดต่อกลับใน 48 ชม.' : '✓ Thanks! Our team will reach out within 48 hours.';
     } else {
       msg = lang === 'th' ? '✓ ขอบคุณ! เราจะแจ้งทันทีที่เปิดตัว · พร้อมส่งโค้ดส่วนลด 50%' : '✓ Thanks! We will notify you at launch with your 50% off code.';
     }
@@ -1067,6 +1338,120 @@
     toast.textContent = message;
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+
+  // === MODAL SYSTEM (v4) ===
+  function openModal(name, role){
+    const m = document.getElementById(name + 'Modal');
+    if(!m) return;
+    m.classList.add('show');
+    document.body.classList.add('modal-open');
+    if(name === 'signup' && role){
+      const tab = document.querySelector('.role-tab[data-role="' + role + '"]');
+      if(tab) switchRole(role, tab);
+    }
+  }
+  function closeModal(name){
+    const m = document.getElementById(name + 'Modal');
+    if(!m) return;
+    m.classList.remove('show');
+    document.body.classList.remove('modal-open');
+  }
+  // ESC closes modals
+  document.addEventListener('keydown', e=>{
+    if(e.key === 'Escape'){
+      closeModal('signup');
+      closeModal('login');
+    }
+  });
+
+  // === ROLE SWITCHER (signup modal) ===
+  const roleConfig = {
+    student: {
+      iconClass: 'student',
+      iconSvg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>',
+      titleTh: 'สมัครเป็นนักเรียน', titleEn: 'Sign up as Student',
+      labelTh: 'ระดับชั้น (ปัจจุบัน)', labelEn: 'Grade level (current)',
+      placeholder: 'เช่น ม.5, ป.6'
+    },
+    parent: {
+      iconClass: 'parent',
+      iconSvg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a6 6 0 0 1 12 0v2"/><circle cx="17" cy="9" r="2"/><path d="M21 21v-1a4 4 0 0 0-3-3.85"/></svg>',
+      titleTh: 'สมัครเป็นผู้ปกครอง', titleEn: 'Sign up as Parent',
+      labelTh: 'ระดับชั้นของลูก', labelEn: "Child's grade level",
+      placeholder: 'เช่น ม.3, ป.5'
+    },
+    teacher: {
+      iconClass: 'teacher',
+      iconSvg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h20"/><path d="M3 6v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6"/><circle cx="12" cy="12" r="3"/><path d="M8 18h8"/></svg>',
+      titleTh: 'สมัครเป็นครู', titleEn: 'Apply as Teacher',
+      labelTh: 'วิชาที่สอน', labelEn: 'Subject you teach',
+      placeholder: 'เช่น คณิต ม.ปลาย, ภาษาอังกฤษ'
+    }
+  };
+  function switchRole(role, btn){
+    document.querySelectorAll('.role-tab').forEach(t=>t.classList.remove('active'));
+    if(btn) btn.classList.add('active');
+    document.getElementById('roleField').value = role;
+    const cfg = roleConfig[role];
+    if(!cfg) return;
+    const iconWrap = document.getElementById('modalIcon');
+    iconWrap.className = 'modal-icon ' + cfg.iconClass;
+    iconWrap.innerHTML = cfg.iconSvg;
+    document.getElementById('modalTitle').innerHTML =
+      '<span data-th>' + cfg.titleTh + '</span><span data-en>' + cfg.titleEn + '</span>';
+    document.getElementById('extraLabel').innerHTML =
+      '<span data-th>' + cfg.labelTh + '</span><span data-en>' + cfg.labelEn + '</span>';
+    document.getElementById('extraInput').placeholder = cfg.placeholder;
+  }
+
+  // === SIGNUP / LOGIN HANDLERS ===
+  function handleSignup(e){
+    e.preventDefault();
+    const form = e.target;
+    const role = document.getElementById('roleField').value;
+    const data = {
+      role: role,
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      extra: form.extra.value,
+      timestamp: new Date().toISOString()
+    };
+    try{
+      const list = JSON.parse(localStorage.getItem('panya_signups') || '[]');
+      list.push(data);
+      localStorage.setItem('panya_signups', JSON.stringify(list));
+      localStorage.setItem('panya_signup_' + role, JSON.stringify(data));
+    }catch(err){}
+    const lang = document.body.dataset.lang;
+    let msg;
+    if(role === 'teacher'){
+      msg = lang === 'th' ? '✓ ขอบคุณ! ทีมจะติดต่อกลับภายใน 48 ชม.' : '✓ Thanks! Our team will reach out within 48 hours.';
+    } else if(role === 'parent'){
+      msg = lang === 'th' ? '✓ สมัครสำเร็จ! เริ่มหาครูสำหรับลูกได้เลย' : '✓ Account created! Start finding tutors for your child.';
+    } else {
+      msg = lang === 'th' ? '✓ สมัครสำเร็จ! เริ่มเรียนกับครูที่ใช่ได้เลย' : '✓ Account created! Find your tutor and start learning.';
+    }
+    showToast(msg);
+    closeModal('signup');
+    form.reset();
+  }
+  function handleLogin(e){
+    e.preventDefault();
+    const lang = document.body.dataset.lang;
+    showToast(lang === 'th' ? '✓ ระบบล็อกอินจริงจะเปิดใช้ใน Phase 2' : '✓ Real login launches in Phase 2');
+    closeModal('login');
+    e.target.reset();
+  }
+
+  // === BROWSE BY GRADE (v4) ===
+  function browseGrade(grade){
+    const lang = document.body.dataset.lang;
+    showToast(lang === 'th'
+      ? '✓ คลาสสำหรับ ' + grade + ' กำลังจะเปิด · สมัครรับแจ้งเตือนเปิดตัวที่นี่'
+      : '✓ Classes for ' + grade + ' coming soon · Sign up to be notified');
+    setTimeout(()=> openModal('signup','student'), 600);
   }
 </script>
 </body>
