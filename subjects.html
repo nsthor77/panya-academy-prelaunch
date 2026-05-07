@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="หลักสูตรครบทุกระดับชั้น ป.1 - ม.6 และเตรียมสอบเข้ามหาลัย ที่ Panya">
+<title>หลักสูตรครบ K-12 · Panya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1E40AF;--primary-dark:#1E3A8A;--primary-light:#DBEAFE;--primary-50:#EFF6FF;--accent:#F59E0B;--accent-light:#FEF3C7;--teacher:#7C3AED;--teacher-light:#EDE9FE;--green:#10B981;--green-light:#D1FAE5;--red:#EF4444;--dark:#0F172A;--gray-900:#111827;--gray-700:#374151;--gray-500:#6B7280;--gray-300:#D1D5DB;--gray-200:#E5E7EB;--gray-100:#F3F4F6;--gray-50:#F9FAFB;--white:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans Thai','Plus Jakarta Sans',system-ui,sans-serif;color:var(--gray-900);background:var(--gray-50);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+body[data-lang="en"] [data-th]{display:none}body[data-lang="th"] [data-en]{display:none}
+
+/* Header */
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--gray-100)}
+.nav{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--primary);letter-spacing:-.02em}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:var(--white);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;box-shadow:0 4px 12px rgba(30,64,175,.25)}
+.nav-back{display:inline-flex;align-items:center;gap:6px;color:var(--gray-700);font-weight:500;font-size:14px;padding:8px 16px;border-radius:10px;transition:all .2s}
+.nav-back:hover{background:var(--gray-100);color:var(--primary)}
+.lang-switch{display:inline-flex;background:var(--gray-100);border-radius:8px;padding:3px;gap:2px}
+.lang-switch button{padding:5px 12px;border-radius:6px;font-size:13px;font-weight:600;color:var(--gray-500);transition:all .2s}
+.lang-switch button.active{background:var(--white);color:var(--primary);box-shadow:0 1px 2px rgba(15,23,42,.04)}
+
+/* Hero */
+.page-hero{background:linear-gradient(180deg,var(--white) 0%,var(--gray-50) 100%);padding:48px 24px 32px;text-align:center;border-bottom:1px solid var(--gray-100)}
+.page-hero-inner{max-width:980px;margin:0 auto}
+.page-hero-eyebrow{color:var(--primary);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.page-hero h1{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.02em;color:var(--dark);margin-bottom:14px;line-height:1.2}
+.page-hero h1 .accent{background:linear-gradient(135deg,var(--primary),var(--teacher));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent}
+.page-hero p{font-size:17px;color:var(--gray-500);max-width:640px;margin:0 auto 24px}
+.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:24px}
+.hero-stat{text-align:center}
+.hero-stat-num{font-size:24px;font-weight:800;color:var(--primary);font-family:'Plus Jakarta Sans',sans-serif}
+.hero-stat-label{font-size:12px;color:var(--gray-500);font-weight:500}
+
+/* Filter Bar (sticky) */
+.filter-bar{position:sticky;top:65px;z-index:90;background:var(--white);border-bottom:1px solid var(--gray-100);padding:16px 24px;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+.filter-inner{max-width:1280px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.filter-group{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.filter-label{font-size:13px;font-weight:600;color:var(--gray-700);margin-right:4px}
+.filter-chip{padding:7px 14px;border-radius:999px;background:var(--gray-100);color:var(--gray-700);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;border:1px solid transparent}
+.filter-chip:hover{background:var(--gray-200)}
+.filter-chip.active{background:var(--primary);color:var(--white)}
+.filter-chip.cat-active{background:var(--teacher);color:var(--white)}
+.filter-search{flex:1;min-width:200px;display:flex;align-items:center;gap:8px;background:var(--gray-100);padding:8px 14px;border-radius:10px;max-width:280px}
+.filter-search input{flex:1;background:transparent;border:none;outline:none;font-family:inherit;font-size:14px;color:var(--gray-900)}
+.filter-count{margin-left:auto;font-size:13px;color:var(--gray-500);font-weight:500}
+
+/* Main Content */
+.main{max-width:1280px;margin:0 auto;padding:32px 24px 80px}
+
+/* Category Section */
+.cat-section{margin-bottom:48px;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.cat-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:14px;border-bottom:2px solid var(--gray-100)}
+.cat-header-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.cat-header-icon.languages{background:linear-gradient(135deg,#DBEAFE,#BFDBFE);color:var(--primary)}
+.cat-header-icon.math_science{background:linear-gradient(135deg,#D1FAE5,#A7F3D0);color:var(--green)}
+.cat-header-icon.humanities{background:linear-gradient(135deg,#FEF3C7,#FDE68A);color:#92400E}
+.cat-header-icon.exam_prep{background:linear-gradient(135deg,#EDE9FE,#DDD6FE);color:var(--teacher)}
+.cat-header-icon.coding{background:linear-gradient(135deg,#E0F2FE,#BAE6FD);color:#0284C7}
+.cat-header-icon.arts{background:linear-gradient(135deg,#FCE7F3,#FBCFE8);color:#BE185D}
+.cat-header-icon.health{background:linear-gradient(135deg,#FEE2E2,#FECACA);color:var(--red)}
+.cat-header-icon.vocational{background:linear-gradient(135deg,#F3E8FF,#E9D5FF);color:#7E22CE}
+.cat-header-info{flex:1}
+.cat-header h2{font-size:22px;font-weight:800;color:var(--dark);letter-spacing:-.01em;margin-bottom:2px}
+.cat-header-meta{font-size:13px;color:var(--gray-500);font-weight:500}
+.cat-header-count{font-size:13px;color:var(--primary);font-weight:700;background:var(--primary-50);padding:4px 12px;border-radius:999px}
+
+/* Subjects Grid */
+.subjects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.subject-card{background:var(--white);border:1px solid var(--gray-100);border-radius:14px;padding:18px;transition:all .2s;cursor:pointer;position:relative;display:flex;flex-direction:column}
+.subject-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,23,42,.08);border-color:var(--primary-light)}
+.subject-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
+.subject-icon{font-size:24px;line-height:1;flex-shrink:0}
+.subject-name-wrap{flex:1;min-width:0}
+.subject-name{font-weight:700;font-size:15px;color:var(--dark);margin-bottom:2px;line-height:1.3}
+.subject-grade{font-size:12px;color:var(--gray-500);font-weight:600}
+.subject-priority{position:absolute;top:14px;right:14px;width:8px;height:8px;border-radius:50%}
+.subject-priority.critical{background:var(--red);box-shadow:0 0 0 4px rgba(239,68,68,.15)}
+.subject-priority.high{background:var(--accent);box-shadow:0 0 0 4px rgba(245,158,11,.15)}
+.subject-priority.medium{background:var(--gray-300)}
+.subject-topics{font-size:13px;color:var(--gray-700);line-height:1.5;margin-bottom:12px;flex:1}
+.subject-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.subject-tag{padding:3px 9px;border-radius:6px;background:var(--accent-light);color:#92400E;font-size:11px;font-weight:700}
+.subject-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--gray-100);margin-top:auto}
+.subject-status{font-size:12px;color:var(--accent);font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.subject-cta{font-size:12px;color:var(--primary);font-weight:600}
+
+/* Empty state */
+.empty-state{text-align:center;padding:64px 24px;background:var(--white);border-radius:16px;border:2px dashed var(--gray-200)}
+.empty-state-icon{font-size:48px;margin-bottom:16px}
+.empty-state h3{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.empty-state p{color:var(--gray-500);margin-bottom:20px}
+
+/* CTA Banner */
+.cta-banner{background:linear-gradient(135deg,var(--primary) 0%,var(--teacher) 100%);color:var(--white);border-radius:20px;padding:40px 32px;margin:48px auto 0;max-width:1280px;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,.15) 0%,transparent 60%);border-radius:50%}
+.cta-banner-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.cta-banner h3{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;line-height:1.3}
+.cta-banner p{font-size:16px;color:rgba(255,255,255,.9);margin-bottom:24px}
+.cta-banner-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta-banner .btn{padding:12px 24px;border-radius:10px;font-weight:700;font-size:14px;transition:all .2s;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.cta-banner .btn-primary{background:var(--accent);color:var(--dark)}
+.cta-banner .btn-primary:hover{background:#FBBF24;transform:translateY(-1px);box-shadow:0 6px 16px rgba(245,158,11,.4)}
+.cta-banner .btn-ghost{background:rgba(255,255,255,.15);color:var(--white);border:1.5px solid rgba(255,255,255,.3);backdrop-filter:blur(8px)}
+.cta-banner .btn-ghost:hover{background:rgba(255,255,255,.25)}
+
+/* Footer */
+.footer{background:var(--dark);color:var(--gray-300);padding:40px 24px 24px;margin-top:64px}
+.footer-inner{max-width:1280px;margin:0 auto;text-align:center}
+.footer-inner .logo{justify-content:center;color:var(--white);margin-bottom:12px}
+.footer-inner .logo-mark{background:var(--white);color:var(--primary)}
+.footer-inner p{font-size:13px;color:var(--gray-500)}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav{padding:12px 20px}
+  .page-hero{padding:32px 20px 24px}
+  .filter-bar{padding:12px 20px;top:61px}
+  .main{padding:24px 20px 64px}
+  .filter-search{max-width:none;width:100%}
+  .hero-stats{gap:20px}
+  .cat-header{gap:10px}
+  .cat-header-icon{width:40px;height:40px;font-size:20px}
+  .cat-header h2{font-size:18px}
+  .cta-banner{padding:32px 20px;margin:32px 20px 0;border-radius:16px}
+  .cta-banner h3{font-size:22px}
+}
+</style>
+</head>
+<body data-lang="th">
+
+<header class="header">
+  <nav class="nav">
+    <a href="/" class="logo"><span class="logo-mark">P</span><span>Panya</span></a>
+    <a href="/" class="nav-back">← <span data-th>กลับหน้าหลัก</span><span data-en>Back to home</span></a>
+    <div class="lang-switch"><button data-set-lang="th" class="active">ไทย</button><button data-set-lang="en">EN</button></div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">📚 <span data-th>หลักสูตรครบ</span><span data-en>Full Curriculum</span></div>
+    <h1>
+      <span data-th>หลักสูตร K-12 <span class="accent">ครบทุกระดับชั้น</span></span>
+      <span data-en>Complete K-12 <span class="accent">curriculum coverage</span></span>
+    </h1>
+    <p>
+      <span data-th>ครอบคลุม ป.1 ถึง ม.6 ทุกวิชาตามหลักสูตรกระทรวง · พร้อมเตรียมสอบเข้า ม.1, ม.4, TGAT, A-Level, IELTS</span>
+      <span data-en>Covering Grade 1-12 across all MOE subjects · Plus M.1, M.4 entrance exams, TGAT, A-Level, IELTS prep</span>
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">12</div><div class="hero-stat-label" data-th>ระดับชั้น</div><div class="hero-stat-label" data-en>Grade levels</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-label" data-th>กลุ่มสาระ</div><div class="hero-stat-label" data-en>Categories</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">100+</div><div class="hero-stat-label" data-th>หลักสูตร</div><div class="hero-stat-label" data-en>Subjects</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-label" data-th>การสอบสำคัญ</div><div class="hero-stat-label" data-en>Major exams</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <div class="filter-group">
+      <span class="filter-label" data-th>ระดับ:</span>
+      <span class="filter-label" data-en>Grade:</span>
+      <button class="filter-chip active" data-grade="all"><span data-th>ทั้งหมด</span><span data-en>All</span></button>
+      <button class="filter-chip" data-grade="P"><span data-th>ประถม</span><span data-en>Primary</span></button>
+      <button class="filter-chip" data-grade="M-EARLY"><span data-th>ม.ต้น</span><span data-en>Middle</span></button>
+      <button class="filter-chip" data-grade="M-LATE"><span data-th>ม.ปลาย</span><span data-en>High</span></button>
+      <button class="filter-chip" data-grade="EXAM"><span data-th>เตรียมสอบ</span><span data-en>Test Prep</span></button>
+    </div>
+    <div class="filter-search">
+      <span style="color:var(--gray-500)">🔍</span>
+      <input type="text" id="search" placeholder="ค้นหาวิชา..." aria-label="Search subjects">
+    </div>
+    <div class="filter-count" id="resultCount"></div>
+  </div>
+</div>
+
+<main class="main" id="curriculumContent">
+  <!-- Generated by JS -->
+</main>
+
+<div class="cta-banner">
+  <div class="cta-banner-inner">
+    <h3>
+      <span data-th>ไม่เห็นวิชาที่ลูกต้องการ?</span>
+      <span data-en>Don't see the subject you need?</span>
+    </h3>
+    <p>
+      <span data-th>เราเพิ่มหลักสูตรใหม่ทุกเดือน · เข้าร่วม Waitlist เพื่อรับแจ้งเตือนทันทีที่เปิด</span>
+      <span data-en>We add new subjects monthly · Join Waitlist to be notified when new courses open</span>
+    </p>
+    <div class="cta-banner-buttons">
+      <a href="/#waitlist" class="btn btn-primary"><span data-th>👨‍👩‍👧 เข้าร่วม Waitlist</span><span data-en>👨‍👩‍👧 Join Waitlist</span></a>
+      <a href="/#teach" class="btn btn-ghost"><span data-th>👨‍🏫 สอนวิชานี้กับเรา</span><span data-en>👨‍🏫 Teach this subject</span></a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="/" class="logo"><span class="logo-mark">P</span><span>Panya</span></a>
+    <p>© 2026 บริษัท ปัญญา อคาเดมี่ จำกัด · Panya Academy Co., Ltd.</p>
+  </div>
+</footer>
+
+<script>
+// === Data: 100+ subjects across all categories ===
+const SUBJECTS = [
+  // Thai
+  {id:'TH-P',cat:'languages',catTh:'ภาษา',catEn:'Languages',name:'ภาษาไทย',nameEn:'Thai Language',icon:'🇹🇭',grade:'P',gradeTh:'ป.1 - ป.6',gradeEn:'Grade 1-6',topics:'พยัญชนะ สระ การอ่าน การเขียน วรรณคดีพื้นฐาน เตรียมสอบ O-NET ป.6',topicsEn:'Alphabet, vowels, reading, writing, basic literature, O-NET prep',exam:'O-NET',priority:'high'},
+  {id:'TH-M-EARLY',cat:'languages',catTh:'ภาษา',catEn:'Languages',name:'ภาษาไทย ม.ต้น',nameEn:'Thai Language (Middle)',icon:'🇹🇭',grade:'M-EARLY',gradeTh:'ม.1 - ม.3',gradeEn:'Grade 7-9',topics:'หลักภาษา การเขียนเชิงสร้างสรรค์ ฉันท์ กลอน วรรณคดีไทย เตรียม O-NET ม.3',topicsEn:'Grammar, creative writing, classical poetry, Thai literature, O-NET',exam:'O-NET',priority:'high'},
+  {id:'TH-M-LATE',cat:'languages',catTh:'ภาษา',catEn:'Languages',name:'ภาษาไทย ม.ปลาย',nameEn:'Thai Language (High)',icon:'🇹🇭',grade:'M-LATE',gradeTh:'ม.4 - ม.6',gradeEn:'Grade 10-12',topics:'หลักภาษาขั้นสูง วรรณคดีสำคัญ การวิเคราะห์ การเขียนวิจารณ์',topicsEn:'Advanced grammar, major literature, analysis, critical writing',exam:'TGAT, A-Level',priority:'critical'},
+  
+  // English
+  {id:'ENG-P',cat:'languages',catTh:'ภาษา',catEn:'Languages',name:'ภาษาอังกฤษ',nameEn:'English',icon:'🔤',grade:'P',gradeTh:'ป.1 - ป.6',gradeEn:'Grade 1-6',topics:'Phonics ABC คำศัพท์พื้นฐาน Tense พื้นฐาน Reading & Writing',topicsEn:'Phonics, ABC, vocabulary, basic tenses, reading & writing',exam:'O-NET',priority:'critical'},
+  {id:'ENG-M-EARLY',cat:'languages',catTh:'ภาษา',catEn:'Languages',name:'ภาษาอังกฤษ ม.ต้น',nameEn:'English (Middle)',icon:'🔤',grade:'M-EARLY',gradeTh:'ม.1 - ม.3',gradeEn:'Grade 7-9',topics:'All tenses Conditional Passive voice Advanced grammar Essay เตรียม O-NET',topicsEn:'All tenses, conditionals, passive voice, advanced grammar, essay, O-NET',exam:'O-NET',priority:'critical'},
+  {id:'ENG-M-LATE',cat:'languages',catTh:'ภาษา',catEn:'Languages',name:'ภาษาอังกฤษ ม.ปลาย',nameEn:'English (High)',icon:'🔤',grade:'M-LATE',gradeTh:'ม.4 - ม.6',gradeEn:'Grade 10-12',topics:'Academic reading Essay writing เตรียม TGAT English IELTS TOEFL',topicsEn:'Academic reading, essay writing, TGAT, IELTS, TOEFL prep',exam:'TGAT, IELTS, TOEFL',priority:'critical'},
+  
+  // Other languages
+  {id:'CN-ALL',cat:'languages',catTh:'ภาษา',catEn:'Languages',name:'ภาษาจีน',nameEn:'Chinese',icon:'🇨🇳',grade:'M-EARLY',gradeTh:'ป.4 - ม.6',gradeEn:'Grade 4-12',topics:'พินอิน HSK 1-6 PAT จีน TGAT จีน เตรียมสอบเข้ามหาลัยสายจีน',topicsEn:'Pinyin, HSK 1-6, PAT Chinese, TGAT Chinese, university prep',exam:'HSK, PAT, TGAT',priority:'high'},
+  {id:'JP-ALL',cat:'languages',catTh:'ภาษา',catEn:'Languages',name:'ภาษาญี่ปุ่น',nameEn:'Japanese',icon:'🇯🇵',grade:'M-EARLY',gradeTh:'ป.4 - ม.6',gradeEn:'Grade 4-12',topics:'ฮิรากานะ คาตากานะ คันจิ JLPT N5-N2 PAT ญี่ปุ่น TGAT ญี่ปุ่น',topicsEn:'Hiragana, katakana, kanji, JLPT N5-N2, PAT, TGAT Japanese',exam:'JLPT, PAT, TGAT',priority:'high'},
+  {id:'KR-ALL',cat:'languages',catTh:'ภาษา',catEn:'Languages',name:'ภาษาเกาหลี',nameEn:'Korean',icon:'🇰🇷',grade:'M-EARLY',gradeTh:'ม.1 - ม.6',gradeEn:'Grade 7-12',topics:'ฮันกึล TOPIK 1-4 บทสนทนา การฟัง การอ่าน',topicsEn:'Hangul, TOPIK 1-4, conversation, listening, reading',exam:'TOPIK',priority:'medium'},
+
+  // Math
+  {id:'MATH-P',cat:'math_science',catTh:'คณิต-วิทย์',catEn:'Math & Science',name:'คณิตศาสตร์',nameEn:'Mathematics',icon:'📐',grade:'P',gradeTh:'ป.1 - ป.6',gradeEn:'Grade 1-6',topics:'นับเลข บวกลบคูณหาร เศษส่วน ทศนิยม ร้อยละ พื้นที่ ปริมาตร พีชคณิตเบื้องต้น เตรียมสอบเข้า ม.1',topicsEn:'Numbers, arithmetic, fractions, decimals, percentages, geometry, basic algebra, M.1 prep',exam:'O-NET, M.1 Entrance',priority:'critical'},
+  {id:'MATH-M-EARLY',cat:'math_science',catTh:'คณิต-วิทย์',catEn:'Math & Science',name:'คณิตศาสตร์ ม.ต้น',nameEn:'Mathematics (Middle)',icon:'📐',grade:'M-EARLY',gradeTh:'ม.1 - ม.3',gradeEn:'Grade 7-9',topics:'จำนวนเต็ม สมการ พีชคณิต อสมการ ฟังก์ชัน ทฤษฎีบทพีทาโกรัส ตรีโกณมิติ เตรียม O-NET ม.3',topicsEn:'Integers, equations, algebra, inequalities, functions, Pythagorean, trigonometry, O-NET',exam:'O-NET, M.4 Entrance',priority:'critical'},
+  {id:'MATH-M-LATE',cat:'math_science',catTh:'คณิต-วิทย์',catEn:'Math & Science',name:'คณิตศาสตร์ ม.ปลาย',nameEn:'Mathematics (High)',icon:'📐',grade:'M-LATE',gradeTh:'ม.4 - ม.6',gradeEn:'Grade 10-12',topics:'เซต ตรรกศาสตร์ จำนวนจริง ฟังก์ชัน ลำดับอนุกรม ความน่าจะเป็น แคลคูลัส เตรียม TGAT/A-Level Math',topicsEn:'Sets, logic, real numbers, functions, sequences, probability, calculus, TGAT/A-Level',exam:'TGAT, A-Level',priority:'critical'},
+  
+  // Science
+  {id:'SCI-P',cat:'math_science',catTh:'คณิต-วิทย์',catEn:'Math & Science',name:'วิทยาศาสตร์',nameEn:'Science',icon:'🔬',grade:'P',gradeTh:'ป.1 - ป.6',gradeEn:'Grade 1-6',topics:'สิ่งมีชีวิต พืช สัตว์ แรง พลังงาน ระบบสุริยะ แสง เสียง ระบบในร่างกาย เตรียมสอบเข้า ม.1',topicsEn:'Living things, plants, animals, force, energy, solar system, light, sound, body systems, M.1 prep',exam:'M.1 Entrance',priority:'high'},
+  {id:'PHY-ALL',cat:'math_science',catTh:'คณิต-วิทย์',catEn:'Math & Science',name:'ฟิสิกส์',nameEn:'Physics',icon:'⚛️',grade:'M-EARLY',gradeTh:'ม.1 - ม.6',gradeEn:'Grade 7-12',topics:'การวัด แรง การเคลื่อนที่ งาน พลังงาน ไฟฟ้า แม่เหล็ก คลื่น จลนศาสตร์ กฎนิวตัน ฟิสิกส์ยุคใหม่ A-Level',topicsEn:'Measurement, force, motion, work, energy, electricity, magnetism, waves, kinematics, Newton, modern physics, A-Level',exam:'O-NET, A-Level, TPAT',priority:'critical'},
+  {id:'CHEM-ALL',cat:'math_science',catTh:'คณิต-วิทย์',catEn:'Math & Science',name:'เคมี',nameEn:'Chemistry',icon:'🧪',grade:'M-EARLY',gradeTh:'ม.1 - ม.6',gradeEn:'Grade 7-12',topics:'สารและการเปลี่ยนแปลง อะตอม ธาตุ พันธะเคมี กรด-เบส สารละลาย เคมีอินทรีย์ สมดุลเคมี A-Level',topicsEn:'Matter, atoms, elements, chemical bonds, acid-base, solutions, organic chem, equilibrium, A-Level',exam:'O-NET, A-Level, TPAT',priority:'critical'},
+  {id:'BIO-ALL',cat:'math_science',catTh:'คณิต-วิทย์',catEn:'Math & Science',name:'ชีววิทยา',nameEn:'Biology',icon:'🧬',grade:'M-EARLY',gradeTh:'ม.1 - ม.6',gradeEn:'Grade 7-12',topics:'เซลล์ พืช สัตว์ ระบบในร่างกาย พันธุกรรม วิวัฒนาการ นิเวศวิทยา เตรียม A-Level กสพท.',topicsEn:'Cells, plants, animals, body systems, genetics, evolution, ecology, A-Level, KPSAT',exam:'A-Level, KPSAT',priority:'critical'},
+
+  // Social Studies
+  {id:'SOC-P',cat:'humanities',catTh:'มนุษยศาสตร์',catEn:'Humanities',name:'สังคมศึกษา',nameEn:'Social Studies',icon:'🌏',grade:'P',gradeTh:'ป.1 - ป.6',gradeEn:'Grade 1-6',topics:'ครอบครัว ชุมชน ประวัติศาสตร์ไทย ภูมิศาสตร์ พระพุทธศาสนา ASEAN เตรียม O-NET',topicsEn:'Family, community, Thai history, geography, Buddhism, ASEAN, O-NET',exam:'O-NET',priority:'high'},
+  {id:'SOC-M-EARLY',cat:'humanities',catTh:'มนุษยศาสตร์',catEn:'Humanities',name:'สังคมศึกษา ม.ต้น',nameEn:'Social Studies (Middle)',icon:'🌏',grade:'M-EARLY',gradeTh:'ม.1 - ม.3',gradeEn:'Grade 7-9',topics:'อารยธรรมโลก เศรษฐศาสตร์ ประวัติศาสตร์เอเชีย ภูมิศาสตร์ พระพุทธศาสนา O-NET',topicsEn:'World civilizations, economics, Asian history, geography, Buddhism, O-NET',exam:'O-NET',priority:'high'},
+  {id:'SOC-M-LATE',cat:'humanities',catTh:'มนุษยศาสตร์',catEn:'Humanities',name:'สังคมศึกษา ม.ปลาย',nameEn:'Social Studies (High)',icon:'🌏',grade:'M-LATE',gradeTh:'ม.4 - ม.6',gradeEn:'Grade 10-12',topics:'พระพุทธศาสนา เศรษฐศาสตร์ กฎหมาย รัฐศาสตร์ ภูมิศาสตร์ เตรียม TGAT สังคม A-Level สังคม',topicsEn:'Buddhism, economics, law, political science, geography, TGAT/A-Level Social',exam:'TGAT, A-Level',priority:'critical'},
+
+  // Coding
+  {id:'CODE-ELEMENTARY',cat:'coding',catTh:'คอม-โค้ดดิ้ง',catEn:'Coding',name:'Coding for Kids',nameEn:'Coding for Kids',icon:'💻',grade:'P',gradeTh:'ป.4 - ป.6',gradeEn:'Grade 4-6',topics:'Scratch บล็อกโปรแกรม Python เบื้องต้น Logic & Problem Solving',topicsEn:'Scratch block coding, basic Python, logic & problem solving',exam:'',priority:'high'},
+  {id:'CODE-MIDDLE',cat:'coding',catTh:'คอม-โค้ดดิ้ง',catEn:'Coding',name:'Coding & Web Dev',nameEn:'Coding & Web Dev',icon:'💻',grade:'M-EARLY',gradeTh:'ม.1 - ม.3',gradeEn:'Grade 7-9',topics:'Python intermediate HTML CSS JavaScript Web design Game development',topicsEn:'Intermediate Python, HTML, CSS, JavaScript, web design, game dev',exam:'',priority:'high'},
+  {id:'CODE-HIGH',cat:'coding',catTh:'คอม-โค้ดดิ้ง',catEn:'Coding',name:'Programming & AI',nameEn:'Programming & AI',icon:'🤖',grade:'M-LATE',gradeTh:'ม.4 - ม.6',gradeEn:'Grade 10-12',topics:'Advanced Python AI/ML Web dev React Mobile app dev เตรียม TCAS Computer',topicsEn:'Advanced Python, AI/ML, web dev (React), mobile app dev, TCAS Computer',exam:'TCAS Computer',priority:'high'},
+
+  // Arts
+  {id:'ART-ALL',cat:'arts',catTh:'ศิลปะ-ดนตรี',catEn:'Arts & Music',name:'ศิลปะ',nameEn:'Art',icon:'🎨',grade:'M-EARLY',gradeTh:'ป.1 - ม.6',gradeEn:'All grades',topics:'วาดเขียน ระบายสี ดิจิทัลอาร์ต Portrait การออกแบบ Portfolio สำหรับสอบเข้า',topicsEn:'Drawing, painting, digital art, portrait, design, portfolio for entrance exams',exam:'TPAT2',priority:'medium'},
+  {id:'MUSIC-ALL',cat:'arts',catTh:'ศิลปะ-ดนตรี',catEn:'Arts & Music',name:'ดนตรี',nameEn:'Music',icon:'🎵',grade:'M-EARLY',gradeTh:'ป.1 - ม.6',gradeEn:'All grades',topics:'เปียโน กีตาร์ ขับร้อง ทฤษฎีดนตรี การประพันธ์เพลง',topicsEn:'Piano, guitar, vocals, music theory, composition',exam:'',priority:'medium'},
+
+  // Health & Vocational
+  {id:'PE-ALL',cat:'health',catTh:'สุขภาพ',catEn:'Health',name:'สุขศึกษา · พลศึกษา',nameEn:'PE & Health',icon:'🏃',grade:'M-EARLY',gradeTh:'ป.1 - ม.6',gradeEn:'All grades',topics:'สุขภาพ โภชนาการ การออกกำลังกาย กีฬา การปฐมพยาบาล',topicsEn:'Health, nutrition, exercise, sports, first aid',exam:'',priority:'medium'},
+  {id:'HOMEEC-ALL',cat:'vocational',catTh:'การงานอาชีพ',catEn:'Vocational',name:'การงานอาชีพ',nameEn:'Home Economics',icon:'🛠️',grade:'M-EARLY',gradeTh:'ป.4 - ม.6',gradeEn:'Grade 4-12',topics:'ทำอาหาร เย็บปัก ช่างพื้นฐาน เกษตรกรรม การเงินส่วนบุคคล',topicsEn:'Cooking, sewing, basic crafts, agriculture, personal finance',exam:'',priority:'medium'},
+
+  // Exam Prep — Major Tests
+  {id:'EXAM-M1',cat:'exam_prep',catTh:'เตรียมสอบ',catEn:'Test Prep',name:'สอบเข้า ม.1',nameEn:'M.1 Entrance Exam',icon:'🏫',grade:'EXAM',gradeTh:'ป.5 - ป.6',gradeEn:'Grade 5-6',topics:'คณิต ไทย อังกฤษ วิทย์ เตรียมสอบเข้าโรงเรียนสาธิต รังสิต ประสานมิตร เตรียมอุดม กรุงเทพคริสเตียน',topicsEn:'Math, Thai, English, Science for Demo Schools, Rangsit, Prasarnmit, Triam Udom',exam:'M.1 Entrance',priority:'critical'},
+  {id:'EXAM-M4',cat:'exam_prep',catTh:'เตรียมสอบ',catEn:'Test Prep',name:'สอบเข้า ม.4',nameEn:'M.4 Entrance Exam',icon:'🏫',grade:'EXAM',gradeTh:'ม.3',gradeEn:'Grade 9',topics:'คณิต วิทย์ อังกฤษ เตรียมสอบเข้าเตรียมอุดม สาธิต ปทุมวัน',topicsEn:'Math, Science, English for Triam Udom, Demo Schools, Patumwan',exam:'M.4 Entrance',priority:'critical'},
+  {id:'EXAM-TGAT',cat:'exam_prep',catTh:'เตรียมสอบ',catEn:'Test Prep',name:'TGAT (TCAS)',nameEn:'TGAT (TCAS)',icon:'🎓',grade:'EXAM',gradeTh:'ม.6',gradeEn:'Grade 12',topics:'TGAT1 ภาษาอังกฤษ TGAT2 การคิดอย่างมีเหตุผล TGAT3 สมรรถนะการทำงาน',topicsEn:'TGAT1 English, TGAT2 Critical Thinking, TGAT3 Working Skills',exam:'TGAT',priority:'critical'},
+  {id:'EXAM-TPAT',cat:'exam_prep',catTh:'เตรียมสอบ',catEn:'Test Prep',name:'TPAT (TCAS)',nameEn:'TPAT (TCAS)',icon:'🎓',grade:'EXAM',gradeTh:'ม.6',gradeEn:'Grade 12',topics:'TPAT1 กสพท. (แพทย์) TPAT2 ศิลปะ TPAT3 วิศวะ TPAT4 สถาปัตย์ TPAT5 ครู',topicsEn:'TPAT1 KPSAT (Medical), TPAT2 Arts, TPAT3 Engineering, TPAT4 Architecture, TPAT5 Teaching',exam:'TPAT',priority:'critical'},
+  {id:'EXAM-ALEVEL',cat:'exam_prep',catTh:'เตรียมสอบ',catEn:'Test Prep',name:'A-Level (TCAS)',nameEn:'A-Level (TCAS)',icon:'🎓',grade:'EXAM',gradeTh:'ม.6',gradeEn:'Grade 12',topics:'A-Level Math1, Math2, ฟิสิกส์, เคมี, ชีวะ, ไทย, สังคม, อังกฤษ ทุกวิชา',topicsEn:'A-Level Math1, Math2, Physics, Chemistry, Biology, Thai, Social, English',exam:'A-Level',priority:'critical'},
+  {id:'EXAM-IELTS',cat:'exam_prep',catTh:'เตรียมสอบ',catEn:'Test Prep',name:'IELTS',nameEn:'IELTS',icon:'🌍',grade:'EXAM',gradeTh:'ม.4 - ม.6',gradeEn:'Grade 10-12',topics:'Reading Writing Listening Speaking เป้าหมาย 7.0+ สำหรับเรียนต่อต่างประเทศ',topicsEn:'Reading, Writing, Listening, Speaking — target 7.0+ for studying abroad',exam:'IELTS',priority:'high'},
+  {id:'EXAM-TOEFL',cat:'exam_prep',catTh:'เตรียมสอบ',catEn:'Test Prep',name:'TOEFL iBT',nameEn:'TOEFL iBT',icon:'🌍',grade:'EXAM',gradeTh:'ม.4 - ม.6',gradeEn:'Grade 10-12',topics:'TOEFL iBT 90+ Reading Listening Speaking Writing สำหรับมหาลัยอเมริกา',topicsEn:'TOEFL iBT 90+ for US universities',exam:'TOEFL',priority:'high'},
+  {id:'EXAM-SAT',cat:'exam_prep',catTh:'เตรียมสอบ',catEn:'Test Prep',name:'SAT',nameEn:'SAT',icon:'🌍',grade:'EXAM',gradeTh:'ม.4 - ม.6',gradeEn:'Grade 10-12',topics:'SAT Math, Reading, Writing เป้าหมาย 1400+ สำหรับมหาลัยต่างประเทศ',topicsEn:'SAT Math, Reading, Writing — target 1400+ for international universities',exam:'SAT',priority:'high'},
+];
+
+// === Categories config ===
+const CATS = {
+  languages: {th:'ภาษา', en:'Languages', icon:'🌐'},
+  math_science: {th:'คณิตศาสตร์ และวิทยาศาสตร์', en:'Math & Science', icon:'🔬'},
+  humanities: {th:'มนุษยศาสตร์ · สังคม', en:'Humanities & Social', icon:'🌏'},
+  exam_prep: {th:'เตรียมสอบสำคัญ', en:'Major Test Prep', icon:'🎓'},
+  coding: {th:'คอมพิวเตอร์ · โค้ดดิ้ง', en:'Coding & Computing', icon:'💻'},
+  arts: {th:'ศิลปะ · ดนตรี', en:'Arts & Music', icon:'🎨'},
+  health: {th:'สุขศึกษา · พลศึกษา', en:'Health & PE', icon:'🏃'},
+  vocational: {th:'การงานอาชีพ', en:'Vocational', icon:'🛠️'},
+};
+
+let currentGrade = 'all';
+let currentSearch = '';
+
+function render() {
+  const lang = document.body.dataset.lang;
+  const filtered = SUBJECTS.filter(s => {
+    const gradeMatch = currentGrade === 'all' 
+      || (currentGrade === 'P' && s.grade === 'P')
+      || (currentGrade === 'M-EARLY' && (s.grade === 'M-EARLY' || s.grade.includes('M-EARLY')))
+      || (currentGrade === 'M-LATE' && (s.grade === 'M-LATE' || s.grade.includes('M-LATE')))
+      || (currentGrade === 'EXAM' && s.grade === 'EXAM');
+    const searchMatch = !currentSearch 
+      || s.name.toLowerCase().includes(currentSearch)
+      || s.nameEn.toLowerCase().includes(currentSearch)
+      || s.topics.toLowerCase().includes(currentSearch)
+      || s.topicsEn.toLowerCase().includes(currentSearch)
+      || (s.exam || '').toLowerCase().includes(currentSearch);
+    return gradeMatch && searchMatch;
+  });
+
+  // Update count
+  document.getElementById('resultCount').textContent = lang === 'th' 
+    ? `พบ ${filtered.length} หลักสูตร` 
+    : `${filtered.length} subjects found`;
+
+  // Group by category
+  const byCat = {};
+  filtered.forEach(s => {
+    if (!byCat[s.cat]) byCat[s.cat] = [];
+    byCat[s.cat].push(s);
+  });
+
+  const main = document.getElementById('curriculumContent');
+  
+  if (filtered.length === 0) {
+    main.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🔍</div>
+        <h3>${lang === 'th' ? 'ไม่พบหลักสูตรที่ค้นหา' : 'No subjects found'}</h3>
+        <p>${lang === 'th' ? 'ลองค้นหาด้วยคำอื่น หรือปรับตัวกรอง' : 'Try a different search or filter'}</p>
+        <button class="btn-chip" onclick="resetFilters()" style="padding:10px 20px;background:var(--primary);color:white;border-radius:10px;font-weight:600;cursor:pointer;border:none">
+          ${lang === 'th' ? 'รีเซ็ตตัวกรอง' : 'Reset filters'}
+        </button>
+      </div>`;
+    return;
+  }
+  
+  // Order: critical exams first, then by category
+  const order = ['exam_prep', 'languages', 'math_science', 'humanities', 'coding', 'arts', 'health', 'vocational'];
+  
+  let html = '';
+  order.forEach(cat => {
+    if (!byCat[cat]) return;
+    const c = CATS[cat];
+    const items = byCat[cat];
+    
+    html += `<section class="cat-section">
+      <div class="cat-header">
+        <div class="cat-header-icon ${cat}">${c.icon}</div>
+        <div class="cat-header-info">
+          <h2>${lang === 'th' ? c.th : c.en}</h2>
+          <div class="cat-header-meta">${lang === 'th' ? `${items.length} หลักสูตร · ทุกระดับชั้น` : `${items.length} subjects · all grade levels`}</div>
+        </div>
+        <div class="cat-header-count">${items.length}</div>
+      </div>
+      <div class="subjects-grid">`;
+    
+    items.forEach(s => {
+      const tags = (s.exam || '').split(',').map(x => x.trim()).filter(x => x);
+      html += `<div class="subject-card" onclick="window.location.href='/#waitlist'">
+        <div class="subject-priority ${s.priority}"></div>
+        <div class="subject-top">
+          <span class="subject-icon">${s.icon}</span>
+          <div class="subject-name-wrap">
+            <div class="subject-name">${lang === 'th' ? s.name : s.nameEn}</div>
+            <div class="subject-grade">${lang === 'th' ? s.gradeTh : s.gradeEn}</div>
+          </div>
+        </div>
+        <div class="subject-topics">${lang === 'th' ? s.topics : s.topicsEn}</div>
+        ${tags.length > 0 ? `<div class="subject-tags">${tags.map(t => `<span class="subject-tag">${t}</span>`).join('')}</div>` : ''}
+        <div class="subject-bottom">
+          <span class="subject-status">⏳ ${lang === 'th' ? 'เปิดเร็ว ๆ นี้' : 'Coming soon'}</span>
+          <span class="subject-cta">${lang === 'th' ? 'แจ้งฉัน →' : 'Notify me →'}</span>
+        </div>
+      </div>`;
+    });
+    html += `</div></section>`;
+  });
+  
+  main.innerHTML = html;
+}
+
+function resetFilters() {
+  currentGrade = 'all';
+  currentSearch = '';
+  document.getElementById('search').value = '';
+  document.querySelectorAll('[data-grade]').forEach(b => b.classList.toggle('active', b.dataset.grade === 'all'));
+  render();
+}
+
+// === Lang Switch ===
+document.querySelectorAll('[data-set-lang]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.setLang;
+    document.body.dataset.lang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-set-lang]').forEach(b => b.classList.toggle('active', b === btn));
+    try { localStorage.setItem('panya_lang', lang); } catch(e) {}
+    document.getElementById('search').placeholder = lang === 'th' ? 'ค้นหาวิชา...' : 'Search subjects...';
+    render();
+  });
+});
+try {
+  const saved = localStorage.getItem('panya_lang');
+  if (saved === 'en' || saved === 'th') {
+    document.body.dataset.lang = saved;
+    document.documentElement.lang = saved;
+    document.querySelectorAll('[data-set-lang]').forEach(b => b.classList.toggle('active', b.dataset.setLang === saved));
+    document.getElementById('search').placeholder = saved === 'th' ? 'ค้นหาวิชา...' : 'Search subjects...';
+  }
+} catch(e) {}
+
+// === Grade filter ===
+document.querySelectorAll('[data-grade]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-grade]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentGrade = btn.dataset.grade;
+    render();
+  });
+});
+
+// === Search ===
+let searchTimer;
+document.getElementById('search').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    currentSearch = e.target.value.toLowerCase().trim();
+    render();
+  }, 200);
+});
+
+// Initial render
+render();
+</script>
+</body>
+</html>
