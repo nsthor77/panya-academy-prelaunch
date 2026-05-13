@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+  <!-- SEO -->
+  <title>Panya · ปัญญา — Marketplace ครูสอนพิเศษคุณภาพ K-12 · Find Quality Tutors</title>
+  <meta name="description" content="แพลตฟอร์มจับคู่ครูคุณภาพกับนักเรียน ป.1-ม.6 และเตรียมสอบเข้ามหาวิทยาลัย · ทดลองเรียนฟรีในช่วงเปิดตัว">
+  <meta name="keywords" content="ครูสอนพิเศษ,ติวออนไลน์,เรียนพิเศษ,Panya,ติวเตอร์,TGAT,A-Level,สอบเข้า ม.1,สอบเข้า ม.4,ทดลองเรียนฟรี">
+  <meta name="author" content="Panya Ventures Co., Ltd.">
+  <link rel="canonical" href="https://panya.academy/">
+  
+  <!-- Open Graph (Facebook, LINE) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://panya.academy/">
+  <meta property="og:title" content="Panya · ปัญญา — Marketplace ครูสอนพิเศษคุณภาพ">
+  <meta property="og:description" content="แพลตฟอร์มจับคู่ครูคุณภาพกับนักเรียน ป.1-ม.6 · ทดลองเรียนฟรีในช่วงเปิดตัว">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:site_name" content="Panya">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Panya · ปัญญา — Marketplace ครูสอนพิเศษคุณภาพ">
+  <meta name="twitter:description" content="แพลตฟอร์มจับคู่ครูคุณภาพกับนักเรียน K-12">
+  
+  <!-- Theme color (mobile browser UI) -->
+  <meta name="theme-color" content="#1E40AF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Panya",
+    "legalName": "Panya Ventures Co., Ltd.",
+    "url": "https://panya.academy",
+    "logo": "https://panya.academy/assets/logo.png",
+    "description": "แพลตฟอร์มจับคู่ครูคุณภาพกับนักเรียน K-12",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Khon Kaen",
+      "addressCountry": "TH"
+    }
+  }
+  </script>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Panya — ตลาดสอนพิเศษออนไลน์สำหรับ K-12 พื้นที่ที่ครูเปิดคอร์สเอง ผู้ปกครองเลือกครูที่ใช่" />
+
 <meta name="theme-color" content="#1E40AF">
 <meta property="og:title" content="Panya — Marketplace สอนพิเศษ K-12" />
 <meta property="og:description" content="ครูเปิดคอร์สเอง ผู้ปกครองเลือกครูที่ใช่ — เริ่มเรียนได้ทันที" />
-<title>Panya · ปัญญา — Marketplace สอนพิเศษออนไลน์ K-12</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,7 +83,9 @@
   body[data-lang="en"] [data-th]{display:none}body[data-lang="th"] [data-en]{display:none}
   
   /* === Header (LIGHT clean — FIXED) === */
-  .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--gray-100)}
+  .header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(30,64,175,.06);z-index:100;transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .25s}
+  .header.scrolled{box-shadow:0 4px 20px rgba(15,23,42,.06)}
+  .header.hidden{transform:translateY(-100%)}
   .nav{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
   .logo{display:flex;align-items:center}
   .logo-img{height:36px;width:auto;display:block}
@@ -110,6 +155,7 @@
   @media(max-width:900px){.teachers-row{grid-template-columns:1fr;gap:32px}}
   .teachers-text .section-eyebrow{display:inline-block;color:var(--primary);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;background:linear-gradient(135deg,#DBEAFE,#BFDBFE);padding:6px 16px;border-radius:999px;box-shadow:0 2px 8px rgba(30,64,175,.10)}
   .teachers-text .section-title{margin-bottom:18px;line-height:1.15}
+  @media(max-width:600px){.section-title{font-size:24px}}
   .teachers-desc{color:rgba(255,255,255,.85);font-size:16px;line-height:1.7;margin-bottom:28px;max-width:560px}
   .teach-perks-list{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px}
   .teach-perks-list li{display:flex;gap:14px;align-items:flex-start;color:rgba(255,255,255,.92);font-size:15px;line-height:1.55}
@@ -134,14 +180,32 @@
   .browse-head h3 svg{color:var(--primary)}
   .browse-head p{font-size:13px;color:var(--gray-500)}
   .grade-pills{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
-  .grade-pill{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:20px 14px;border:1px solid rgba(30,64,175,.10);border-radius:14px;background:#fff;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;box-shadow:0 2px 6px rgba(30,64,175,.06);position:relative;overflow:hidden}
+  .grade-pill{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    padding:20px 14px;
+    border:1px solid rgba(30,64,175,.12);
+    border-radius:14px;
+    background:linear-gradient(135deg,#FFFFFF 0%,#F8FAFF 50%,#EFF6FF 100%);
+    cursor:pointer;
+    transition:all .25s cubic-bezier(.4,0,.2,1);
+    text-decoration:none;color:inherit;
+    box-shadow:0 4px 12px rgba(30,64,175,.08),0 2px 4px rgba(30,64,175,.06),inset 0 1px 0 rgba(255,255,255,.95);
+    position:relative;overflow:hidden
+  }
+  .grade-pill::before{content:"";position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.65) 0%,transparent 100%);pointer-events:none;border-radius:14px 14px 0 0}
   .grade-pill::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3B82F6,#1E40AF);opacity:0;transition:opacity .25s}
-  .grade-pill:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 14px 28px rgba(30,64,175,.15),0 4px 8px rgba(30,64,175,.08);background:linear-gradient(180deg,#FFFFFF 0%,#F0F6FF 100%)}
+  .grade-pill:hover{
+    border-color:var(--primary);
+    transform:translateY(-3px);
+    background:linear-gradient(135deg,#FFFFFF 0%,#EFF6FF 50%,#DBEAFE 100%);
+    box-shadow:0 14px 28px rgba(30,64,175,.18),0 4px 8px rgba(30,64,175,.10),inset 0 1px 0 rgba(255,255,255,1)
+  }
+  .grade-pill:hover::after{opacity:1}
   .grade-pill:hover::before{opacity:1}
   .grade-pill:hover .gp-name{color:var(--primary)}
   
-  .grade-pill .gp-name{font-weight:700;font-size:15px;color:var(--dark);transition:color .2s;letter-spacing:-.01em}
-  .grade-pill .gp-sub{font-size:12px;color:var(--gray-500);transition:color .2s;line-height:1.4;text-align:center}
+  .grade-pill .gp-name{font-weight:700;font-size:15px;color:var(--dark);transition:color .2s;letter-spacing:-.01em;position:relative;z-index:1}
+  .grade-pill .gp-sub{font-size:12px;color:var(--gray-500);transition:color .2s;line-height:1.4;text-align:center;position:relative;z-index:1}
 
   /* === Quick-find row (also under hero) === */
   .quickfind-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px;align-items:center}
@@ -166,6 +230,7 @@
   
   /* === Hero (VIBRANT gradient) === */
   .hero{position:relative;padding:64px 24px 100px;overflow:hidden;background:linear-gradient(135deg,#EEF2FF 0%,#FEF3C7 100%);color:var(--dark)}
+  @media(max-width:768px){.hero{padding:40px 18px 70px}}
   .hero::before{content:'';position:absolute;top:-200px;right:-150px;width:680px;height:680px;background:radial-gradient(circle,rgba(30,64,175,.18) 0%,transparent 60%);border-radius:50%;z-index:0}
   .hero::after{content:'';position:absolute;bottom:-250px;left:-180px;width:580px;height:580px;background:radial-gradient(circle,rgba(245,158,11,.16) 0%,transparent 60%);border-radius:50%;z-index:0}
   .hero::after, .hero::before{animation:floatSlow 16s ease-in-out infinite}
@@ -177,11 +242,13 @@
   @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 4px rgba(16,185,129,.18)}50%{opacity:.7;box-shadow:0 0 0 8px rgba(16,185,129,.05)}}
 
   .hero h1{font-size:clamp(36px,6vw,60px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--dark);margin-bottom:18px}
+  @media(max-width:600px){.hero h1{font-size:30px;line-height:1.2}}
   .hero h1 .accent{background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
   .hero-sub{font-size:clamp(16px,2vw,19px);color:var(--gray-700);max-width:680px;margin:0 auto 32px;line-height:1.6}
   
   /* === Search Bar (Light, prominent) === */
   .search-box{max-width:720px;margin:0 auto 24px;background:#fff;border-radius:18px;padding:8px;display:flex;gap:8px;border:2px solid var(--primary-light);box-shadow:0 12px 40px rgba(30,64,175,.12);align-items:center;flex-wrap:wrap;transition:all .2s}
+  @media(max-width:760px){.search-box{flex-direction:column;border-radius:18px;padding:12px;gap:10px}.search-input-wrap{width:100%;padding:8px 12px}.search-divider{display:none}.search-grade{width:100%}.search-btn{width:100%}}
   .search-box:focus-within{border-color:var(--primary);box-shadow:0 16px 48px rgba(30,64,175,.18)}
   .search-input-wrap{flex:1;min-width:200px;display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--primary)}
   .search-input{flex:1;border:none;outline:none;font-family:inherit;font-size:16px;color:var(--dark);padding:14px 0;background:transparent;min-width:0;font-weight:500}
@@ -216,6 +283,43 @@
   .trust-item{display:flex;align-items:center;gap:10px;color:var(--gray-700);font-size:14px;font-weight:500}
   .trust-item-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 100%);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 6px 14px rgba(30,64,175,.25)}
   
+  /* === MOBILE: Hamburger + Drawer === */
+  .hamburger{display:none;background:transparent;border:none;cursor:pointer;padding:8px;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:10px;transition:background .2s}
+  .hamburger:hover{background:var(--gray-100)}
+  .hamburger span{width:22px;height:2.5px;background:var(--dark);border-radius:2px;transition:all .3s}
+  .hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:998;opacity:0;transition:opacity .3s;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+  .mobile-overlay.show{display:block;opacity:1}
+  .mobile-drawer{position:fixed;top:0;right:-100%;width:min(82%,360px);height:100vh;background:#fff;z-index:999;box-shadow:-12px 0 40px rgba(15,23,42,.18);transition:right .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow-y:auto}
+  .mobile-drawer.show{right:0}
+  .mobile-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--gray-100);background:linear-gradient(135deg,#EEF2FF 0%,#FAFBFF 100%)}
+  .mobile-drawer-title{font-weight:700;font-size:18px;color:var(--dark)}
+  .mobile-drawer-close{background:transparent;border:none;cursor:pointer;padding:8px;border-radius:8px;color:var(--gray-500);display:flex;transition:all .2s}
+  .mobile-drawer-close:hover{background:var(--gray-100);color:var(--dark)}
+  .mobile-nav{flex:1;padding:16px 0;display:flex;flex-direction:column}
+  .mobile-nav a{padding:16px 24px;color:var(--gray-700);font-weight:500;font-size:16px;text-decoration:none;border-bottom:1px solid var(--gray-50);transition:all .2s;display:flex;align-items:center;gap:12px}
+  .mobile-nav a:hover,.mobile-nav a:active{background:var(--primary-light);color:var(--primary);padding-left:32px}
+  .mobile-cta{padding:24px;display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--gray-100);background:#FAFBFF}
+  .mobile-btn-full{width:100%;padding:14px;font-size:15px;justify-content:center}
+  
+  /* Hide elements on mobile */
+  @media(max-width:900px){
+    .hamburger{display:flex}
+    .hide-mobile{display:none!important}
+    .nav-links{display:none!important}
+    body.menu-open{overflow:hidden}
+  }
+  
+
+  /* === Scroll animations === */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  .reveal-delay-1{transition-delay:.1s}
+  .reveal-delay-2{transition-delay:.2s}
+  .reveal-delay-3{transition-delay:.3s}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
   /* === Section alternating backgrounds (depth) === */
   section{position:relative}
   section.bg-gradient{background:linear-gradient(180deg,#FAFBFF 0%,#FFFFFF 100%)}
@@ -244,12 +348,25 @@
   .cat-bg::after{content:"";position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(30,64,175,.10) 0%,transparent 70%);border-radius:50%;animation:floatSlow 25s ease-in-out infinite reverse;pointer-events:none}
   .cat-bg .section-inner{position:relative;z-index:1}
   .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-  .cat-card{display:flex;flex-direction:column;justify-content:center;gap:6px;background:#fff;border:1px solid rgba(30,64,175,.10);border-radius:14px;padding:22px;text-align:left;transition:all .25s cubic-bezier(.4,0,.2,1);cursor:pointer;text-decoration:none;color:inherit;min-height:92px;position:relative;box-shadow:0 4px 12px rgba(30,64,175,.06),0 1px 3px rgba(15,23,42,.05);overflow:hidden}
+  @media(max-width:760px){.cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+  @media(max-width:400px){.cat-grid{grid-template-columns:1fr}}
+  .cat-card{
+    display:flex;flex-direction:column;justify-content:center;gap:6px;
+    background:linear-gradient(135deg,#FFFFFF 0%,#F8FAFF 50%,#EFF6FF 100%);
+    border:1px solid rgba(30,64,175,.12);
+    border-radius:14px;padding:22px;text-align:left;
+    transition:all .25s cubic-bezier(.4,0,.2,1);
+    cursor:pointer;text-decoration:none;color:inherit;min-height:92px;
+    position:relative;
+    box-shadow:0 4px 12px rgba(30,64,175,.08),0 2px 4px rgba(30,64,175,.06),inset 0 1px 0 rgba(255,255,255,.95);
+    overflow:hidden
+  }
+  .cat-card::after{content:"";position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.65) 0%,transparent 100%);pointer-events:none;border-radius:14px 14px 0 0}
   .cat-card::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3B82F6,#1E40AF);opacity:0;transition:opacity .3s}
   .cat-card::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:0;background:var(--primary);border-radius:0 4px 4px 0;transition:height .25s ease}
   .cat-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--primary),var(--teacher));opacity:0;transition:opacity .2s}
   .cat-card:hover{transform:translateY(-2px);border-color:var(--primary);box-shadow:0 8px 20px rgba(30,64,175,.10)}
-  .cat-card:hover .cat-name{font-weight:700;font-size:15px;color:var(--dark);letter-spacing:-.01em;line-height:1.3;transition:color .2s}
+  .cat-card:hover .cat-name{font-weight:700;font-size:15px;color:var(--dark);letter-spacing:-.01em;line-height:1.3;transition:color .2s;position:relative;z-index:1}
   .cat-card-feature{
     background:linear-gradient(135deg,#1E3A8A 0%,#1E40AF 50%,#2563EB 100%);
     border-color:transparent;
@@ -259,7 +376,7 @@
   .cat-card-feature::before{content:"";position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.12) 0%,transparent 100%);pointer-events:none}
   .cat-card-feature::after{display:none}
   .cat-card-feature .cat-name{color:#fff!important;font-weight:800;font-size:16px;letter-spacing:-.01em;text-shadow:0 1px 3px rgba(0,0,0,.25);position:relative;z-index:1}
-  .cat-card-feature .cat-meta{color:#FBBF24!important;font-weight:700;font-size:12.5px;text-shadow:0 1px 2px rgba(0,0,0,.20);position:relative;z-index:1}
+  .cat-card-feature .cat-meta{font-size:12.5px;color:var(--gray-500);font-weight:500;line-height:1.4;position:relative;z-index:1}
   .cat-card-feature:hover{
     background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 50%,#3B82F6 100%);
     transform:translateY(-4px);
@@ -281,6 +398,7 @@
   
   /* === Featured Tutors === */
   .tutors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+  @media(max-width:900px){.tutors-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
   .tutor-card{background:#fff;border:1px solid rgba(30,64,175,.08);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s;cursor:pointer;box-shadow:0 4px 16px rgba(15,23,42,.04)}
   .tutor-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(30,64,175,.12);border-color:transparent}
   .tutor-cover{height:140px;position:relative;overflow:hidden}
@@ -337,6 +455,8 @@
   
   /* === Why Panya === */
   .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  @media(max-width:760px){.why-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+  @media(max-width:400px){.why-grid{grid-template-columns:1fr}}
   .why-card{padding:32px 28px;background:#fff;border:1px solid rgba(30,64,175,.08);border-radius:var(--radius-lg);transition:all .3s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
   .why-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(30,64,175,.15);border-color:transparent}
   .why-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:20px;box-shadow:0 8px 20px rgba(0,0,0,.10)}
@@ -416,6 +536,7 @@
   
   /* === Final CTA === */
   .final-cta{background:linear-gradient(135deg,var(--dark) 0%,var(--primary-dark) 100%);color:var(--white);text-align:center;padding:96px 24px;position:relative;overflow:hidden}
+  @media(max-width:760px){.final-cta{padding:64px 18px}}
   .final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(245,158,11,.15) 0%,transparent 60%);border-radius:50%}
   .final-cta-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
   .final-cta .section-title{color:var(--white)}
@@ -481,9 +602,54 @@
   .tf-item strong{display:block;font-size:14px;color:var(--dark);margin-bottom:2px;font-weight:700}
   .tf-item span{font-size:13px;color:var(--gray-500);line-height:1.5}
   .trial-cta{margin-top:8px}
+
+  @media(max-width:760px){
+    /* Bigger tap targets */
+    .nav-cta button{min-height:44px;min-width:44px}
+    .grade-pill,.cat-card{min-height:60px}
+    .role-card{padding:32px 22px 26px}
+    .modal-content{margin:10px;max-height:92vh;border-radius:16px}
+  @media(max-width:600px){.modal-content{margin:8px;max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);overflow-y:auto;border-radius:16px}}
+    .role-icon-big{width:72px;height:72px;border-radius:18px}
+    .role-icon-big svg{width:36px;height:36px}
+    /* Better readability */
+    body{font-size:15px;line-height:1.65}
+    .section-eyebrow{font-size:11px;padding:5px 12px}
+    /* Hero adjustments */
+    .hero{min-height:auto}
+    .hero h1{font-size:28px}
+    .hero-sub{font-size:14px}
+    /* Force button stacking */
+    .btn-row{flex-direction:column;width:100%}
+    .btn-row button{width:100%}
+  }
 </style>
 </head>
 <body data-lang="th">
+<!-- Initial loading screen -->
+<div id="initLoader" style="position:fixed;inset:0;background:linear-gradient(135deg,#EEF2FF 0%,#FEF3C7 100%);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity .5s ease,visibility .5s ease">
+  <div style="width:64px;height:64px;border:4px solid rgba(30,64,175,.20);border-top-color:#1E40AF;border-radius:50%;animation:loaderSpin .8s linear infinite"></div>
+  <div style="color:#1E40AF;font-weight:700;font-size:18px;letter-spacing:.05em;font-family:'IBM Plex Sans Thai','Plus Jakarta Sans',sans-serif">Panya · ปัญญา</div>
+</div>
+<style>
+  @keyframes loaderSpin{to{transform:rotate(360deg)}}
+  #initLoader.hide{opacity:0;visibility:hidden;pointer-events:none}
+  body.loading{overflow:hidden}
+</style>
+<script>
+  document.documentElement.classList.add('loading');
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      const ldr = document.getElementById('initLoader');
+      if(ldr){
+        ldr.classList.add('hide');
+        document.documentElement.classList.remove('loading');
+        setTimeout(()=>ldr.remove(), 600);
+      }
+    }, 300);
+  });
+</script>
+
 
 <!-- ============ HEADER ============ -->
 <header class="header">
@@ -499,10 +665,40 @@
     </div>
     <div class="nav-cta">
       <div class="lang-switch"><button data-set-lang="th" class="active">ไทย</button><button data-set-lang="en">EN</button></div>
-      <button class="btn-ghost-dark" onclick="openModal('login')"><span data-th>เข้าสู่ระบบ</span><span data-en>Log in</span></button>
-      <button class="btn-bold" onclick="openModal('signup')"><span data-th>สมัครฟรี</span><span data-en>Sign up free</span></button>
+      <button class="btn-ghost-dark hide-mobile" onclick="openModal('login')"><span data-th>เข้าสู่ระบบ</span><span data-en>Log in</span></button>
+      <button class="btn-bold hide-mobile" onclick="openModal('signup')"><span data-th>สมัครฟรี</span><span data-en>Sign up free</span></button>
+      <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+  
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-title"><span data-th>เมนู</span><span data-en>Menu</span></div>
+      <button class="mobile-drawer-close" onclick="toggleMobileMenu()" aria-label="Close">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="/subjects.html" onclick="closeMobileMenu()"><span data-th>📚 หลักสูตร</span><span data-en>📚 Curriculum</span></a>
+      <a href="#categories" onclick="closeMobileMenu()"><span data-th>📖 วิชาเรียน</span><span data-en>📖 Subjects</span></a>
+      <a href="#tutors" onclick="closeMobileMenu()"><span data-th>👨‍🏫 ครูแนะนำ</span><span data-en>👨‍🏫 Top Tutors</span></a>
+      <a href="#how" onclick="closeMobileMenu()"><span data-th>💡 วิธีใช้</span><span data-en>💡 How it works</span></a>
+      <a href="#teach" onclick="closeMobileMenu()"><span data-th>🎓 สอนกับเรา</span><span data-en>🎓 Teach with us</span></a>
+      <a href="#signup" onclick="closeMobileMenu()"><span data-th>✨ สมัครสมาชิก</span><span data-en>✨ Sign up</span></a>
+    </nav>
+    <div class="mobile-cta">
+      <button class="btn-bold mobile-btn-full" onclick="closeMobileMenu();openModal('signup')">
+        <span data-th>สมัครฟรี</span><span data-en>Sign up free</span>
+      </button>
+      <button class="btn-ghost-dark mobile-btn-full" onclick="closeMobileMenu();openModal('login')">
+        <span data-th>เข้าสู่ระบบ</span><span data-en>Log in</span>
+      </button>
+    </div>
+  </div>
 </header>
 
 <!-- ============ HERO ============ -->
@@ -1166,7 +1362,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 บริษัท ปัญญา อคาเดมี่ จำกัด · Panya Academy Co., Ltd.</span>
+      <span>© 2026 Panya Ventures Co., Ltd. · บริษัท ปัญญา เวนเจอร์ส จำกัด</span>
       <span><span data-th>ทำในไทย ด้วยใจ</span><span data-en>Made in Thailand</span></span>
     </div>
   </div>
@@ -1327,6 +1523,91 @@
 <div id="toast" class="toast"></div>
 
 <script>
+  
+  // Smart sticky header
+  (function(){
+    const header = document.querySelector('.header');
+    if(!header) return;
+    let lastScroll = 0;
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if(!ticking){
+        requestAnimationFrame(() => {
+          const sc = window.scrollY;
+          if(sc > 50){
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+          if(sc > lastScroll + 8 && sc > 200){
+            header.classList.add('hidden');
+          } else if(sc < lastScroll - 8){
+            header.classList.remove('hidden');
+          }
+          lastScroll = sc;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+  
+  // Scroll reveal animations
+  (function(){
+    if(!('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    
+    // Auto-add reveal class to cards, sections
+    document.querySelectorAll('.cat-card,.tutor-card,.why-card,.step,.role-card,.section-head,.faq-item,.trial-card').forEach((el, i) => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  })();
+  
+  // Close mobile menu on scroll
+  let scrollMenuTimer;
+  window.addEventListener('scroll', () => {
+    clearTimeout(scrollMenuTimer);
+    scrollMenuTimer = setTimeout(() => {
+      if(document.getElementById('mobileDrawer')?.classList.contains('show')){
+        // Don't auto-close on scroll inside menu
+      }
+    }, 200);
+  }, { passive: true });
+
+
+  // Mobile menu toggle
+  function toggleMobileMenu(){
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('mobileOverlay');
+    const isOpen = drawer.classList.contains('show');
+    if(isOpen){
+      drawer.classList.remove('show');
+      overlay.classList.remove('show');
+      hamburger.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    } else {
+      drawer.classList.add('show');
+      overlay.classList.add('show');
+      hamburger.classList.add('open');
+      document.body.classList.add('menu-open');
+    }
+  }
+  function closeMobileMenu(){
+    document.getElementById('mobileDrawer').classList.remove('show');
+    document.getElementById('mobileOverlay').classList.remove('show');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+
   // === Language Switcher ===
   document.querySelectorAll('[data-set-lang]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1528,5 +1809,37 @@
     setTimeout(()=> openModal('signup','student'), 600);
   }
 </script>
+
+<!-- Floating mobile CTA - shows on scroll -->
+<button class="floating-cta" id="floatingCta" onclick="openModal('signup')" aria-label="Sign up">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  <span data-th>เริ่มเรียนเลย</span><span data-en>Start learning</span>
+</button>
+<style>
+  .floating-cta{position:fixed;bottom:20px;right:20px;display:none;align-items:center;gap:8px;padding:14px 22px;background:linear-gradient(135deg,#1E40AF 0%,#3B82F6 100%);color:#fff;border:none;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 10px 30px rgba(30,64,175,.40),inset 0 1px 0 rgba(255,255,255,.20);z-index:990;font-family:inherit;transition:all .3s cubic-bezier(.4,0,.2,1);transform:translateY(100px);opacity:0}
+  .floating-cta.show{transform:translateY(0);opacity:1}
+  .floating-cta:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(30,64,175,.50)}
+  @media(max-width:760px){.floating-cta{display:flex}}
+</style>
+<script>
+  // Show floating CTA when user scrolls past hero
+  (function(){
+    const cta = document.getElementById('floatingCta');
+    const hero = document.querySelector('.hero');
+    if(!cta || !hero) return;
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const sc = window.scrollY;
+      const heroEnd = hero.offsetTop + hero.offsetHeight;
+      if(sc > heroEnd){
+        cta.classList.add('show');
+      } else {
+        cta.classList.remove('show');
+      }
+      lastScroll = sc;
+    }, { passive: true });
+  })();
+</script>
+
 </body>
 </html>
