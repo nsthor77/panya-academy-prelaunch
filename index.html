@@ -825,6 +825,110 @@
     /* Hero ให้กระชับขึ้น */
     .hero { min-height: auto !important; padding: 48px 16px 32px !important; }
   }
+
+  /* ============================================================
+     TESLA AGGRESSIVE FINAL PASS (Session 8 — visible everywhere)
+     ============================================================ */
+
+  /* HERO typography — bigger, tighter (Tesla-style) */
+  .hero h1, .hero-title {
+    font-size: clamp(40px, 6.5vw, 84px) !important;
+    letter-spacing: -.035em !important;
+    font-weight: 700 !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Hero tutor preview — neutral border, no blue tint */
+  .hero-tutor-preview {
+    border: 1px solid var(--gray-200) !important;
+    box-shadow: none !important;
+  }
+
+  /* MINI TUTOR avatars (A·B·C) — all neutral dark, no 3-color */
+  .mini-avatar,
+  .mini-avatar.c1, .mini-avatar.c2, .mini-avatar.c4 {
+    background: var(--gray-900) !important;
+    color: var(--white) !important;
+  }
+  .mini-tutor {
+    background: var(--white) !important;
+    border: 1px solid var(--gray-200) !important;
+  }
+  .mini-tutor:hover {
+    border-color: var(--gray-900) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    background: var(--white) !important;
+  }
+
+  /* "+47" more-btn — was pink/orange gradient → flat neutral */
+  .more-btn,
+  .mini-tutor.more-btn {
+    background: var(--gray-50) !important;
+    border: 1px solid var(--gray-200) !important;
+    border-color: var(--gray-200) !important;
+    color: var(--gray-700) !important;
+  }
+  .more-btn .mini-avatar,
+  .mini-tutor.more-btn .mini-avatar {
+    background: var(--gray-900) !important;
+    color: var(--white) !important;
+  }
+
+  /* GRADE PILLS — flat white, no gradient/tint/shadow */
+  .grade-pill {
+    background: var(--white) !important;
+    border: 1px solid var(--gray-200) !important;
+    box-shadow: none !important;
+  }
+  .grade-pill::before,
+  .grade-pill::after { display: none !important; }
+  .grade-pill:hover {
+    border-color: var(--gray-900) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    background: var(--white) !important;
+  }
+  .grade-pill .gp-name { color: var(--gray-900) !important; }
+  .grade-pill:hover .gp-name { color: var(--gray-900) !important; }
+
+  /* MOBILE — aggressive shorten: hide low-value sections, swipe grade-pills */
+  @media (max-width: 768px) {
+    /* ตัด preview การ์ดครูบนมือถือ (ยาวเปล่า) */
+    .hero-tutor-preview { display: none !important; }
+
+    /* Hero h1 บนมือถือ */
+    .hero h1, .hero-title {
+      font-size: 36px !important;
+      line-height: 1.1 !important;
+    }
+
+    /* Compress sections บนมือถือ */
+    .trust-strip { padding: 24px 16px !important; }
+    .trial-section { padding: 48px 16px !important; }
+    .for-teachers { padding: 56px 16px !important; }
+    .final-cta { padding: 56px 16px !important; }
+    .browse-section { padding: 48px 16px !important; }
+    footer { padding: 32px 16px 24px !important; }
+
+    /* Grade pills → swipe carousel แทน 2-col grid */
+    .grade-pills {
+      display: flex !important;
+      grid-template-columns: none !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      gap: 10px !important;
+      padding: 4px 24px 12px !important;
+      margin: 0 -24px !important;
+      scrollbar-width: none;
+    }
+    .grade-pills::-webkit-scrollbar { display: none !important; }
+    .grade-pills > * {
+      flex: 0 0 45% !important;
+      min-width: 45% !important;
+      scroll-snap-align: center !important;
+    }
+  }
 </style>
 </head>
 <body data-lang="th">
