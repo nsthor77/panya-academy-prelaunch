@@ -783,14 +783,47 @@
   }
 
   /* ============================================================
-     MOBILE: SECTION SNAP (Tesla-style — ไม่ยาวพรืด, snap ทีละหน้า)
-     proximity (ไม่ใช่ mandatory) = feel ธรรมชาติ ไม่บังคับ
+     MOBILE: HORIZONTAL SWIPE (Tesla — swipe ขวา แทนเลื่อนยาว)
      ============================================================ */
   @media (max-width: 768px) {
-    html { scroll-snap-type: y proximity; scroll-padding-top: 64px; }
-    section { scroll-snap-align: start; scroll-snap-stop: normal; }
-    /* Hero ให้ snap แบบเต็มสุด */
-    .hero { scroll-snap-align: start; }
+    /* Grid sections → horizontal swipe carousel */
+    .cat-grid,
+    .tutors-grid,
+    .why-grid,
+    .how-steps {
+      display: flex !important;
+      grid-template-columns: none !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      scroll-snap-type: x mandatory !important;
+      gap: 14px !important;
+      padding: 4px 24px 20px !important;
+      margin: 0 -24px !important;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .cat-grid::-webkit-scrollbar,
+    .tutors-grid::-webkit-scrollbar,
+    .why-grid::-webkit-scrollbar,
+    .how-steps::-webkit-scrollbar { display: none !important; }
+
+    /* Cards = fixed-width swipe items (เห็น peek ของอันถัดไป) */
+    .cat-grid > *,
+    .tutors-grid > *,
+    .why-grid > *,
+    .how-steps > * {
+      flex: 0 0 78% !important;
+      max-width: 78% !important;
+      min-width: 78% !important;
+      scroll-snap-align: center !important;
+    }
+
+    /* Compress section padding บนมือถือ */
+    section { padding-top: 48px !important; padding-bottom: 48px !important; }
+    .role-section { padding: 56px 16px !important; }
+
+    /* Hero ให้กระชับขึ้น */
+    .hero { min-height: auto !important; padding: 48px 16px 32px !important; }
   }
 </style>
 </head>
