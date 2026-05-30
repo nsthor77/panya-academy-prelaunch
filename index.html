@@ -1160,75 +1160,27 @@
   </div>
 </section>
 
-<!-- ============ CATEGORIES ============ -->
-<section id="categories" class="cat-bg bg-gradient">
-  <div class="section-inner">
-    <div class="section-head-row">
-      <div class="section-head" style="text-align:left;margin-left:0">
-        <div class="section-eyebrow"><span data-th>วิชาเรียน</span><span data-en>Subjects</span></div>
-        <h2 class="section-title" style="margin-bottom:8px"><span data-th>เรียนได้ทุกวิชา ทุกระดับชั้น</span><span data-en>Every subject, every grade</span></h2>
-        <p class="section-sub"><span data-th>ครอบคลุม ป.1 ถึง ม.6 และเตรียมสอบเข้ามหาลัย</span><span data-en>From Grade 1 through Grade 12, plus university entrance prep</span></p>
-      </div>
-      <a href="#" class="view-all"><span data-th>ดูทั้งหมด</span><span data-en>View all</span> →</a>
-    </div>
-    <div class="cat-grid">
-      <a class="cat-card" onclick="setSearch('คณิตศาสตร์')">
-        <div class="cat-name"><span data-th>คณิตศาสตร์</span><span data-en>Mathematics</span></div>
-        <div class="cat-meta"><span data-th>ป.1 - ม.6</span><span data-en>Grades 1-12</span></div>
-      </a>
-      <a class="cat-card" onclick="setSearch('ภาษาอังกฤษ')">
-        <div class="cat-name"><span data-th>ภาษาอังกฤษ</span><span data-en>English</span></div>
-        <div class="cat-meta"><span data-th>ทุกระดับ</span><span data-en>All levels</span></div>
-      </a>
-      <a class="cat-card" onclick="setSearch('วิทยาศาสตร์')">
-        <div class="cat-name"><span data-th>วิทยาศาสตร์</span><span data-en>Science</span></div>
-        <div class="cat-meta"><span data-th>ฟิสิกส์ · เคมี · ชีวะ</span><span data-en>Physics · Chem · Bio</span></div>
-      </a>
-      <a class="cat-card" onclick="setSearch('ภาษาไทย')">
-        <div class="cat-name"><span data-th>ภาษาไทย</span><span data-en>Thai Language</span></div>
-        <div class="cat-meta"><span data-th>ทุกระดับ</span><span data-en>All levels</span></div>
-      </a>
-      <a class="cat-card" onclick="setSearch('สังคมศึกษา')">
-        <div class="cat-name"><span data-th>สังคมศึกษา</span><span data-en>Social Studies</span></div>
-        <div class="cat-meta"><span data-th>ม.1 - ม.6</span><span data-en>Grades 7-12</span></div>
-      </a>
-      <a class="cat-card" onclick="setSearch('TGAT')">
-        <div class="cat-name">TGAT / A-Level</div>
-        <div class="cat-meta"><span data-th>เตรียมสอบเข้ามหาลัย</span><span data-en>University Prep</span></div>
-      </a>
-      <a class="cat-card" onclick="setSearch('สอบเข้า ม.1')">
-        <div class="cat-name"><span data-th>สอบเข้า ม.1 / ม.4</span><span data-en>M.1 / M.4 Entrance</span></div>
-        <div class="cat-meta"><span data-th>โรงเรียนสาธิต / รัฐ</span><span data-en>Top schools</span></div>
-      </a>
-      <a class="cat-card" onclick="setSearch('ภาษาจีน')">
-        <div class="cat-name"><span data-th>ภาษาจีน</span><span data-en>Chinese</span></div>
-        <div class="cat-meta"><span data-th>HSK · พื้นฐาน</span><span data-en>HSK · Basics</span></div>
-      </a>
-      <a class="cat-card" onclick="setSearch('ภาษาญี่ปุ่น')">
-        <div class="cat-name"><span data-th>ภาษาญี่ปุ่น</span><span data-en>Japanese</span></div>
-        <div class="cat-meta">JLPT N5 - N1</div>
-      </a>
-      <a class="cat-card" onclick="setSearch('คอมพิวเตอร์')">
-        <div class="cat-name"><span data-th>คอมพิวเตอร์</span><span data-en>Coding</span></div>
-        <div class="cat-meta">Python · Web · AI</div>
-      </a>
-      <a class="cat-card" onclick="setSearch('ศิลปะ')">
-        <div class="cat-name"><span data-th>ศิลปะ · ดนตรี</span><span data-en>Arts · Music</span></div>
-        <div class="cat-meta"><span data-th>วาดรูป · เปียโน · กีตาร์</span><span data-en>Drawing · Piano · Guitar</span></div>
-      </a>
-      <a href="/subjects.html" class="cat-card cat-card-feature">
-        <div class="cat-name"><span data-th>ดูหลักสูตรทั้งหมด</span><span data-en>View all subjects</span></div>
-        <div class="cat-meta"><span data-th>100+ วิชา ครบทุกระดับ →</span><span data-en>100+ subjects, all grades →</span></div>
-      </a>
-    </div>
-    
-    <div style="text-align:center;margin-top:32px">
-      <a href="/subjects.html" class="btn btn-secondary btn-large" style="text-decoration:none">
-        <span data-th>ดูหลักสูตรครบทุกระดับชั้น</span>
-        <span data-en>Browse complete K-12 curriculum</span>
-        →
-      </a>
-    </div>
+<!-- ============ CATEGORIES (slim hook — community discovery lives in app/browse post-launch) ============ -->
+<section id="categories">
+  <div class="section-inner" style="max-width:760px;text-align:center">
+    <div class="section-eyebrow" style="margin-left:auto;margin-right:auto"><span data-th>วิชาเรียน</span><span data-en>Subjects</span></div>
+    <h2 class="section-title" style="margin-bottom:16px">
+      <span data-th>100+ วิชา · ป.1 ถึง ม.6</span>
+      <span data-en>100+ subjects · Grade 1-12</span>
+    </h2>
+    <p class="section-sub" style="margin:0 auto 28px;max-width:580px">
+      <span data-th>คณิต · อังกฤษ · วิทย์ · ไทย · TGAT/A-Level · ภาษาจีน · ญี่ปุ่น · ศิลปะ · ดนตรี · เขียนโปรแกรม · และอีกมาก</span>
+      <span data-en>Math · English · Science · Thai · TGAT/A-Level · Chinese · Japanese · Arts · Music · Coding · and more</span>
+    </p>
+    <a href="#waitlist" class="btn btn-primary btn-large" style="text-decoration:none">
+      <span data-th>เข้าร่วม Waitlist · รับแจ้งวันเปิด</span>
+      <span data-en>Join Waitlist · Get launch updates</span>
+      →
+    </a>
+    <p style="margin-top:18px;font-size:13px;color:var(--gray-500)">
+      <span data-th>เปิดตัวเร็ว ๆ นี้ · ระบบ discovery หาครูเก่งต่อวิชาแบบละเอียด</span>
+      <span data-en>Coming soon · full discovery — find specialist teachers per subject</span>
+    </p>
   </div>
 </section>
 
