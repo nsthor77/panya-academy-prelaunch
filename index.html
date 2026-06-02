@@ -995,6 +995,152 @@
       padding: 32px 20px 24px;
     }
   }
+
+  /* ============================================================
+     LIVE CLASS PREVIEW — mockup video tiles (Option A, Session 8.5+)
+     ============================================================ */
+  .live-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+  @media (max-width: 900px) { .live-tiles { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .live-tiles { grid-template-columns: 1fr; gap: 14px; } }
+
+  .live-tile {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+    cursor: default;
+  }
+  .live-tile:hover {
+    transform: translateY(-4px);
+    border-color: var(--gray-900);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, .10);
+  }
+
+  /* Variant backgrounds — สีต่างกันให้ดูหลากหลายเหมือนห้องจริง */
+  .live-tile.lt-1 { background: linear-gradient(135deg, #1E293B 0%, #334155 100%); }
+  .live-tile.lt-2 { background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%); }
+  .live-tile.lt-3 { background: linear-gradient(135deg, #166534 0%, #16A34A 100%); }
+  .live-tile.lt-4 { background: linear-gradient(135deg, #7C2D12 0%, #C2410C 100%); }
+  .live-tile.lt-5 { background: linear-gradient(135deg, #581C87 0%, #9333EA 100%); }
+  .live-tile.lt-6 { background: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%); }
+
+  /* LIVE badge — animated pulse */
+  .live-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    background: rgba(220, 38, 38, .95);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, .35);
+  }
+  .live-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    animation: livePulse 1.4s infinite;
+  }
+  @keyframes livePulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .3; transform: scale(1.4); }
+  }
+
+  /* Mock video controls (top-right) */
+  .live-controls {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+  }
+  .live-control-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, .15);
+  }
+
+  /* Avatar in center — large initial letter */
+  .live-avatar {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    border: 2px solid rgba(255, 255, 255, .25);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+  }
+
+  /* Bottom info bar (gradient overlay → black) */
+  .live-meta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 16px 14px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .80) 100%);
+    color: #fff;
+    z-index: 2;
+  }
+  .live-name { font-weight: 700; font-size: 15px; letter-spacing: -.01em; }
+  .live-subject { font-size: 12px; opacity: .85; margin-top: 3px; }
+
+  /* Mock viewer/duration count (top-right under controls) */
+  .live-meta-tag {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 2px 7px;
+    background: rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  @media (max-width: 600px) {
+    .live-avatar { width: 72px; height: 72px; font-size: 28px; }
+    .live-meta { padding: 12px 14px 10px; }
+    .live-name { font-size: 14px; }
+  }
 </style>
 </head>
 <body data-lang="th">
@@ -1301,6 +1447,121 @@
       <p style="margin-top:14px;font-size:13px;color:var(--gray-500)">
         <span data-th>นักเรียนใหม่: ได้ทดลองเรียนฟรี 5 นาทีกับครูแต่ละคน</span>
         <span data-en>New students: free 5-min trial with each teacher</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIVE CLASS PREVIEW (mockup video tiles) ============ -->
+<section id="live-preview">
+  <div class="section-inner" style="max-width:1100px">
+    <div class="section-head" style="text-align:center">
+      <div class="section-eyebrow" style="margin-left:auto;margin-right:auto"><span data-th>ห้องเรียนสด</span><span data-en>Live Classes</span></div>
+      <h2 class="section-title" style="max-width:720px;margin-left:auto;margin-right:auto">
+        <span data-th>เห็นภาพห้องเรียน · ก่อนตัดสินใจ</span>
+        <span data-en>See the classroom · before you commit</span>
+      </h2>
+      <p class="section-sub" style="max-width:560px;margin:14px auto 0">
+        <span data-th>เรียน 1-on-1 กับครูตัวจริง · video HD · ตัดเป็นนาที · เริ่มหยุดเมื่อไหร่ก็ได้</span>
+        <span data-en>1-on-1 with real teachers · HD video · pay by the minute · start and stop anytime</span>
+      </p>
+    </div>
+
+    <div class="live-tiles">
+      <!-- Tile 1 — Math -->
+      <div class="live-tile lt-1">
+        <span class="live-badge">LIVE</span>
+        <div class="live-controls">
+          <div class="live-control-icon" aria-hidden="true">🎤</div>
+          <div class="live-control-icon" aria-hidden="true">📹</div>
+        </div>
+        <div class="live-avatar">ก</div>
+        <div class="live-meta">
+          <div class="live-name"><span data-th>ครูก้อง</span><span data-en>Krukong</span></div>
+          <div class="live-subject"><span data-th>คณิตศาสตร์ · ม.4-6 · 5฿/นาที</span><span data-en>Math · M.4-6 · 5฿/min</span></div>
+        </div>
+      </div>
+
+      <!-- Tile 2 — English -->
+      <div class="live-tile lt-2">
+        <span class="live-badge">LIVE</span>
+        <div class="live-controls">
+          <div class="live-control-icon" aria-hidden="true">🎤</div>
+          <div class="live-control-icon" aria-hidden="true">📹</div>
+        </div>
+        <div class="live-avatar">N</div>
+        <div class="live-meta">
+          <div class="live-name"><span data-th>ครูนิด</span><span data-en>Teacher Nid</span></div>
+          <div class="live-subject"><span data-th>ภาษาอังกฤษ · IELTS · 7฿/นาที</span><span data-en>English · IELTS · 7฿/min</span></div>
+        </div>
+      </div>
+
+      <!-- Tile 3 — TGAT -->
+      <div class="live-tile lt-3">
+        <span class="live-badge">LIVE</span>
+        <div class="live-controls">
+          <div class="live-control-icon" aria-hidden="true">🎤</div>
+          <div class="live-control-icon" aria-hidden="true">📹</div>
+        </div>
+        <div class="live-avatar">ภ</div>
+        <div class="live-meta">
+          <div class="live-name"><span data-th>ครูภา</span><span data-en>Krupha</span></div>
+          <div class="live-subject"><span data-th>TGAT / A-Level · 6฿/นาที</span><span data-en>TGAT / A-Level · 6฿/min</span></div>
+        </div>
+      </div>
+
+      <!-- Tile 4 — Science -->
+      <div class="live-tile lt-4">
+        <span class="live-badge">LIVE</span>
+        <div class="live-controls">
+          <div class="live-control-icon" aria-hidden="true">🎤</div>
+          <div class="live-control-icon" aria-hidden="true">📹</div>
+        </div>
+        <div class="live-avatar">T</div>
+        <div class="live-meta">
+          <div class="live-name"><span data-th>ครูเต</span><span data-en>Teacher Tay</span></div>
+          <div class="live-subject"><span data-th>ฟิสิกส์ · ม.5-6 · 5฿/นาที</span><span data-en>Physics · M.5-6 · 5฿/min</span></div>
+        </div>
+      </div>
+
+      <!-- Tile 5 — Chinese -->
+      <div class="live-tile lt-5">
+        <span class="live-badge">LIVE</span>
+        <div class="live-controls">
+          <div class="live-control-icon" aria-hidden="true">🎤</div>
+          <div class="live-control-icon" aria-hidden="true">📹</div>
+        </div>
+        <div class="live-avatar">L</div>
+        <div class="live-meta">
+          <div class="live-name"><span data-th>ครูหลี่</span><span data-en>Teacher Li</span></div>
+          <div class="live-subject"><span data-th>ภาษาจีน · HSK 1-6 · 4฿/นาที</span><span data-en>Chinese · HSK 1-6 · 4฿/min</span></div>
+        </div>
+      </div>
+
+      <!-- Tile 6 — Coding -->
+      <div class="live-tile lt-6">
+        <span class="live-badge">LIVE</span>
+        <div class="live-controls">
+          <div class="live-control-icon" aria-hidden="true">🎤</div>
+          <div class="live-control-icon" aria-hidden="true">📹</div>
+        </div>
+        <div class="live-avatar">D</div>
+        <div class="live-meta">
+          <div class="live-name"><span data-th>ครูเดฟ</span><span data-en>Teacher Dev</span></div>
+          <div class="live-subject"><span data-th>Python · Web · AI · 8฿/นาที</span><span data-en>Python · Web · AI · 8฿/min</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://app.panya.academy/browse" class="btn btn-primary btn-large" style="text-decoration:none">
+        <span data-th>เริ่มเรียนตอนนี้</span>
+        <span data-en>Start learning now</span>
+        →
+      </a>
+      <p style="margin-top:14px;font-size:12px;color:var(--gray-500)">
+        <span data-th>* ภาพประกอบ · เปิดตัวจริงเร็ว ๆ นี้ · ครู+นักเรียนจริงจะปรากฏใน /browse</span>
+        <span data-en>* Illustrative · launching soon · real teachers will appear in /browse</span>
       </p>
     </div>
   </div>
