@@ -2249,6 +2249,15 @@
   }
 
   // === Language Switcher ===
+  // เซ็ต cookie panya_locale ที่ .panya.academy เพื่อ app subdomain อ่านได้ → bilingual ต่อเนื่อง
+  function setLocaleCookie(lang) {
+    try {
+      const host = window.location.hostname;
+      const domain = host.endsWith('panya.academy') ? ';domain=.panya.academy' : '';
+      const maxAge = 60 * 60 * 24 * 365; // 1 year
+      document.cookie = `panya_locale=${lang};path=/;max-age=${maxAge};samesite=lax${domain}`;
+    } catch(e) {}
+  }
   document.querySelectorAll('[data-set-lang]').forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.setLang;
@@ -2256,14 +2265,21 @@
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-set-lang]').forEach(b => b.classList.toggle('active', b === btn));
       try { localStorage.setItem('panya_lang', lang); } catch(e) {}
+      setLocaleCookie(lang); // sync to app subdomain
     });
   });
   try {
-    const saved = localStorage.getItem('panya_lang');
+    // Prefer cookie (set by app or previous landing visit) over localStorage
+    const cookieMatch = document.cookie.match(/(?:^|; )panya_locale=([^;]+)/);
+    const cookieLang = cookieMatch ? cookieMatch[1] : null;
+    const saved = cookieLang || localStorage.getItem('panya_lang');
     if (saved === 'en' || saved === 'th') {
       document.body.dataset.lang = saved;
       document.documentElement.lang = saved;
       document.querySelectorAll('[data-set-lang]').forEach(b => b.classList.toggle('active', b.dataset.setLang === saved));
+      // ensure cookie + localStorage in sync
+      try { localStorage.setItem('panya_lang', saved); } catch(e) {}
+      if (!cookieLang) setLocaleCookie(saved);
     }
   } catch(e) {}
 
